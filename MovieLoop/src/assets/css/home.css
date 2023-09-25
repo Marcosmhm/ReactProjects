@@ -1,11 +1,12 @@
 .midia-hero-banner {
   display: grid;
   gap: 0.5em;
+  padding-bottom: 1em;
 }
 
 .img-container {
   display: flex;
-  max-height: 32vh;
+  max-height: 40vh;
   position: relative;
 }
 
@@ -65,4 +66,21 @@
 /* TRENDING MOVIES AND SHOWS */
 .trending-midia-section {
   background-color: #141414;
+  padding: 1em 0 3em 1em;
 }
+
+.trending-midia-section h2 {
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.slider-item {
+  width: 96%;
+  object-fit: cover;
+}
+
+.slider {
+  width: 100%;
+}
+
+

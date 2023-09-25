@@ -2,6 +2,7 @@ import { getDetails, getTrending } from "../../services/api"
 import { defer, useLoaderData, Await } from "react-router-dom"
 import { Suspense } from "react"
 
+import Slider from "../../components/Slider"
 import Loading from "../../components/Loading"
 import Stars from "../../components/Stars"
 import "../assets/css/home.css"
@@ -60,13 +61,16 @@ export default function Home() {
   function renderTvShows(tv) {
     const tvShowElements = tv.map(show => (
       <>
-        <h1>{show.original_name}</h1>
+        <img src={`https://image.tmdb.org/t/p/original/${show.poster_path}`} className="slider-item" />
       </>
     ))
     return (
       <>
         <h2>Trending TV Shows</h2>
-        {tvShowElements}
+        <Slider
+          data={tvShowElements} 
+          className="slider"
+        />
       </> 
     )
   }
@@ -74,13 +78,15 @@ export default function Home() {
   function renderMovies(movies) {
     const movieElements = movies.map(movie => (  
       <>
-        <h1>{movie.original_title}</h1>
+        <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="slider-item" />
       </>
       ))
       return (
         <>
-        <h2>Trending Movies </h2>
-        {movieElements}
+          <h2>Trending Movies </h2>
+          <Slider
+            data={movieElements}
+          />
       </> 
     )
   }
