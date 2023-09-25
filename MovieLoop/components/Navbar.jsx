@@ -4,7 +4,7 @@ import { GoHome } from 'react-icons/go'
 import { PiFilmSlate, PiTelevisionSimpleBold } from 'react-icons/pi'
 import { AiOutlineSearch } from 'react-icons/ai'
 
-import "../src/assets/sidebar.css"
+import "../src/assets/css/navbar.css"
 
 export default function Sidebar() {
 

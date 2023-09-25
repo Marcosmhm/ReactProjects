@@ -2,7 +2,8 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import Navbar from "../components/Navbar"
 import Home, { loader as homeLoader } from "./pages/Home"
 
-import "./assets/app.css"
+
+import "./assets/css/app.css"
 
 
 
