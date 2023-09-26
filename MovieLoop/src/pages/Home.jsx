@@ -5,6 +5,7 @@ import { Suspense } from "react"
 import Slider from "../../components/Slider"
 import Loading from "../../components/Loading"
 import Stars from "../../components/Stars"
+import Hero from "../../components/Hero"
 import "../assets/css/home.css"
 
 
@@ -27,34 +28,38 @@ export default function Home() {
   function renderHeroMidia(midia) {
     const seasonString = midia.number_of_seasons > 1 ? "seasons" : "season"
     const midiaELement = (
-      <section className="midia-hero-banner">
-          <div className="img-container">
-            <img src={`https://image.tmdb.org/t/p/original/${midia.backdrop_path}`} className="hero-poster" />
-          </div>
-          <div className="hero-info">
-            <h1>{midia.title ? midia.title : midia.name}</h1>
-            <div className="hero-rating">
-              <Stars 
-                rating={(midia.vote_average / 2).toFixed(2)} 
-                reviews={midia.vote_count}
-                />
-            </div>
-            <div className="hero-midia-info">
-              <span className="hero-midia-date">
-                {midia.first_air_date ? midia.first_air_date.slice(0, 4) : midia.release_date.slice(0, 4)}
-              </span>
-              <span>
-                {midia.number_of_seasons ? `${midia.number_of_seasons} ${seasonString} `
-                : `${midia.runtime} minutes` }
-              </span>
-            </div>
-          </div>
-      </section>
+      <>
+          <Hero 
+            image={`https://image.tmdb.org/t/p/original/${midia.backdrop_path}`}
+            title={midia.title ? midia.title : midia.name}
+            rating={(midia.vote_average / 2).toFixed(2)}
+            reviews={midia.vote_count}
+            airDate={midia.first_air_date ? midia.first_air_date.slice(0, 4) : midia.release_date.slice(0, 4)}
+            seasons={midia.number_of_seasons ? `${midia.number_of_seasons} ${seasonString} `
+            : `${midia.runtime} minutes`}
+          /> 
+      </>
     )
     return (
       <>
           {midiaELement}
       </>
+    )
+  }
+
+  function renderMovies(movies) {
+    const movieElements = movies.map(movie => (  
+      <>
+        <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="slider-item" />
+      </>
+      ))
+      return (
+        <>
+          <h2>Trending Movies </h2>
+          <Slider
+            data={movieElements}
+          />
+      </> 
     )
   }
 
@@ -75,21 +80,6 @@ export default function Home() {
     )
   }
 
-  function renderMovies(movies) {
-    const movieElements = movies.map(movie => (  
-      <>
-        <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="slider-item" />
-      </>
-      ))
-      return (
-        <>
-          <h2>Trending Movies </h2>
-          <Slider
-            data={movieElements}
-          />
-      </> 
-    )
-  }
 
   return (
     <>
