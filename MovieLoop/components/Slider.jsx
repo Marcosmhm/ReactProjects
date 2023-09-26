@@ -24,10 +24,10 @@ export default function Slider({ data, title }) {
           430: {
             slidesPerView: 3,
           },
-          700: {
+          550: {
             slidesPerView: 4,
           },
-          900: {
+          700: {
             slidesPerView: 5,
           },
           1080: {
@@ -36,11 +36,14 @@ export default function Slider({ data, title }) {
           1366: {
             slidesPerView: 7,
           },
+          1600: {
+            slidesPerView: 8,
+          },
         }}
       >
         {data.map((item, index) => (
           <SwiperSlide key={index}>
-            {item}
+              {item}
           </SwiperSlide>
         ))}
       </Swiper>

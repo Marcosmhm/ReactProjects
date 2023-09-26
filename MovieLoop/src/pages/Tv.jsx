@@ -46,20 +46,22 @@ export default function Tv() {
   return (
     <>
       <Suspense fallback={<h2>Loading <Loading /> </h2>}>
-        <Await resolve={dataPromise.banner}>
-          {renderHeroMidia}
-        </Await>
-        <section className="midia-section">
-          <Await resolve={dataPromise.popular}>
-            {renderTrending}
+        <div className="section-container">
+          <Await resolve={dataPromise.banner}>
+            {renderHeroMidia}
           </Await>
-          <Await resolve={dataPromise.topRated}>
-            {renderTopRated}
-          </Await>
-          <Await resolve={dataPromise.onAir}>
-            {renderOnAir}
-          </Await>
-        </section>
+          <section className="midia-section">
+            <Await resolve={dataPromise.popular}>
+              {renderTrending}
+            </Await>
+            <Await resolve={dataPromise.topRated}>
+              {renderTopRated}
+            </Await>
+            <Await resolve={dataPromise.onAir}>
+              {renderOnAir}
+            </Await>
+          </section>
+        </div>
       </Suspense>
     </>
   )

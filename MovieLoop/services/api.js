@@ -66,6 +66,5 @@ export async function getShows(query) {
       }
   }
   const data = await res.json()
-  console.log(data)
   return data.results
 }

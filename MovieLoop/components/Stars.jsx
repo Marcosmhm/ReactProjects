@@ -15,7 +15,7 @@ export default function Stars({ rating, reviews }) {
     <>
       {ratingStar}
       <span className="hero-reviews">
-        {reviews} Reviews
+        {reviews && `${reviews} Reviews` }
       </span>
     </>
   );

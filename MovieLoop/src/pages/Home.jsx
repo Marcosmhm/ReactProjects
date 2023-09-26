@@ -44,17 +44,19 @@ export default function Home() {
   return (
     <>
         <Suspense fallback={<h2>Loading <Loading /> </h2>}>
-              <Await resolve={dataPromise.banner}>
-                {renderHeroMidia}
+          <div className="section-container">
+            <Await resolve={dataPromise.banner}>
+              {renderHeroMidia}
+            </Await>
+            <section className="midia-section">
+              <Await resolve={dataPromise.movies}>
+                {renderMovies}
               </Await>
-          <section className="midia-section">
-            <Await resolve={dataPromise.movies}>
-              {renderMovies}
-            </Await>
-            <Await resolve={dataPromise.tv}>
-              {renderTvShows}
-            </Await>
-          </section>
+              <Await resolve={dataPromise.tv}>
+                {renderTvShows}
+              </Await>
+            </section>
+          </div>
         </Suspense>
     </>
   )
