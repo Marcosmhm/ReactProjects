@@ -8,13 +8,15 @@ import 'swiper/css/scrollbar'
 
 register()
 
-export default function Slider({ data }) {
+export default function Slider({ data, title }) {
   return (
     <>
+      <h2 className='slider-title'>{title}</h2>
       <Swiper className='slider'
         slidesPerView={'auto'}
         navigation
         autoplay
+        spaceBetween={10}
         breakpoints={{
           280: {
             slidesPerView: 2,
@@ -36,8 +38,8 @@ export default function Slider({ data }) {
           },
         }}
       >
-        {data.map((item) => (
-          <SwiperSlide>
+        {data.map((item, index) => (
+          <SwiperSlide key={index}>
             {item}
           </SwiperSlide>
         ))}

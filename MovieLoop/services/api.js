@@ -6,13 +6,12 @@ const options = {
   }
 };
 
-
 export async function getTrending(type, randomNumber) {
   const url = `https://api.themoviedb.org/3/trending/${type}/day?language=en-US`
   const res = await fetch(url, options)
   if (!res.ok) {
     throw {
-        message: "Failed to fetch midiaaa",
+        message: "Failed to fetch midia",
         statusText: res.statusText,
         status: res.status
       }
@@ -35,9 +34,38 @@ export async function getDetails(type, randomNumber) {
       }
   }
   const data = await res.json()
-  console.log(data)
   return data
 }
 
+export async function getMovies(query) {
+  let url
+  query ==='trending' ? url = `https://api.themoviedb.org/3/trending/movie/day?language=en-US` :
+  url = `https://api.themoviedb.org/3/movie/${query}`
+  const res = await fetch(url, options)
+  if (!res.ok) {
+    throw {
+        message: "Failed to fetch movie",
+        statusText: res.statusText,
+        status: res.status
+      }
+  }
+  const data = await res.json()
+  return data.results
+}
 
-
+export async function getShows(query) {
+  let url
+  query ==='trending' ? url = `https://api.themoviedb.org/3/trending/tv/day?language=en-US` :
+  url = `https://api.themoviedb.org/3/tv/${query}`
+  const res = await fetch(url, options)
+  if (!res.ok) {
+    throw {
+        message: "Failed to fetch show",
+        statusText: res.statusText,
+        status: res.status
+      }
+  }
+  const data = await res.json()
+  console.log(data)
+  return data.results
+}

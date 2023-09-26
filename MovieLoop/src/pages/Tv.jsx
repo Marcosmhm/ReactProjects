@@ -1,45 +1,44 @@
 import { defer, useLoaderData, Await } from "react-router-dom"
-import { getDetails, getMovies } from "../../services/api"
+import { getDetails, getShows } from "../../services/api"
 import { Suspense } from "react"
 
 import Loading from "../../components/Loading"
-import { getHeroMidia as renderHeroMidia, getMidiaElements as getMovieElements } from "../../utils"
+import { getHeroMidia as renderHeroMidia, getMidiaElements as midiaElements} from "../../utils"
 
 const randomNumber = (max) => Math.floor(Math.random() * max)
 
 export function loader() {
-  return defer({ 
-    banner : getDetails('movie', randomNumber(20)),
-    popular: getMovies('trending'),
-    topRated: getMovies('top_rated'),
-    upComing: getMovies('upcoming'),
+  return defer({
+    banner : getDetails('tv', randomNumber(20)),
+    popular: getShows('trending'),
+    topRated: getShows('top_rated'),
+    onAir: getShows('on_the_air'),
   })
 }
 
-export default function Movies() {
-
+export default function Tv() {
   const dataPromise = useLoaderData()
 
-  function renderTrending(movies) {
-      return (
-        <>
-         {getMovieElements(movies, 'Popular Movies')}
-      </> 
-    )
-  }
-
-  function renderTopRated(movies) {
-      return (
-        <>
-          {getMovieElements(movies, 'Top Rated Movies')}
-      </> 
-    )
-  }
-
-  function renderUpcoming(movies) {
+  function renderTrending(shows) {
     return (
       <>
-        {getMovieElements(movies, 'Upcoming Movies')}
+       {midiaElements(shows, 'Popular shows')}
+      </> 
+    )
+  }
+
+  function renderTopRated(shows) {
+    return (
+      <>
+        {midiaElements(shows, 'Top Rated shows')}
+      </> 
+    )
+  }
+
+  function renderOnAir(shows) {
+    return (
+      <>
+        {midiaElements(shows, 'Currently Airing TV Shows')}
       </> 
     )
   }
@@ -57,8 +56,8 @@ export default function Movies() {
           <Await resolve={dataPromise.topRated}>
             {renderTopRated}
           </Await>
-          <Await resolve={dataPromise.upComing}>
-            {renderUpcoming}
+          <Await resolve={dataPromise.onAir}>
+            {renderOnAir}
           </Await>
         </section>
       </Suspense>

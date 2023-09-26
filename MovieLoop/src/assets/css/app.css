@@ -22,3 +22,22 @@ a {
   text-decoration: unset;
   color: unset;
 }
+
+.midia-section {
+  background-color: #141414;
+  padding: 1em 0 3em 1em;
+}
+
+.slider-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.slider-title:not(:first-child) {
+  margin-top: 1.5em;
+}
+
+.slider-item {
+  width: 100%;
+  object-fit: cover;
+}
