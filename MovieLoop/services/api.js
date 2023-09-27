@@ -44,13 +44,27 @@ export async function getMovies(query) {
   const res = await fetch(url, options)
   if (!res.ok) {
     throw {
-        message: "Failed to fetch movie",
+        message: "Failed to fetch movies",
         statusText: res.statusText,
         status: res.status
       }
   }
   const data = await res.json()
   return data.results
+}
+
+export async function getSpecificMovie(id) {
+  const url = `https://api.themoviedb.org/3/movie/${id}?language=en-US`
+  const res = await fetch(url, options)
+  if (!res.ok) {
+    throw {
+        message: "Failed to fetch Movie",
+        statusText: res.statusText,
+        status: res.status
+      }
+  }
+  const data = await res.json
+  return data
 }
 
 export async function getShows(query) {
@@ -60,11 +74,25 @@ export async function getShows(query) {
   const res = await fetch(url, options)
   if (!res.ok) {
     throw {
-        message: "Failed to fetch show",
+        message: "Failed to fetch shows",
         statusText: res.statusText,
         status: res.status
       }
   }
   const data = await res.json()
   return data.results
+}
+
+export async function getSpecifiShow(id) {
+  const url = `https://api.themoviedb.org/3/tv/${id}?language=en-US`
+  const res = await fetch(url, options)
+  if (!res.ok) {
+    throw {
+        message: "Failed to fetch Show",
+        statusText: res.statusText,
+        status: res.status
+      }
+  }
+  const data = await res.json
+  return data
 }
