@@ -22,7 +22,6 @@ export async function getTrending(type, randomNumber) {
 }
 
 export async function getDetails(type, randomNumber) {
-  // tv e numero  entre 0 e 19
   const id = (await getTrending(type, randomNumber)).id
   const url = type === 'movie' ? `https://api.themoviedb.org/3/movie/${id}?language=en-US` : `https://api.themoviedb.org/3/tv/${id}?language=en-US` 
   const res = await fetch(url, options)
@@ -54,7 +53,7 @@ export async function getMovies(query) {
 }
 
 export async function getSpecificMovie(id) {
-  const url = `https://api.themoviedb.org/3/movie/${id}?language=en-US`
+  const url = `https://api.themoviedb.org/3/movie/${id}?append_to_response=videos%2Ccredits%2Cimages%2Crecommendations&language=en-US`
   const res = await fetch(url, options)
   if (!res.ok) {
     throw {
@@ -63,9 +62,11 @@ export async function getSpecificMovie(id) {
         status: res.status
       }
   }
-  const data = await res.json
+  const data = await res.json()
+  console.log(data)
   return data
 }
+getSpecificMovie()
 
 export async function getShows(query) {
   let url

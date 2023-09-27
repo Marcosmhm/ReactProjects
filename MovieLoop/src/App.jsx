@@ -6,13 +6,14 @@ import Tv, {loader as tvLoader} from "./pages/Tv"
 
 
 import "./assets/css/app.css"
+import MovieDetail from "./pages/MovieDetail"
 
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Navbar />}>
       <Route index element={<Home />} loader={homeLoader} />
       <Route path="/movies" element={<Movies />} loader={movieLoader} />
-      <Route path="/movie/:id" element="Specific movie goes here" />
+      <Route path="/movie/:id" element={<MovieDetail />} />
       <Route path="/shows" element={<Tv />} loader={tvLoader} />
       <Route path="/show/id" element="Specific show goes here" />
       <Route path="*" element="404" />
