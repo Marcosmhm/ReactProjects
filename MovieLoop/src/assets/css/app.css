@@ -192,9 +192,10 @@ a {
 
   .hero-midia-overview {
     display: -webkit-box;
+    font-size: 0.9rem;
     line-height: 1.5;
     margin: 0 ;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -204,23 +205,32 @@ a {
 @media (min-width: 1024px) {
   .midia-hero-container {
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
-    height: 27rem;
-    padding-bottom: 0;
+    display: flex;
+    height: 0;
+    padding-bottom: 40%;
   }
 
   .hero-info {
-    top: 30%;
+    top: 20%;
     position: absolute;
     width: 55%;
   }
 
+  .hero-midia-overview {
+    text-align: left;
+    font-size: 1.1rem;
+  }
+
   .img-container {
-    grid-column: 2;
+    right: 0;
+    width: 71.1%;
     height: 100%;
-    max-height: 27rem;
+    display: block;
+    position: absolute;
+  }
+
+  .hero-poster {
+    height: 100%;
   }
 
   .img-container::after {
@@ -243,6 +253,18 @@ a {
     align-items: center;
     gap: 4em;
     padding-top: 2em;
+  }
+
+  .hero-info {
+    width: 45%;
+  }
+
+  .hero-info h1 {
+    font-size: 2.5vw;
+  }
+
+  .hero-midia-overview {
+    text-align: justify; 
   }
 
   .slider-title {
