@@ -121,6 +121,7 @@ a {
 .slider-item {
   width: 100%;
   object-fit: cover;
+  border: 3px solid #202124;
 }
 
 .slider-item-info {

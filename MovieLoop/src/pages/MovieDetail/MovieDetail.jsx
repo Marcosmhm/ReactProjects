@@ -24,7 +24,7 @@ export default function MovieDetail() {
   return (
     <>
       <div className="section-container">
-        
+
         {renderHeroMidia(movie)}
         <div className="button-wrapper">
           <button style={active === 'overview' ? activeStyles : []}
@@ -43,12 +43,14 @@ export default function MovieDetail() {
             Photos
           </button>
         </div>
-        {active === 'overview' && Overview(movie)}
-        {active === 'videos' && Videos(movie.videos)}
-        {active === 'photos' && Photos(movie.images)}
-        <div className="detail-recommendations">
-          {getMidiaElements(movie.recommendations.results, 'More Like This')}
-        </div>
+        <section className='detail-section'>
+          {active === 'overview' && Overview(movie)}
+          {active === 'videos' && Videos(movie.videos.results)}
+          {active === 'photos' && Photos(movie.images)}
+          <div className="detail-recommendations">
+            {getMidiaElements(movie.recommendations.results, 'More Like This')}
+          </div>
+        </section>
       </div>
     </>
   )
