@@ -15,11 +15,8 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Navbar />}>
       <Route index element={<Home />} loader={homeLoader} />
       <Route path="/movies" element={<Movies />} loader={movieLoader} />
-      <Route path="/movie/:id" element={<MovieDetail />} loader={movieDetailLoader}>
-        <Route index element={<Overview />}/>
-        <Route path='/movie/:id/Videos' element={'test'}/>
-        <Route path='/movie/:id/Photos' element={'test'}/>
-      </Route>
+      <Route path="/movie/:id" element={<MovieDetail />} loader={movieDetailLoader} />
+
       <Route path="/shows" element={<Tv />} loader={tvLoader} />
       <Route path="/show/id" element="Specific show goes here" />
       <Route path="*" element="404" />
