@@ -5,7 +5,10 @@ export default function Hero({ image, title, rating, reviews, airDate, seasons, 
     <>
       <section className="midia-hero-container">
           <div className="img-container">
-            <img src={image} className="hero-poster" />
+            <img 
+              src={image} 
+              className="hero-poster"
+            />
           </div>
           <div className="hero-info">
             <h1>{title}</h1>

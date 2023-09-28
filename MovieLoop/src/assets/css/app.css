@@ -149,8 +149,10 @@ footer a {
 .personal-links {
   display: flex;
   gap: 0.5em;
+}
+
+.personal-links a {
   border-bottom: 1px solid gray;
-  width: fit-content;
 }
 
 @media (min-width: 640px) {
@@ -290,5 +292,11 @@ footer a {
 
   .slider-item-review {
     font-size: 0.9rem;
+  }
+
+  footer {
+    padding-top: 4em;
+    padding-left: 9em;
+    align-items: center;
   }
 }

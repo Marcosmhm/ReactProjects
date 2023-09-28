@@ -50,10 +50,10 @@ export function getMidiaElements(midia, title) {
           </span>
           <div className="slider-item-review">
             <Stars 
-              rating={(midia.vote_average.toFixed(2) / 2)}
+              rating={(midia.vote_average?.toFixed(2) / 2)}
               />
             <span className="slider-item-reviews-vote">
-              {midia.vote_average.toFixed(2)}
+              {midia.vote_average?.toFixed(2)}
             </span>
           </div>
         </div>
@@ -65,6 +65,35 @@ export function getMidiaElements(midia, title) {
         <Slider
           title={title}
           data={midiaElements}
+        />
+    </> 
+  )
+}
+
+export function getCast(midia, title) {
+  const castElements = midia.map(midia => (  
+    <>
+      <Link
+        to=''
+      >
+        <LazyLoadImage
+          src={`https://image.tmdb.org/t/p/original/${midia.profile_path}`}
+          className="slider-item slider-item-cast"
+          effect="blur"
+        />
+        <div className="slider-item-cast-info">
+          <span className="slider-item-cast-name">
+            {midia.title ? midia.title : midia.name}
+          </span>
+        </div>
+      </Link>
+    </>
+    ))
+    return (
+      <>
+        <Slider
+          title={title}
+          data={castElements}
         />
     </> 
   )
