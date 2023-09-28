@@ -10,9 +10,10 @@ export default function Sidebar() {
 
   return (
     <>
-      <nav>
+      <nav className='navbar-principal'>
         <NavLink to="/">
-          {({ isActive }) => isActive ? <GoHome size={32} color='#2779a7' /> : <GoHome size={32}/>}
+          {({ isActive }) => isActive ? <GoHome size={32} color='#2779a7' /> : <GoHome size={32}
+        />}
         </NavLink>
         <NavLink to="/movies">
         {({ isActive }) => isActive ? <PiFilmSlate size={32} color='#2779a7' /> : <PiFilmSlate size={32} />}

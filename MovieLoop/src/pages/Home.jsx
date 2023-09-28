@@ -3,7 +3,6 @@ import { defer, useLoaderData, Await } from "react-router-dom"
 import { Suspense } from "react"
 
 import Loading from "../../components/Loading"
-import "../assets/css/home.css"
 
 import { getHeroMidia as renderHeroMidia, getMidiaElements as midiaElements } from "../../utils"
 

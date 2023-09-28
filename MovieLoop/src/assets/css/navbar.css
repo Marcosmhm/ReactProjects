@@ -1,4 +1,4 @@
-nav {
+.navbar-principal {
   background: #000;
   position: fixed;
   bottom: 0;
@@ -9,7 +9,7 @@ nav {
   z-index: 2;
 }
 
-NavLink {
+.navbar-principal NavLink {
   cursor: pointer;
 }
 
@@ -36,5 +36,19 @@ NavLink {
   justify-content: center;
   align-items: center;
   height: 350px;
+}
+
+@media (min-width: 1200px) {
+  .navbar-principal {
+    border-right: 1px solid #202124;
+    height: 100vh;
+    top: 0;
+    width: 6rem;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    gap: 4em;
+    padding-top: 2em;
+  }
 }
 

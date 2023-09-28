@@ -9,7 +9,7 @@ export default function Hero({ image, title, rating, reviews, airDate, seasons, 
           </div>
           <div className="hero-info">
             <h1>{title}</h1>
-            <div className="hero-midia-container">
+            <div className="hero-container">
               <div className="hero-rating">
                 <Stars 
                   rating={rating} 

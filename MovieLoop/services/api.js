@@ -53,7 +53,7 @@ export async function getMovies(query) {
 }
 
 export async function getSpecificMovie(id) {
-  const url = `https://api.themoviedb.org/3/movie/${id}?append_to_response=videos%2Ccredits%2Cimages%2Crecommendations&language=en-US`
+  const url = `https://api.themoviedb.org/3/movie/${id}?append_to_response=videos%2Ccredits%2Cimages%2Crecommendations&language=en-US&include_image_language=en,null`
   const res = await fetch(url, options)
   if (!res.ok) {
     throw {
@@ -63,10 +63,8 @@ export async function getSpecificMovie(id) {
       }
   }
   const data = await res.json()
-  console.log(data)
   return data
 }
-getSpecificMovie()
 
 export async function getShows(query) {
   let url
