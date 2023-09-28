@@ -1,17 +1,27 @@
-import { Await } from "react-router-dom"
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 
 export default function Overview(midia) {
   const backdrops = midia.backdrops.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }) => {
     return (
       <div className="detail-image-card">
-        <img src={`https://image.tmdb.org/t/p/original/${file_path}`} className="backdrop-image" />
+        <LazyLoadImage
+          src={`https://image.tmdb.org/t/p/original/${file_path}`} 
+          className="backdrop-image"
+          effect="blur"
+        />
       </div>
     )
   })
   const posters = midia.posters.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }) => {
     return (
       <div className="detail-image-card">
-        <img src={`https://image.tmdb.org/t/p/original/${file_path}`} className="backdrop-image" />
+        <LazyLoadImage
+          src={`https://image.tmdb.org/t/p/original/${file_path}`}
+          className="backdrop-image"
+          effect="blur"
+        />
       </div>
     )
   })
@@ -25,9 +35,7 @@ export default function Overview(midia) {
         </div>
         <h2>Posters</h2>
         <div className="detail-poster-container">
-          <Await resolve={midia}>
-            {posters}
-          </Await>
+          {posters}
         </div>
       </div>
     </>

@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 import Hero from "./components/Hero"
 import Slider from "./components/Slider"
@@ -34,7 +36,11 @@ export function getMidiaElements(midia, title) {
       <Link
         to={midia.title ? `../movie/${midia.id}` : `../tv/${midia.id}`}
       >
-        <img src={`https://image.tmdb.org/t/p/original/${midia.poster_path || midia.backdrop_path}`} className="slider-item" />
+        <LazyLoadImage
+          src={`https://image.tmdb.org/t/p/original/${midia.poster_path || midia.backdrop_path}`}
+          className="slider-item"
+          effect="blur"
+        />
         <div className="slider-item-info">
           <span className="slider-item-title">
             {/* {
