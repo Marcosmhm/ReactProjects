@@ -2,6 +2,8 @@ import { useLoaderData, useParams } from 'react-router-dom'
 import { useState } from 'react'
 
 import Overview from '../../../components/Overview'
+import Photos from '../../../components/Photos'
+import Videos from '../../../components/Videos'
 import { getSpecificMovie } from '../../../services/api'
 import { getHeroMidia as renderHeroMidia } from '../../../utils'
 import '../../assets/css/movieDetail.css'
@@ -11,7 +13,7 @@ export function loader({ params }) {
 }
 
 export default function MovieDetail() {
-  const [active, setActive] = useState('')
+  const [active, setActive] = useState('overview')
   const movie = useLoaderData()
   const activeStyles = {
     color: "#FFF",
@@ -41,9 +43,9 @@ export default function MovieDetail() {
             Photos
           </button>
         </div>
-        {active === 'overview' && <Overview />}
-        {active === 'videos' && <Overview />}
-        {active === 'photos' && <Overview />}
+        {active === 'overview' && Overview(movie)}
+        {active === 'videos' && Videos(movie.videos)}
+        {active === 'photos' && Photos(movie.images)}
       </div>
     </>
   )

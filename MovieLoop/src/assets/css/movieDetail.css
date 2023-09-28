@@ -1,19 +1,39 @@
-.navbar-details {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1.5em;
-}
-
 .button-wrapper {
   display: flex;
   justify-content: space-between;
+  margin-top: 1em;
 }
 
 button {
   width: 100%;
-  padding: 0.8em;
+  padding: 1em;
   background-color: #1a1a1a;
   border: none;
   border-right: 1px solid #141414;
   color: #585858;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.midia-overview {
+  padding-bottom: 2em;
+  font-size: 0.95em;
+}
+
+.detail-image-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  gap: 0.5em;
+}
+
+.backdrop-image {
+  width: 100%;
 }
