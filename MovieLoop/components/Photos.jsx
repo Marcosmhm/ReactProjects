@@ -1,16 +1,34 @@
+import { Await } from "react-router-dom"
+
 export default function Overview(midia) {
-  const backdrops = midia.backdrops.map(({ file_path }) => {
+  const backdrops = midia.backdrops.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }) => {
     return (
       <div className="detail-image-card">
-        <img src={`https://image.tmdb.org/t/p/original/${file_path}`} className="backdrop-image"/>
+        <img src={`https://image.tmdb.org/t/p/original/${file_path}`} className="backdrop-image" />
       </div>
     )
-  }).slice(0, 12)
+  })
+  const posters = midia.posters.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }) => {
+    return (
+      <div className="detail-image-card">
+        <img src={`https://image.tmdb.org/t/p/original/${file_path}`} className="backdrop-image" />
+      </div>
+    )
+  })
+
   return (
     <>
-      <h2>Backdrops</h2>
-      <div className="detail-image-container">
-        {backdrops}
+      <div className="detail-photos-container">
+        <h2>Backdrops</h2>
+        <div className="detail-backdrop-container">
+          {backdrops}
+        </div>
+        <h2>Posters</h2>
+        <div className="detail-poster-container">
+          <Await resolve={midia}>
+            {posters}
+          </Await>
+        </div>
       </div>
     </>
   )

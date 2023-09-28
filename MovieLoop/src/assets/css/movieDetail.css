@@ -1,3 +1,16 @@
+.detail-title {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  margin: 0;
+  text-align: center;
+  background-color: #141414;
+  font-size: 0.9rem;
+  font-weight: normal;
+  padding: 1em;
+}
+
 .button-wrapper {
   display: flex;
   justify-content: space-between;
@@ -23,17 +36,57 @@ ul {
   gap: 0.2em;
 }
 
-.midia-overview {
-  padding-bottom: 2em;
-  font-size: 0.95em;
+li {
+  display: flex;
 }
 
-.detail-image-container {
+.detail-li-title {
+  flex: 1;
+  max-width: 100px;
+  margin-right: 1em;
+}
+
+.detail-li-content {
+  flex: 2;
+}
+.detail-overview {
+  padding-bottom: 2em;
+  font-size: 0.95em;
+  padding: 0.7rem;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+.detail-overview h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.detail-photos-container {
+  padding: 1.5em 1em 1.5em 1em;
+  font-size: 0.9rem;
+}
+
+.detail-photos-container h2{
+  margin: 1em 0 0.5em 0;
+}
+
+.detail-backdrop-container,
+.detail-poster-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 0.5em;
+}
+
+.detail-poster-container {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .backdrop-image {
   width: 100%;
+}
+
+.detail-recommendations {
+  font-size: 1.5rem;
+  padding-left: 0.7rem;
 }
