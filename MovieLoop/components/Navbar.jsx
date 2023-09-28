@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom'
-import { Outlet } from 'react-router-dom'
 import { GoHome } from 'react-icons/go'
 import { PiFilmSlate, PiTelevisionSimpleBold } from 'react-icons/pi'
 import { AiOutlineSearch } from 'react-icons/ai'
@@ -23,7 +22,6 @@ export default function Sidebar() {
         </NavLink>
         <AiOutlineSearch size={32}/>
       </nav>
-      <Outlet />
     </>
   )
 }
