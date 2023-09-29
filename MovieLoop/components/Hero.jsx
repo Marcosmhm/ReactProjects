@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom"
+
 import Stars from "./Stars"
 
-export default function Hero({ image, title, rating, reviews, airDate, seasons, overview}) {
+export default function Hero({ image, title, rating, reviews, airDate, seasons, overview, id }) {
   return (
     <>
       <section className="midia-hero-container">
           <div className="img-container">
-            <img 
-              src={image} 
+            <img
+              src={image}
               className="hero-poster"
             />
           </div>
@@ -14,10 +16,10 @@ export default function Hero({ image, title, rating, reviews, airDate, seasons, 
             <h1>{title}</h1>
             <div className="hero-container">
               <div className="hero-rating">
-                <Stars 
-                  rating={rating} 
+                <Stars
+                  rating={rating}
                   reviews={reviews}
-                  />
+                />
               </div>
               <div className="hero-midia-info">
                 <span className="hero-midia-date">
@@ -28,9 +30,9 @@ export default function Hero({ image, title, rating, reviews, airDate, seasons, 
                 </span>
               </div>
             </div>
-              <p className="hero-midia-overview">
-                {overview}
-              </p>
+            <p className="hero-midia-overview">
+              {overview}
+            </p>
           </div>
       </section>
     </>

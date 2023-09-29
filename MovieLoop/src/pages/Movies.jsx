@@ -3,7 +3,7 @@ import { getDetails, getMovies } from "../../services/api"
 import { Suspense } from "react"
 
 import Loading from "../../components/Loading"
-import { getHeroMidia as renderHeroMidia, getMidiaElements as getMovieElements } from "../../utils"
+import { renderHeroMidia, renderMidiaElements as getMovieElements } from "../../utils"
 
 const randomNumber = (max) => Math.floor(Math.random() * max)
 

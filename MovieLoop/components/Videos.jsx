@@ -1,5 +1,4 @@
-import ReactPlayer from 'react-player'
-
+import ReactPlayer from 'react-player/lazy'
 export default function DetailNavbar(midia) {
   console.log(midia)
   const videoElements = midia.map(video => {

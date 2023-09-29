@@ -1,19 +1,25 @@
-import { getCast } from "../utils"
+import { renderCast } from "../utils"
 
 export default function Overview(midia) {
+
   console.log(midia)
-  const directors = midia.credits.crew.filter(({job}) => job === 'Director').map( (director) => director.name)
+  const directors = midia.credits.crew.filter(({job}) => job === 'Director')
+    .map( (director) => director.name)
+
   const genres = midia.genres.map((genre, index) => {
     return genre.name
   })
+
   const companies = midia.production_companies.map((companie, index) => {
     return companie.name.charAt(0).toUpperCase() + companie.name.slice(1)
   })
+
   const date = new Date(midia.release_date).toLocaleDateString('en-gb', {
     year: "numeric",
     month: "long",
     day: "numeric",
   })
+
   return (
     <>
       <div className="detail-overview">
@@ -31,7 +37,7 @@ export default function Overview(midia) {
           <li><span className="detail-li-title">Production</span> <span className="detail-li-content">{companies.join(', ')}.</span></li>
         </ul>
         <h2 className="cast-title">Cast</h2>
-        {getCast(midia.credits.cast)}
+        {renderCast(midia.credits.cast)}
       </div>
     </>
   )

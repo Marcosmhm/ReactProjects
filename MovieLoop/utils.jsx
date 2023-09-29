@@ -6,7 +6,7 @@ import Hero from "./components/Hero"
 import Slider from "./components/Slider"
 import Stars from "./components/Stars"
 
-export function getHeroMidia( midia ) {
+export function renderHeroMidia( midia ) {
   const seasonString = midia.number_of_seasons > 1 ? "seasons" : "season"
   const midiaELement = (  
     <>
@@ -30,7 +30,7 @@ export function getHeroMidia( midia ) {
   )
 }
 
-export function getMidiaElements(midia, title) {
+export function renderMidiaElements(midia, title) {
   const midiaElements = midia.map(midia => (  
     <>
       <Link
@@ -70,7 +70,7 @@ export function getMidiaElements(midia, title) {
   )
 }
 
-export function getCast(midia, title) {
+export function renderCast(midia, title) {
   const castElements = midia.map(midia => (  
     <>
       <Link

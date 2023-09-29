@@ -4,7 +4,7 @@ import { Suspense } from "react"
 
 import Loading from "../../components/Loading"
 
-import { getHeroMidia as renderHeroMidia, getMidiaElements as midiaElements } from "../../utils"
+import { renderHeroMidia, renderMidiaElements } from "../../utils"
 
 
 
@@ -27,7 +27,7 @@ export default function Home() {
   function renderMovies(movies) {
       return (
         <>
-         {midiaElements(movies,'Trending Movies')} 
+         {renderMidiaElements(movies,'Trending Movies')} 
         </> 
     )
   }
@@ -35,7 +35,7 @@ export default function Home() {
   function renderTvShows(tv) {
     return (
       <>
-        {midiaElements(tv, 'Trending TV Shows')}
+        {renderMidiaElements(tv, 'Trending TV Shows')}
       </> 
     )
   }

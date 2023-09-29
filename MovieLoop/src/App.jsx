@@ -14,7 +14,7 @@ import "./assets/css/app.css"
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} loader={homeLoader} />
-      <Route path="/movies" element={<Movies />} loader={movieLoader} />
+      <Route path="/movie" element={<Movies />} loader={movieLoader} />
       <Route path="/movie/:id" element={<MovieDetail />} loader={movieDetailLoader} />
       <Route path="/shows" element={<Tv />} loader={tvLoader} />
       <Route path="/show/id" element="Specific show goes here" />

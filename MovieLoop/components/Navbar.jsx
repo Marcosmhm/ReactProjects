@@ -14,7 +14,7 @@ export default function Sidebar() {
           {({ isActive }) => isActive ? <GoHome size={32} color='#2779a7' /> : <GoHome size={32}
         />}
         </NavLink>
-        <NavLink to="/movies">
+        <NavLink to="/movie">
         {({ isActive }) => isActive ? <PiFilmSlate size={32} color='#2779a7' /> : <PiFilmSlate size={32} />}
         </NavLink>
         <NavLink to="/shows">

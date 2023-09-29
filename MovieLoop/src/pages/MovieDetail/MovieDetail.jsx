@@ -5,7 +5,7 @@ import Overview from '../../../components/Overview'
 import Photos from '../../../components/Photos'
 import Videos from '../../../components/Videos'
 import { getSpecificMovie } from '../../../services/api'
-import { getHeroMidia as renderHeroMidia, getMidiaElements } from '../../../utils'
+import { renderHeroMidia, renderMidiaElements } from '../../../utils'
 import '../../assets/css/movieDetail.css'
 
 export function loader({ params }) {
@@ -48,7 +48,7 @@ export default function MovieDetail() {
           {active === 'videos' && Videos(movie.videos.results)}
           {active === 'photos' && Photos(movie.images)}
           <div className="detail-recommendations">
-            {getMidiaElements(movie.recommendations.results, 'More Like This')}
+            {renderMidiaElements(movie.recommendations.results, 'More Like This')}
           </div>
         </section>
       </div>

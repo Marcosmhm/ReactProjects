@@ -3,7 +3,7 @@ import { getDetails, getShows } from "../../services/api"
 import { Suspense } from "react"
 
 import Loading from "../../components/Loading"
-import { getHeroMidia as renderHeroMidia, getMidiaElements as midiaElements} from "../../utils"
+import { renderHeroMidia, renderMidiaElements} from "../../utils"
 
 const randomNumber = (max) => Math.floor(Math.random() * max)
 
@@ -22,7 +22,7 @@ export default function Tv() {
   function renderTrending(shows) {
     return (
       <>
-       {midiaElements(shows, 'Popular shows')}
+       {renderMidiaElements(shows, 'Popular shows')}
       </> 
     )
   }
@@ -30,7 +30,7 @@ export default function Tv() {
   function renderTopRated(shows) {
     return (
       <>
-        {midiaElements(shows, 'Top Rated shows')}
+        {renderMidiaElements(shows, 'Top Rated shows')}
       </> 
     )
   }
@@ -38,7 +38,7 @@ export default function Tv() {
   function renderOnAir(shows) {
     return (
       <>
-        {midiaElements(shows, 'Currently Airing TV Shows')}
+        {renderMidiaElements(shows, 'Currently Airing TV Shows')}
       </> 
     )
   }

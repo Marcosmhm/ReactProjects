@@ -74,10 +74,14 @@ a {
 
 .hero-info h1 {
   font-size: 1.75rem;
-  font-weight: 400;
-  margin-bottom: 0em;
-  text-align: left;
 }
+
+.hero-info h1,
+.hero-reviews,
+.slider-title {
+  font-weight: 400;
+}
+
 
 .hero-rating {
   display: flex;
@@ -86,17 +90,18 @@ a {
   margin-bottom: 0.5em;
 }
 
-.hero-reviews {
-  margin-left: 0.4em;
-  align-self: center;
-  opacity: 0.5;
-  font-weight: 400;
-  font-size: 0.9rem;
-}
-
+.hero-reviews,
 .hero-midia-info {
   font-size: 0.9rem;
   opacity: 0.5;
+}
+
+.hero-reviews {
+  margin-left: 0.4em;
+  align-self: center;
+}
+
+.hero-midia-info {
   display: flex;
   gap: 0.4em;
 }
@@ -112,7 +117,6 @@ a {
 
 .slider-title {
   font-size: 1.2rem;
-  font-weight: 400;
 }
 
 .slider-title:not(:first-child) {
@@ -233,7 +237,6 @@ footer a {
 @media (min-width: 1024px) {
   .midia-hero-container {
     position: relative;
-    display: flex;
     height: 0;
     padding-bottom: 40%;
   }
@@ -246,7 +249,6 @@ footer a {
   }
 
   .hero-midia-overview {
-    text-align: left;
     font-size: 1.1rem;
     text-align: justify; 
   }
@@ -296,7 +298,7 @@ footer a {
 
   footer {
     padding-top: 4em;
-    padding-left: 9em;
+    padding-left: 0;
     align-items: center;
   }
 }
