@@ -1,7 +1,6 @@
 import { renderCast } from "../utils"
 
 export default function Overview(media) {
-  console.log(media)
   const directors = media.credits.crew.filter(({job}) => job === 'Director')
   .map( (director) => director.name)
   

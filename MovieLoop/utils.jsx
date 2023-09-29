@@ -9,9 +9,11 @@ import Stars from "./components/Stars"
 export function renderHeroMedia(media) {
   const mediaType = media.original_title ? 'movie' : 'tv'
   const seasonString = media.number_of_seasons > 1 ? "seasons" : "season"
+  const url = media.videos.results?.filter(video => video.type === 'Trailer')[0].key
+  console.log(media)
+  console.log(url)
   const mediaELement = (
     <>
-      <Link to={`/${mediaType}/${media.id}`}>
         <Hero
           image={`https://image.tmdb.org/t/p/original/${media.backdrop_path}`}
           title={media.title ? media.title : media.name}
@@ -22,8 +24,9 @@ export function renderHeroMedia(media) {
             media.number_of_seasons ? `${media.number_of_seasons} ${seasonString} `
               : `${media.runtime} minutes`}
           overview={media.overview}
+          link = {`/${mediaType}/${media.id}`}
+          url={url}
         />
-      </Link>
     </>
   )
   return (

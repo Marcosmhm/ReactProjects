@@ -23,7 +23,7 @@ export async function getTrending(type, randomNumber) {
 
 export async function getDetails(type, randomNumber) {
   const id = (await getTrending(type, randomNumber)).id
-  const url = type === 'movie' ? `https://api.themoviedb.org/3/movie/${id}?language=en-US` : `https://api.themoviedb.org/3/tv/${id}?language=en-US` 
+  const url = type === 'movie' ? `https://api.themoviedb.org/3/movie/${id}?append_to_response=videos&?language=en-US` : `https://api.themoviedb.org/3/tv/${id}?append_to_response=videos&?language=en-US` 
   const res = await fetch(url, options)
   if (!res.ok) {
     throw {

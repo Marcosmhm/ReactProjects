@@ -1,8 +1,24 @@
+import { useState } from "react"
+import { AiOutlinePlayCircle } from 'react-icons/ai'
+
+import TrailerModal from './TrailerModal'
+import Stars from "./Stars"
 import { Link } from "react-router-dom"
 
-import Stars from "./Stars"
+export default function Hero({ image, title, rating, reviews, airDate, seasons, overview, link, }) {
 
-export default function Hero({ image, title, rating, reviews, airDate, seasons, overview }) {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  function handleWatchTrailerClick() {
+    document.body.style.overflow = 'hidden'
+    return setIsModalOpen(true)
+  }
+
+  function handleCloseModal() {
+    document.body.style.overflow = 'unset'
+    setIsModalOpen(false)
+  }
+
   return (
     <>
       <section className="media-hero-container">
@@ -12,7 +28,8 @@ export default function Hero({ image, title, rating, reviews, airDate, seasons, 
               className="hero-poster"
             />
           </div>
-          <div className="hero-info">
+        <div className="hero-info">
+          <Link to={link}>
             <h1>{title}</h1>
             <div className="hero-container">
               <div className="hero-rating">
@@ -33,7 +50,14 @@ export default function Hero({ image, title, rating, reviews, airDate, seasons, 
             <p className="hero-media-overview">
               {overview}
             </p>
-          </div>
+          </Link>
+          <button onClick={handleWatchTrailerClick} className="hero-button"><AiOutlinePlayCircle />Watch Trailer</button>
+          {isModalOpen && (
+            <TrailerModal
+              onClose={handleCloseModal}
+              videoUrl={`https://www.youtube.com/watch?v=${url}`} />
+          )}
+        </div>
       </section>
     </>
   )

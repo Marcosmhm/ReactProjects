@@ -2,7 +2,6 @@ import { useState } from 'react'
 import ReactPlayer from 'react-player'
 
 export default function DetailNavbar(media, selectedFilter, onFilterChange) {
-  console.log(media)
 
   let videoElements = ''
   if (selectedFilter === 'All') {
@@ -31,6 +30,8 @@ export default function DetailNavbar(media, selectedFilter, onFilterChange) {
 
   return (
     <>
+      <div className="test">
+      </div>
       <select
         className='detail-videos-filter'
         id="filter"
