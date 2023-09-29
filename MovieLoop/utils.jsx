@@ -7,7 +7,7 @@ import Slider from "./components/Slider"
 import Stars from "./components/Stars"
 
 export function renderHeroMidia(midia) {
-  const midiaType = midia.orinal_name ? 'movie' : 'tv'
+  const midiaType = midia.original_title ? 'movie' : 'tv'
   const seasonString = midia.number_of_seasons > 1 ? "seasons" : "season"
   const midiaELement = (
     <>
