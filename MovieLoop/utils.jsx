@@ -94,10 +94,12 @@ export function renderCast(midia, title) {
   ))
   return (
     <>
-      <Slider
-        title={title}
-        data={castElements}
-      />
+      <div className="cast-slider">
+        <Slider
+          title={title}
+          data={castElements}
+        />
+      </div>
     </>
   )
 }

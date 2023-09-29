@@ -14,17 +14,23 @@ export function loader({ params }) {
 
 export default function MovieDetail() {
   const [active, setActive] = useState('overview')
+
+  const [selectedFilter, setSelectedFilter] = useState('All')
+
   const movie = useLoaderData()
+
   const activeStyles = {
     color: "#FFF",
     opacity: 1,
     backgroundColor: "#000"
   }
 
+  const handleFilterChange = filter => setSelectedFilter(filter);
+
   return (
     <>
+      <h3 className='detail-title'>{movie.original_title}</h3>
       <div className="section-container">
-
         {renderHeroMidia(movie)}
         <div className="button-wrapper">
           <button style={active === 'overview' ? activeStyles : []}
@@ -45,7 +51,7 @@ export default function MovieDetail() {
         </div>
         <section className='detail-section'>
           {active === 'overview' && Overview(movie)}
-          {active === 'videos' && Videos(movie.videos.results)}
+          {active === 'videos' && Videos(movie.videos.results, selectedFilter, handleFilterChange)}
           {active === 'photos' && Photos(movie.images)}
           <div className="detail-recommendations">
             {renderMidiaElements(movie.recommendations.results, 'More Like This')}

@@ -13,6 +13,7 @@
   font-size: 0.9rem;
   font-weight: normal;
   padding: 1em;
+  z-index: 2;
 }
 
 .button-wrapper {
@@ -67,17 +68,30 @@ li {
 }
 
 .cast-title {
-  margin-bottom: -1.2em;
+  margin-bottom: -0.5em;
   font-size: 1.2rem!important;
   margin-top: 2em;
 }
 
+.cast-slider {
+  margin-right: -0.7em;
+}
+
 .detail-videos-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  margin-top: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  margin-top: 0.5em;
   gap: 1em;
   padding: 1em;
+}
+
+.detail-videos-filter {
+  margin-left: 1.2em;
+  margin-top: 1.2em;
+  background-color: #141414;
+  color: white;
+  border-radius: 5px;
+  padding: 0.5em;
 }
 
 .detail-video {
@@ -112,4 +126,17 @@ li {
 .detail-recommendations {
   font-size: 1.5rem;
   padding-left: 0.7rem;
+}
+
+@media (min-width: 768px) {
+  .detail-section {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .detail-title {
+    display: none;
+  }
 }

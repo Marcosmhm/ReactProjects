@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar"
 import Home, { loader as homeLoader } from "./pages/Home"
 import Movies, { loader as movieLoader} from "./pages/Movies"
 import Tv, {loader as tvLoader} from "./pages/Tv"
-import MovieDetail, {loader as movieDetailLoader} from "./pages/MovieDetail/MovieDetail"
+import MovieDetail, {loader as movieDetailLoader} from "./pages/DetailPages/MovieDetail"
 import Layout from "../components/Layout"
 
 import "./assets/css/app.css"
