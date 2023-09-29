@@ -6,41 +6,41 @@ import Hero from "./components/Hero"
 import Slider from "./components/Slider"
 import Stars from "./components/Stars"
 
-export function renderHeroMidia(midia) {
-  const midiaType = midia.original_title ? 'movie' : 'tv'
-  const seasonString = midia.number_of_seasons > 1 ? "seasons" : "season"
-  const midiaELement = (
+export function renderHeroMedia(media) {
+  const mediaType = media.original_title ? 'movie' : 'tv'
+  const seasonString = media.number_of_seasons > 1 ? "seasons" : "season"
+  const mediaELement = (
     <>
-      <Link to={`/${midiaType}/${midia.id}`}>
+      <Link to={`/${mediaType}/${media.id}`}>
         <Hero
-          image={`https://image.tmdb.org/t/p/original/${midia.backdrop_path}`}
-          title={midia.title ? midia.title : midia.name}
-          rating={(midia.vote_average / 2).toFixed(2)}
-          reviews={midia.vote_count}
-          airDate={midia.first_air_date ? midia.first_air_date.slice(0, 4) : midia.release_date.slice(0, 4)}
+          image={`https://image.tmdb.org/t/p/original/${media.backdrop_path}`}
+          title={media.title ? media.title : media.name}
+          rating={(media.vote_average / 2).toFixed(2)}
+          reviews={media.vote_count}
+          airDate={media.first_air_date ? media.first_air_date.slice(0, 4) : media.release_date.slice(0, 4)}
           seasons={
-            midia.number_of_seasons ? `${midia.number_of_seasons} ${seasonString} `
-              : `${midia.runtime} minutes`}
-          overview={midia.overview}
+            media.number_of_seasons ? `${media.number_of_seasons} ${seasonString} `
+              : `${media.runtime} minutes`}
+          overview={media.overview}
         />
       </Link>
     </>
   )
   return (
     <>
-      {midiaELement}
+      {mediaELement}
     </>
   )
 }
 
-export function renderMidiaElements(midia, title) {
-  const midiaElements = midia.map(midia => (
+export function renderMediaElements(media, title) {
+  const mediaElements = media.map(media => (
     <>
       <Link
-        to={midia.title ? `../movie/${midia.id}` : `../tv/${midia.id}`}
+        to={media.title ? `../movie/${media.id}` : `../tv/${media.id}`}
       >
         <LazyLoadImage
-          src={`https://image.tmdb.org/t/p/original/${midia.poster_path || midia.backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/original/${media.poster_path || media.backdrop_path}`}
           className="slider-item"
           effect="blur"
         />
@@ -49,14 +49,14 @@ export function renderMidiaElements(midia, title) {
             {/* {
               midia.title && midia.title.length > 18 ? `${midia.title.slice(0, 18)} ...` : midia.title
             } */}
-            {midia.title ? midia.title : midia.name}
+            {media.title ? media.title : media.name}
           </span>
           <div className="slider-item-review">
             <Stars
-              rating={(midia.vote_average?.toFixed(2) / 2)}
+              rating={(media.vote_average?.toFixed(2) / 2)}
             />
             <span className="slider-item-reviews-vote">
-              {midia.vote_average?.toFixed(2)}
+              {media.vote_average?.toFixed(2)}
             </span>
           </div>
         </div>
@@ -67,26 +67,26 @@ export function renderMidiaElements(midia, title) {
     <>
       <Slider
         title={title}
-        data={midiaElements}
+        data={mediaElements}
       />
     </>
   )
 }
 
-export function renderCast(midia, title) {
-  const castElements = midia.map(midia => (
+export function renderCast(media, title) {
+  const castElements = media.map(media => (
     <>
       <Link
         to=''
       >
         <LazyLoadImage
-          src={`https://image.tmdb.org/t/p/original/${midia.profile_path}`}
+          src={`https://image.tmdb.org/t/p/original/${media.profile_path}`}
           className="slider-item slider-item-cast"
           effect="blur"
         />
         <div className="slider-item-cast-info">
           <span className="slider-item-cast-name">
-            {midia.title ? midia.title : midia.name}
+            {media.title ? media.title : media.name}
           </span>
         </div>
       </Link>

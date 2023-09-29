@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import ReactPlayer from 'react-player'
 
-export default function DetailNavbar(midia, selectedFilter, onFilterChange) {
-  console.log(midia)
+export default function DetailNavbar(media, selectedFilter, onFilterChange) {
+  console.log(media)
 
   let videoElements = ''
   if (selectedFilter === 'All') {
-    videoElements = midia.map(video => {
+    videoElements = media.map(video => {
       return (
         <ReactPlayer
           url={`https://www.youtube.com/watch?v=${video.key}`}
@@ -17,7 +17,7 @@ export default function DetailNavbar(midia, selectedFilter, onFilterChange) {
       )
     })
   } else {
-    videoElements = midia.filter(video => video.type === selectedFilter).map(video => {
+    videoElements = media.filter(video => video.type === selectedFilter).map(video => {
       return (
         <ReactPlayer
           url={`https://www.youtube.com/watch?v=${video.key}`}

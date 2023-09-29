@@ -1,19 +1,19 @@
 import { renderCast } from "../utils"
 
-export default function Overview(midia) {
-  console.log(midia)
-  const directors = midia.credits.crew.filter(({job}) => job === 'Director')
+export default function Overview(media) {
+  console.log(media)
+  const directors = media.credits.crew.filter(({job}) => job === 'Director')
   .map( (director) => director.name)
   
-  const genres = midia.genres.map((genre, index) => {
+  const genres = media.genres.map((genre, index) => {
     return genre.name
   })
   
-  const companies = midia.production_companies.map((companie, index) => {
+  const companies = media.production_companies.map((companie, index) => {
     return companie.name.charAt(0).toUpperCase() + companie.name.slice(1)
   })
   
-  const date = new Date(midia.release_date).toLocaleDateString('en-gb', {
+  const date = new Date(media.release_date).toLocaleDateString('en-gb', {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -21,13 +21,13 @@ export default function Overview(midia) {
   
   const detailItems = [
     { title: 'Released', content: date },
-    { title: 'Runtime', content: midia.runtime },
+    { title: 'Runtime', content: media.runtime },
     { title: 'Director', content: directors },
-    { title: 'Budget', content: midia.budget },
-    { title: 'Revenue', content: midia.revenue },
+    { title: 'Budget', content: media.budget },
+    { title: 'Revenue', content: media.revenue },
     { title: 'Genre', content: genres.join(', ') },
-    { title: 'Status', content: midia.status },
-    { title: 'Language', content: midia.original_language },
+    { title: 'Status', content: media.status },
+    { title: 'Language', content: media.original_language },
     { title: 'Production', content: companies.join(', ') }
   ]
 
@@ -47,12 +47,12 @@ export default function Overview(midia) {
     <>
       <div className="detail-overview">
         <h2>Storyline</h2>
-        <p>{midia.overview}</p>
+        <p>{media.overview}</p>
         <ul>
           {renderItems}
         </ul>
         <h2 className="cast-title">Cast</h2>
-        {renderCast(midia.credits.cast)}
+        {renderCast(media.credits.cast)}
       </div>
     </>
   )

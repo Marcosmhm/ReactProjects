@@ -2,8 +2,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 
-export default function Overview(midia) {
-  const backdrops = midia.backdrops.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }) => {
+export default function Overview(media) {
+  const backdrops = media.backdrops.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }) => {
     return (
       <div className="detail-image-card">
         <LazyLoadImage
@@ -14,7 +14,7 @@ export default function Overview(midia) {
       </div>
     )
   })
-  const posters = midia.posters.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }) => {
+  const posters = media.posters.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }) => {
     return (
       <div className="detail-image-card">
         <LazyLoadImage

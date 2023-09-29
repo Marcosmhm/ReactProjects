@@ -5,7 +5,7 @@ import Stars from "./Stars"
 export default function Hero({ image, title, rating, reviews, airDate, seasons, overview }) {
   return (
     <>
-      <section className="midia-hero-container">
+      <section className="media-hero-container">
           <div className="img-container">
             <img
               src={image}
@@ -21,8 +21,8 @@ export default function Hero({ image, title, rating, reviews, airDate, seasons, 
                   reviews={reviews}
                 />
               </div>
-              <div className="hero-midia-info">
-                <span className="hero-midia-date">
+              <div className="hero-media-info">
+                <span className="hero-media-date">
                   {airDate}
                 </span>
                 <span>
@@ -30,7 +30,7 @@ export default function Hero({ image, title, rating, reviews, airDate, seasons, 
                 </span>
               </div>
             </div>
-            <p className="hero-midia-overview">
+            <p className="hero-media-overview">
               {overview}
             </p>
           </div>

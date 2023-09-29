@@ -4,19 +4,19 @@ import { Suspense } from "react"
 
 import Loading from "../../components/Loading"
 
-import { renderHeroMidia, renderMidiaElements } from "../../utils"
+import { renderHeroMedia, renderMediaElements } from "../../utils"
 
 
 
 const randomNumber = (max) => Math.floor(Math.random() * max)
-const midiaType = ['tv', 'movie']
+const mediaType = ['tv', 'movie']
 
 export function loader() {
   return defer({ 
     movies : getTrending('movie'),
     tv: getTrending('tv'),
     banner: 
-      getDetails(midiaType[randomNumber(2)], randomNumber(20)
+      getDetails(mediaType[randomNumber(2)], randomNumber(20)
     )
   })
 }
@@ -27,7 +27,7 @@ export default function Home() {
   function renderMovies(movies) {
       return (
         <>
-         {renderMidiaElements(movies,'Trending Movies')} 
+         {renderMediaElements(movies,'Trending Movies')} 
         </> 
     )
   }
@@ -35,7 +35,7 @@ export default function Home() {
   function renderTvShows(tv) {
     return (
       <>
-        {renderMidiaElements(tv, 'Trending TV Shows')}
+        {renderMediaElements(tv, 'Trending TV Shows')}
       </> 
     )
   }
@@ -45,9 +45,9 @@ export default function Home() {
         <Suspense fallback={<h2>Loading <Loading /> </h2>}>
           <div className="section-container">
             <Await resolve={dataPromise.banner}>
-              {renderHeroMidia}
+              {renderHeroMedia}
             </Await>
-            <section className="midia-section">
+            <section className="media-section">
               <Await resolve={dataPromise.movies}>
                 {renderMovies}
               </Await>

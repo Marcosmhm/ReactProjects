@@ -3,7 +3,7 @@ import { getDetails, getMovies } from "../../services/api"
 import { Suspense } from "react"
 
 import Loading from "../../components/Loading"
-import { renderHeroMidia, renderMidiaElements as getMovieElements } from "../../utils"
+import { renderHeroMedia, renderMediaElements as getMovieElements } from "../../utils"
 
 const randomNumber = (max) => Math.floor(Math.random() * max)
 
@@ -49,9 +49,9 @@ export default function Movies() {
       <Suspense fallback={<h2>Loading <Loading /> </h2>}>
         <div className="section-container">
           <Await resolve={dataPromise.banner}>
-            {renderHeroMidia}
+            {renderHeroMedia}
           </Await>
-          <section className="midia-section">
+          <section className="media-section">
             <Await resolve={dataPromise.popular}>
               {renderTrending}
             </Await>

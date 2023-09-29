@@ -11,14 +11,14 @@ export async function getTrending(type, randomNumber) {
   const res = await fetch(url, options)
   if (!res.ok) {
     throw {
-        message: "Failed to fetch midia",
+        message: "Failed to fetch media",
         statusText: res.statusText,
         status: res.status
       }
   }
   const data = await res.json()
-  const midiaAmount = randomNumber >= 0 ?  data.results[randomNumber] :  data.results
-  return midiaAmount
+  const mediaAmount = randomNumber >= 0 ?  data.results[randomNumber] :  data.results
+  return mediaAmount
 }
 
 export async function getDetails(type, randomNumber) {

@@ -3,7 +3,7 @@ import { getDetails, getShows } from "../../services/api"
 import { Suspense } from "react"
 
 import Loading from "../../components/Loading"
-import { renderHeroMidia, renderMidiaElements} from "../../utils"
+import { renderHeroMedia, renderMediaElements} from "../../utils"
 
 const randomNumber = (max) => Math.floor(Math.random() * max)
 
@@ -22,7 +22,7 @@ export default function Tv() {
   function renderTrending(shows) {
     return (
       <>
-       {renderMidiaElements(shows, 'Popular shows')}
+       {renderMediaElements(shows, 'Popular shows')}
       </> 
     )
   }
@@ -30,7 +30,7 @@ export default function Tv() {
   function renderTopRated(shows) {
     return (
       <>
-        {renderMidiaElements(shows, 'Top Rated shows')}
+        {renderMediaElements(shows, 'Top Rated shows')}
       </> 
     )
   }
@@ -38,7 +38,7 @@ export default function Tv() {
   function renderOnAir(shows) {
     return (
       <>
-        {renderMidiaElements(shows, 'Currently Airing TV Shows')}
+        {renderMediaElements(shows, 'Currently Airing TV Shows')}
       </> 
     )
   }
@@ -48,9 +48,9 @@ export default function Tv() {
       <Suspense fallback={<h2>Loading <Loading /> </h2>}>
         <div className="section-container">
           <Await resolve={dataPromise.banner}>
-            {renderHeroMidia}
+            {renderHeroMedia}
           </Await>
-          <section className="midia-section">
+          <section className="media-section">
             <Await resolve={dataPromise.popular}>
               {renderTrending}
             </Await>

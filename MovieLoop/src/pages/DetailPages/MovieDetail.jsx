@@ -5,7 +5,7 @@ import Overview from '../../../components/Overview'
 import Photos from '../../../components/Photos'
 import Videos from '../../../components/Videos'
 import { getSpecificMovie } from '../../../services/api'
-import { renderHeroMidia, renderMidiaElements } from '../../../utils'
+import { renderHeroMedia, renderMediaElements } from '../../../utils'
 import '../../assets/css/movieDetail.css'
 
 export function loader({ params }) {
@@ -31,7 +31,7 @@ export default function MovieDetail() {
     <>
       <h3 className='detail-title'>{movie.original_title}</h3>
       <div className="section-container">
-        {renderHeroMidia(movie)}
+        {renderHeroMedia(movie)}
         <div className="button-wrapper">
           <button style={active === 'overview' ? activeStyles : []}
             onClick={() => setActive('overview')}
@@ -54,7 +54,7 @@ export default function MovieDetail() {
           {active === 'videos' && Videos(movie.videos.results, selectedFilter, handleFilterChange)}
           {active === 'photos' && Photos(movie.images)}
           <div className="detail-recommendations">
-            {renderMidiaElements(movie.recommendations.results, 'More Like This')}
+            {renderMediaElements(movie.recommendations.results, 'More Like This')}
           </div>
         </section>
       </div>
