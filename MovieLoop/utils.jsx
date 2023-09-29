@@ -6,21 +6,24 @@ import Hero from "./components/Hero"
 import Slider from "./components/Slider"
 import Stars from "./components/Stars"
 
-export function renderHeroMidia( midia ) {
+export function renderHeroMidia(midia) {
+  const midiaType = midia.orinal_name ? 'movie' : 'tv'
   const seasonString = midia.number_of_seasons > 1 ? "seasons" : "season"
-  const midiaELement = (  
+  const midiaELement = (
     <>
-      <Hero 
-        image={`https://image.tmdb.org/t/p/original/${midia.backdrop_path}`}
-        title={midia.title ? midia.title : midia.name}
-        rating={(midia.vote_average / 2).toFixed(2)}
-        reviews={midia.vote_count}
-        airDate={midia.first_air_date ? midia.first_air_date.slice(0, 4) : midia.release_date.slice(0, 4)}
-        seasons={
-          midia.number_of_seasons ? `${midia.number_of_seasons} ${seasonString} `
-          : `${midia.runtime} minutes`}
-        overview={midia.overview}
-      /> 
+      <Link to={`/${midiaType}/${midia.id}`}>
+        <Hero
+          image={`https://image.tmdb.org/t/p/original/${midia.backdrop_path}`}
+          title={midia.title ? midia.title : midia.name}
+          rating={(midia.vote_average / 2).toFixed(2)}
+          reviews={midia.vote_count}
+          airDate={midia.first_air_date ? midia.first_air_date.slice(0, 4) : midia.release_date.slice(0, 4)}
+          seasons={
+            midia.number_of_seasons ? `${midia.number_of_seasons} ${seasonString} `
+              : `${midia.runtime} minutes`}
+          overview={midia.overview}
+        />
+      </Link>
     </>
   )
   return (
@@ -31,7 +34,7 @@ export function renderHeroMidia( midia ) {
 }
 
 export function renderMidiaElements(midia, title) {
-  const midiaElements = midia.map(midia => (  
+  const midiaElements = midia.map(midia => (
     <>
       <Link
         to={midia.title ? `../movie/${midia.id}` : `../tv/${midia.id}`}
@@ -49,9 +52,9 @@ export function renderMidiaElements(midia, title) {
             {midia.title ? midia.title : midia.name}
           </span>
           <div className="slider-item-review">
-            <Stars 
+            <Stars
               rating={(midia.vote_average?.toFixed(2) / 2)}
-              />
+            />
             <span className="slider-item-reviews-vote">
               {midia.vote_average?.toFixed(2)}
             </span>
@@ -59,19 +62,19 @@ export function renderMidiaElements(midia, title) {
         </div>
       </Link>
     </>
-    ))
-    return (
-      <>
-        <Slider
-          title={title}
-          data={midiaElements}
-        />
-    </> 
+  ))
+  return (
+    <>
+      <Slider
+        title={title}
+        data={midiaElements}
+      />
+    </>
   )
 }
 
 export function renderCast(midia, title) {
-  const castElements = midia.map(midia => (  
+  const castElements = midia.map(midia => (
     <>
       <Link
         to=''
@@ -88,13 +91,13 @@ export function renderCast(midia, title) {
         </div>
       </Link>
     </>
-    ))
-    return (
-      <>
-        <Slider
-          title={title}
-          data={castElements}
-        />
-    </> 
+  ))
+  return (
+    <>
+      <Slider
+        title={title}
+        data={castElements}
+      />
+    </>
   )
 }

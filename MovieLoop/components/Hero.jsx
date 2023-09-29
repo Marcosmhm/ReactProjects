@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 import Stars from "./Stars"
 
-export default function Hero({ image, title, rating, reviews, airDate, seasons, overview, id }) {
+export default function Hero({ image, title, rating, reviews, airDate, seasons, overview }) {
   return (
     <>
       <section className="midia-hero-container">

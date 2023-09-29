@@ -17,7 +17,7 @@ export default function Sidebar() {
         <NavLink to="/movie">
         {({ isActive }) => isActive ? <PiFilmSlate size={32} color='#2779a7' /> : <PiFilmSlate size={32} />}
         </NavLink>
-        <NavLink to="/shows">
+        <NavLink to="/tv">
         {({ isActive }) => isActive ? <PiTelevisionSimpleBold size={32} color='#2779a7' /> : <PiTelevisionSimpleBold size={32} />}
         </NavLink>
         <AiOutlineSearch size={32}/>
