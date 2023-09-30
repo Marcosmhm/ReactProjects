@@ -9,8 +9,14 @@ import Stars from "./components/Stars"
 export function renderHeroMedia(media) {
   const mediaType = media.original_title ? 'movie' : 'tv'
   const seasonString = media.number_of_seasons > 1 ? "seasons" : "season"
-  const url = media.videos.results?.filter(video => video.type === 'Trailer')[0].key
   console.log(media)
+  let url = 'NF'
+  media.videos.results.map(video =>  {
+    if(video.type === 'Trailer') {
+      url = media.videos.results.filter(video => video.type === 'Trailer')[0].key
+    } else url= media.videos.results[0]
+  })
+ 
   console.log(url)
   const mediaELement = (
     <>

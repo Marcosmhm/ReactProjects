@@ -19,12 +19,19 @@ export default function Overview(media) {
     day: "numeric",
   })
 
+  function toCurrencyStyle(content) {
+    return content.toLocaleString('en-Us', {
+      style: 'currency',
+      currency: 'USD'
+    })
+  }
+
   const detailItems = [
     { title: 'Released', content: date },
     { title: 'Runtime', content: media.runtime },
     { title: 'Director', content: directors },
-    { title: 'Budget', content: media.budget },
-    { title: 'Revenue', content: media.revenue },
+    { title: 'Budget', content: toCurrencyStyle(media.budget) },
+    { title: 'Revenue', content: toCurrencyStyle(media.revenue)},
     { title: 'Genre', content: genres.join(', ') },
     { title: 'Status', content: media.status },
     { title: 'Language', content: media.original_language },
