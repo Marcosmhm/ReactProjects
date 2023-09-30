@@ -2,7 +2,7 @@ import { render } from "react-dom"
 import { renderCast } from "../utils"
 
 export default function Overview(media) {
-  console.log('oi', media)
+  console.log(media)
   const directors = media.credits.crew.filter(({ job }) => job === 'Director')
     .map((director) => director.name)
 
@@ -53,10 +53,13 @@ export default function Overview(media) {
 
   let usProviders = ''
   let renderAvailableAt = ''
-  if (Object.keys(media['watch/providers'].results).length > 1) {
-    usProviders = media['watch/providers'].results.US
-    renderAvailableAt = usProviders.buy.map(provider => {
-      console.log(provider)
+  if ('US' in (media['watch/providers'].results) ) {
+    if('buy'in (media['watch/providers'].results.US)) {
+      usProviders = media['watch/providers'].results.US.buy
+    } else if ('flatrate' in (media['watch/providers'].results.US)) {
+      usProviders = media['watch/providers'].results.US.flatrate
+    }
+    renderAvailableAt = usProviders.map(provider => {
       return (
         <>
           <img src={`https://image.tmdb.org/t/p/original/${provider.logo_path}`}
@@ -84,7 +87,7 @@ export default function Overview(media) {
           </ul>
           {renderAvailableAt && (
             <>
-              <h2>Buy At: </h2>
+              <h2>Available At: </h2>
               <div className="overview-available-container">
                 {renderAvailableAt}
               </div>
