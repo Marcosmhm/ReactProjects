@@ -33,19 +33,19 @@ export default function MovieDetail() {
       <div className="section-container">
         {renderHeroMedia(movie)}
         <div className="button-wrapper">
-          <button className={`detail-button ${active === 'episodes' ? 'button-border' : ''}`} 
+          <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`} 
             style={active === 'overview' ? activeStyles : []}
             onClick={() => setActive('overview')}
           >
             Overview
           </button>
-          <button className={`detail-button ${active === 'episodes' ? 'button-border' : ''}`} 
+          <button className={`detail-button ${active === 'videos' ? 'button-border' : ''}`} 
             style={active === 'videos' ? activeStyles : []}
             onClick={() => setActive('videos')}
           >
             Videos
           </button>
-          <button className={`detail-button ${active === 'episodes' ? 'button-border' : ''}`}
+          <button className={`detail-button ${active === 'photos' ? 'button-border' : ''}`}
             style={active === 'photos' ? activeStyles : []}
             onClick={() => setActive('photos')}
           >
