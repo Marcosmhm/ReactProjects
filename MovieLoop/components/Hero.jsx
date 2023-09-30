@@ -5,7 +5,7 @@ import TrailerModal from './TrailerModal'
 import Stars from "./Stars"
 import { Link } from "react-router-dom"
 
-export default function Hero({ image, title, rating, reviews, airDate, seasons, overview, link, }) {
+export default function Hero({ image, title, rating, reviews, airDate, seasons, overview, link, url }) {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -22,14 +22,17 @@ export default function Hero({ image, title, rating, reviews, airDate, seasons, 
   return (
     <>
       <section className="media-hero-container">
+        <Link to={link} style={{ display: 'contents' }}>
           <div className="img-container">
             <img
               src={image}
               className="hero-poster"
+
             />
           </div>
+        </Link>
         <div className="hero-info">
-          <Link to={link}>
+          <Link to={link} tyle={{ display: 'contents' }}>
             <h1>{title}</h1>
             <div className="hero-container">
               <div className="hero-rating">
@@ -52,13 +55,13 @@ export default function Hero({ image, title, rating, reviews, airDate, seasons, 
             </p>
           </Link>
           <button onClick={handleWatchTrailerClick} className="hero-button"><AiOutlinePlayCircle />Watch Trailer</button>
-          {isModalOpen && (
-            <TrailerModal
-              onClose={handleCloseModal}
-              videoUrl={`https://www.youtube.com/watch?v=${url}`} />
-          )}
         </div>
       </section>
+      {isModalOpen && (
+        <TrailerModal
+          onClose={handleCloseModal}
+          videoUrl={`https://www.youtube.com/watch?v=${url}`} />
+      )}
     </>
   )
 }
