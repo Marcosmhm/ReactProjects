@@ -6,7 +6,7 @@ import Photos from '../../../components/Photos'
 import Videos from '../../../components/Videos'
 import { getSpecificMovie } from '../../../services/api'
 import { renderHeroMedia, renderMediaElements } from '../../../utils'
-import '../../assets/css/movieDetail.css'
+import '../../assets/css/mediaDetail.css'
 
 export function loader({ params }) {
   return getSpecificMovie(params.id)

@@ -95,3 +95,22 @@ export async function getSpecifiShow(id) {
   const data = await res.json()
   return data
 }
+
+export async function getShowSeason(id) {
+  const allSeasonData = []
+  try {
+    const specificShow = await getSpecifiShow(id);
+    const seasonCount = specificShow.number_of_seasons;
+    for (let season = 1; season <= seasonCount; season++) {
+      const url = `https://api.themoviedb.org/3/tv/${id}/season/${season}?language=en-US`;
+      const res = await fetch(url, options);
+      const data = await res.json();
+      allSeasonData.push(data)
+    }
+  } catch(e) {
+    console.log(e)
+  } 
+  return allSeasonData
+}
+
+

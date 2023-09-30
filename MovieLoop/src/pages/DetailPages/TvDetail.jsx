@@ -4,21 +4,29 @@ import { useLoaderData, useParams } from 'react-router-dom'
 import Overview from '../../../components/Overview'
 import Photos from '../../../components/Photos'
 import Videos from '../../../components/Videos'
-import '../../assets/css/movieDetail.css'
-import { getSpecifiShow } from '../../../services/api'
+import Episodes from "../../../components/Episodes"
+import '../../assets/css/mediaDetail.css'
+import { getSpecifiShow, getShowSeason } from '../../../services/api'
 import { renderHeroMedia, renderMediaElements } from '../../../utils'
 
-export function loader({ params }) {
-  return getSpecifiShow(params.id)
+export function loader({params} ) {
+  const showPromise = getSpecifiShow(params.id)
+  const seasonPromise = getShowSeason(params.id)
+  return Promise.all([showPromise, seasonPromise]).then(([tv, seasonData]) => {
+    return {
+      tv,
+      seasonData
+    };
+  });
 }
 
 export default function TvDetail() {
-  const [active, setActive] = useState('overview')
-
-  const [selectedFilter, setSelectedFilter] = useState('All')
-
+  const [season, setSeason] = useState(1)
   const tv = useLoaderData()
-  console.log(tv)
+  const [active, setActive] = useState('overview')
+  
+  const [selectedFilter, setSelectedFilter] = useState('All')
+  
 
   const activeStyles = {
     color: "#FFF",
@@ -30,9 +38,9 @@ export default function TvDetail() {
 
   return (
     <>
-      <h3 className='detail-title'>{tv.original_title}</h3>
+      <h3 className='detail-title'>{tv.tv.original_title}</h3>
       <div className="section-container">
-        {renderHeroMedia(tv)}
+        {renderHeroMedia(tv.tv)}
         <div className="button-wrapper">
           <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`} 
             style={active === 'overview' ? activeStyles : []}
@@ -60,11 +68,12 @@ export default function TvDetail() {
           </button>
         </div>
         <section className='detail-section'>
-          {active === 'overview' && Overview(tv)}
-          {active === 'videos' && Videos(tv.videos.results, selectedFilter, handleFilterChange)}
-          {active === 'photos' && Photos(tv.images)}
+          {active === 'overview' && Overview(tv.tv)}
+          {active === 'videos' && Videos(tv.tv.videos.results, selectedFilter, handleFilterChange)}
+          {active === 'photos' && Photos(tv.tv.images)}
+          {active === 'episodes' && Episodes(tv.seasonData)}
           <div className="detail-recommendations">
-            {renderMediaElements(tv.recommendations.results, 'More Like This')}
+            {renderMediaElements(tv.tv.recommendations.results, 'More Like This')}
           </div>
         </section>
       </div>

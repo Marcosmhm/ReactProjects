@@ -2,7 +2,6 @@ import { render } from "react-dom"
 import { renderCast } from "../utils"
 
 export default function Overview(media) {
-  console.log(media)
   const directors = media.credits.crew.filter(({ job }) => job === 'Director')
     .map((director) => director.name)
   const creators = media.created_by?.map((creator) => creator.name) || ''

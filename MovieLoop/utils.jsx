@@ -7,7 +7,6 @@ import Slider from "./components/Slider"
 import Stars from "./components/Stars"
 
 export function renderHeroMedia(media) {
-  console.log(media)
   const mediaType = media.original_title ? 'movie' : 'tv'
   const seasonString = media.number_of_seasons > 1 ? "seasons" : "season"
   let url = 'NF'

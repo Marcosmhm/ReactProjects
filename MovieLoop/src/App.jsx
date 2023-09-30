@@ -1,7 +1,6 @@
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom"
 
 import Navbar from "../components/Navbar"
-import ScrollToTop from "../components/ScrollToTop"
 import Home, { loader as homeLoader } from "./pages/Home"
 import Movies, { loader as movieLoader } from "./pages/Movies"
 import Tv, { loader as tvLoader } from "./pages/Tv"
@@ -14,8 +13,7 @@ import "./assets/css/app.css"
 
 
 const router = createBrowserRouter(createRoutesFromElements(
-  <Route path="/" element={<Layout />}>
-    ScrollToTop()
+  <Route path="/" element={<Layout />} >
     <Route index element={<Home />} loader={homeLoader} />
     <Route path="/movie" element={<Movies />} loader={movieLoader} />
     <Route path="/movie/:id" element={<MovieDetail />} loader={movieDetailLoader} />
