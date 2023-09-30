@@ -23,7 +23,7 @@ export default function TvDetail() {
   const activeStyles = {
     color: "#FFF",
     opacity: 1,
-    backgroundColor: "#000"
+    backgroundColor: "#000",
   }
 
   const handleFilterChange = filter => setSelectedFilter(filter);
@@ -34,22 +34,26 @@ export default function TvDetail() {
       <div className="section-container">
         {renderHeroMedia(tv)}
         <div className="button-wrapper">
-          <button style={active === 'overview' ? activeStyles : []}
+          <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`} 
+            style={active === 'overview' ? activeStyles : []}
             onClick={() => setActive('overview')}
           >
             Overview
           </button>
-          <button style={active === 'episodes' ? activeStyles : []}
+          <button className={`detail-button ${active === 'episodes' ? 'button-border' : ''}`} 
+            style={active === 'episodes' ? activeStyles : []}
             onClick={() => setActive('episodes')}
           >
             Episodes
           </button>
-          <button style={active === 'videos' ? activeStyles : []}
+          <button className={`detail-button ${active === 'videos' ? 'button-border' : ''}`} 
+            style={active === 'videos' ? activeStyles : []}
             onClick={() => setActive('videos')}
           >
             Videos
           </button>
-          <button style={active === 'photos' ? activeStyles : []}
+          <button className={`detail-button ${active === 'photos' ? 'button-border' : ''}`} 
+            style={active === 'photos' ? activeStyles : []}
             onClick={() => setActive('photos')}
           >
             Photos
