@@ -1,3 +1,4 @@
+import { render } from "react-dom"
 import { renderCast } from "../utils"
 
 export default function Overview(media) {
@@ -50,18 +51,21 @@ export default function Overview(media) {
     return null
   })
 
-  let usProviders = media['watch/providers'].results.US
-  let renderAvailableAt = usProviders.buy.map(provider => {
-    console.log(provider)
-    return (
-      <>
+  let usProviders = ''
+  let renderAvailableAt = ''
+  if (Object.keys(media['watch/providers'].results).length > 1) {
+    usProviders = media['watch/providers'].results.US
+    renderAvailableAt = usProviders.buy.map(provider => {
+      console.log(provider)
+      return (
+        <>
           <img src={`https://image.tmdb.org/t/p/original/${provider.logo_path}`}
             className="company-logo"
           />
-      </>
-    )
-  })
-  console.log(renderAvailableAt)
+        </>
+      )
+    })
+  }
 
   return (
     <>
@@ -78,10 +82,14 @@ export default function Overview(media) {
           <ul>
             {renderItems}
           </ul>
-          <h2>Buy At: </h2>
-          <div className="overview-available-container">
-            {renderAvailableAt}
-          </div>
+          {renderAvailableAt && (
+            <>
+              <h2>Buy At: </h2>
+              <div className="overview-available-container">
+                {renderAvailableAt}
+              </div>
+            </>
+          )}
         </div>
       </div>
       <h2 className="cast-title">Cast</h2>
