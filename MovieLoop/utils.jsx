@@ -44,7 +44,7 @@ export function renderMediaElements(media, title) {
   const mediaElements = media.map(media => (
     <>
       <Link
-        to={media.title ? `../movie/${media.id}` : `../tv/${media.id}`}
+        to={media.original_title  ? `../movie/${media.id}` : `../tv/${media.id}`}
       >
         <LazyLoadImage
           src={`https://image.tmdb.org/t/p/original/${media.poster_path || media.backdrop_path}`}

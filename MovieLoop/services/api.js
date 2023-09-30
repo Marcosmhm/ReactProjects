@@ -83,7 +83,7 @@ export async function getShows(query) {
 }
 
 export async function getSpecifiShow(id) {
-  const url = `https://api.themoviedb.org/3/tv/${id}?language=en-US`
+  const url = `https://api.themoviedb.org/3/tv/${id}?append_to_response=watch/providers%2Cvideos%2Ccredits%2Cimages%2Crecommendations&language=en-US&include_image_language=en,null`
   const res = await fetch(url, options)
   if (!res.ok) {
     throw {
@@ -92,6 +92,6 @@ export async function getSpecifiShow(id) {
         status: res.status
       }
   }
-  const data = await res.json
+  const data = await res.json()
   return data
 }

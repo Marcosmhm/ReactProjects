@@ -14,23 +14,32 @@ export default function Overview(media) {
     return companie.name.charAt(0).toUpperCase() + companie.name.slice(1)
   })
 
-  const date = new Date(media.release_date).toLocaleDateString('en-gb', {
+  const date = new Date(media.release_date || media.first_air_date).toLocaleDateString('en-gb', {
     year: "numeric",
     month: "long",
     day: "numeric",
   })
 
+  function toLocaleDateMedia(media) {
+    return new Date(media).toLocaleDateString('en-gb', {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  }
+
   function toCurrencyStyle(content) {
-    return content.toLocaleString('en-Us', {
+    return content?.toLocaleString('en-Us', {
       style: 'currency',
       currency: 'USD'
     })
   }
 
   const detailItems = [
-    { title: 'Released', content: date },
-    { title: 'Runtime', content: media.runtime },
-    { title: 'Director', content: directors },
+    { title: media.original_title ? 'Released' : 'First Aired', content: toLocaleDateMedia(media.release_date || media.first_air_date) },
+    { title: 'Last Aired', content: media.last_air_date ? toLocaleDateMedia(media.last_air_date) : '' },
+    { title: 'Runtime', content: media.original_title ? media.runtime + ' minutes' : ''},
+    { title: 'Director', content: directors},
     { title: 'Budget', content: toCurrencyStyle(media.budget) !== '$0.00' && toCurrencyStyle(media.budget)},
     { title: 'Revenue', content: toCurrencyStyle(media.revenue) !== '$0.00' && toCurrencyStyle(media.revenue) },
     { title: 'Genre', content: genres.join(', ') },
