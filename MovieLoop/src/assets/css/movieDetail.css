@@ -78,6 +78,22 @@ li {
   padding-left: 0.7rem;
 }
 
+.overview-available-container {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  width: 50%;
+}
+
+.company-logo {
+  max-width: 46px;
+  min-width: 36px;
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 100%;
+  margin-top: -0.5em;
+}
+
 .cast-slider {
   padding-left: 0.7rem;
   margin-bottom: 2em;
@@ -150,7 +166,7 @@ li {
   }
   
   .overview-img-container {
-    width: 70%;
+    width: 100%;
     margin-top: 1.5em;
     max-width: 350px;
     display: block;

@@ -31,7 +31,7 @@ export default function Overview(media) {
     { title: 'Runtime', content: media.runtime },
     { title: 'Director', content: directors },
     { title: 'Budget', content: toCurrencyStyle(media.budget) },
-    { title: 'Revenue', content: toCurrencyStyle(media.revenue)},
+    { title: 'Revenue', content: toCurrencyStyle(media.revenue) },
     { title: 'Genre', content: genres.join(', ') },
     { title: 'Status', content: media.status },
     { title: 'Language', content: media.original_language },
@@ -50,6 +50,19 @@ export default function Overview(media) {
     return null
   })
 
+  let usProviders = media['watch/providers'].results.US
+  let renderAvailableAt = usProviders.buy.map(provider => {
+    console.log(provider)
+    return (
+      <>
+          <img src={`https://image.tmdb.org/t/p/original/${provider.logo_path}`}
+            className="company-logo"
+          />
+      </>
+    )
+  })
+  console.log(renderAvailableAt)
+
   return (
     <>
       <div className="detail-overview">
@@ -65,6 +78,10 @@ export default function Overview(media) {
           <ul>
             {renderItems}
           </ul>
+          <h2>Buy At: </h2>
+          <div className="overview-available-container">
+            {renderAvailableAt}
+          </div>
         </div>
       </div>
       <h2 className="cast-title">Cast</h2>
