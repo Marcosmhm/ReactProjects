@@ -1,6 +1,13 @@
 import ReactPlayer from "react-player"; 
 
 export default function modal({ onClose, videoUrl }) {
+  const youtubeConfig = {
+    file: {
+      attributes: {
+        crossOrigin: "true",
+      }
+    }
+  };
   return (
     <div className="modal">
       <div className="modal-content">
@@ -12,7 +19,10 @@ export default function modal({ onClose, videoUrl }) {
           controls 
           width="100%" 
           height="100%" 
-          className='modal-video' />
+          className='modal-video'
+          config={youtubeConfig}
+          playing
+           />
       </div>
     </div>
   );

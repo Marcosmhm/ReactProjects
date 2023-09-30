@@ -39,6 +39,11 @@ export default function TvDetail() {
           >
             Overview
           </button>
+          <button style={active === 'episodes' ? activeStyles : []}
+            onClick={() => setActive('episodes')}
+          >
+            Episodes
+          </button>
           <button style={active === 'videos' ? activeStyles : []}
             onClick={() => setActive('videos')}
           >

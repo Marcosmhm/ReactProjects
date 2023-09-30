@@ -5,6 +5,7 @@ export default function Overview(media) {
   console.log(media)
   const directors = media.credits.crew.filter(({ job }) => job === 'Director')
     .map((director) => director.name)
+  const creators = media.created_by?.map((creator) => creator.name) || ''
 
   const genres = media.genres.map((genre, index) => {
     return genre.name
@@ -39,10 +40,12 @@ export default function Overview(media) {
     { title: media.original_title ? 'Released' : 'First Aired', content: toLocaleDateMedia(media.release_date || media.first_air_date) },
     { title: 'Last Aired', content: media.last_air_date ? toLocaleDateMedia(media.last_air_date) : '' },
     { title: 'Runtime', content: media.original_title ? media.runtime + ' minutes' : ''},
-    { title: 'Director', content: directors},
+    { title: media.created_by ? 'Creator' : 'Director', content: creators || directors },
     { title: 'Budget', content: toCurrencyStyle(media.budget) !== '$0.00' && toCurrencyStyle(media.budget)},
     { title: 'Revenue', content: toCurrencyStyle(media.revenue) !== '$0.00' && toCurrencyStyle(media.revenue) },
     { title: 'Genre', content: genres.join(', ') },
+    { title: 'Seasons', content: media.number_of_seasons},
+    { title: 'Episodes', content: media.number_of_episodes },
     { title: 'Status', content: media.status },
     { title: 'Language', content: media.original_language },
     { title: 'Production', content: companies.join(', ') }
