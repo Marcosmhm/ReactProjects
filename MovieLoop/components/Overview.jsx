@@ -87,7 +87,7 @@ export default function Overview({ media }) {
         <div className="overview-img-container">
           <img
             className="overview-poster"
-            src={`https://image.tmdb.org/t/p/original/${media.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w780/${media.poster_path}`}
           />
         </div>
         <div className="overview-summary">

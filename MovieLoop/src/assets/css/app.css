@@ -153,15 +153,22 @@ a {
 .slider-title {
   font-size: 1.2rem;
   margin-bottom: 0.5em;
-}
-
-.slider-title:not(:first-child) {
   margin-top: 1.5em;
 }
 
-.slider-item {
+.slider-title:not(:first-child) {
+}
+
+a > span {
+  padding-top: 150%;
   width: 100%;
-  object-fit: cover;
+}
+
+.slider-item {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
   border: 3px solid #202124;
 }
 

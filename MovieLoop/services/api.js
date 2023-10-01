@@ -79,6 +79,7 @@ export async function getShows(query) {
       }
   }
   const data = await res.json()
+  console.log(data.results)
   return data.results
 }
 

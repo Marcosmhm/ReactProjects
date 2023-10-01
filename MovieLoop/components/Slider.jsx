@@ -44,7 +44,7 @@ export default function Slider({ data, title }) {
         {data.map((item, index) => (
           <SwiperSlide key={`slider-${index}`}>
               {item}
-          </SwiperSlide>
+            </SwiperSlide>
         ))}
       </Swiper>
     </>

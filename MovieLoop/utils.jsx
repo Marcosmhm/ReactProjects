@@ -2,9 +2,9 @@ import { Suspense, lazy } from "react";
 import { Link } from "react-router-dom"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css";
-
+import placeHolder from './src/assets/images/poster_placeholder.jpg'
 const Hero = lazy(() => import("./components/Hero"));
-const Slider = lazy(() => import ("./components/Slider"))
+const Slider = lazy(() => import("./components/Slider"))
 import Stars from "./components/Stars"
 import Loading from "./components/Loading"
 import { key } from "localforage";
@@ -13,12 +13,12 @@ export function renderHeroMedia(media) {
   const mediaType = media.original_title ? 'movie' : 'tv'
   const seasonString = media.number_of_seasons > 1 ? "seasons" : "season"
   let url = 'NF'
-  media.videos.results.map(video =>  {
-    if(video.type === 'Trailer') {
+  media.videos.results.map(video => {
+    if (video.type === 'Trailer') {
       url = media.videos.results.filter(video => video.type === 'Trailer')[0].key
-    } else url= media.videos.results[0].key
+    } else url = media.videos.results[0].key
   })
- 
+
   const mediaELement = (
     <>
       <Suspense fallback={<Loading />}>
@@ -30,11 +30,11 @@ export function renderHeroMedia(media) {
           airDate={media.first_air_date ? media.first_air_date.slice(0, 4) : media.release_date?.slice(0, 4)}
           seasons={
             media.number_of_seasons ? `${media.number_of_seasons} ${seasonString} `
-            : `${media.runtime} minutes`}
-            overview={media.overview}
-            link = {`/${mediaType}/${media.id}`}
-            url={url}
-            />
+              : `${media.runtime} minutes`}
+          overview={media.overview}
+          link={`/${mediaType}/${media.id}`}
+          url={url}
+        />
       </Suspense>
     </>
   )
@@ -50,13 +50,13 @@ export function renderMediaElements(media, title) {
     <>
       <Link
         key={`${media.id} ${index}`}
-        to={media.original_title  ? `../movie/${media.id}` : `../tv/${media.id}`}
+        to={media.original_title ? `../movie/${media.id}` : `../tv/${media.id}`}
       >
-        <LazyLoadImage
-          src={`https://image.tmdb.org/t/p/original/${media.poster_path || media.backdrop_path}`}
-          className="slider-item"
-          effect="blur"
-        />
+          <LazyLoadImage
+            src={media.poster_path ? `https://image.tmdb.org/t/p/w342/${media.poster_path}` : placeHolder}
+            className="slider-item"
+            effect="blur"
+          />
         <div className="slider-item-info">
           <span className="slider-item-title">
             {/* {

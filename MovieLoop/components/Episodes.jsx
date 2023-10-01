@@ -47,7 +47,7 @@ export default function Episodes({ media, selectedSeason = 1, onSeasonChange }) 
       <div className="episode-card" key={`episode-${index}-${episode.season_number}`}>
         <div className="episode-still-container">
           <LazyLoadImage
-            src={`https://image.tmdb.org/t/p/original/${episode.still_path}`}
+            src={`https://image.tmdb.org/t/p/w500/${episode.still_path}`}
             className="episode-still"
             effect="blur"
             />
