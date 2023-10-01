@@ -1,0 +1,29 @@
+.person-overview-container {
+  padding: 1em;
+}
+
+.person-overview-container > span {
+  float: left;
+  width: 40%;
+  max-width: 250px;
+  margin-right: 1em;
+} 
+
+.person-poster-img {
+  width: 100%;
+  margin-top: 1em;
+  border: 3px solid #202124;
+}
+
+.person-overview-info {
+  font-size: 0.95rem;
+}
+
+.person-overview-info p {
+  line-height: 1.7;
+  margin: 1em 0;
+}
+
+.person-list {
+  gap: 0.5em;
+}
