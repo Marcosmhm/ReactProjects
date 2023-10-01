@@ -1,6 +1,6 @@
 import { render } from "react-dom"
 import { renderCast } from "../utils"
-
+import placeHolder from '../src/assets/images/poster_placeholder.jpg'
 export default function Overview({ media }) {
   const directors = media.credits?.crew.filter(({ job }) => job === 'Director')
     .map((director) => director.name) 
@@ -87,7 +87,7 @@ export default function Overview({ media }) {
         <div className="overview-img-container">
           <img
             className="overview-poster"
-            src={`https://image.tmdb.org/t/p/w780/${media.poster_path}`}
+            src={media.poster_path ? `https://image.tmdb.org/t/p/w780/${media.poster_path}` : placeHolder}
           />
         </div>
         <div className="overview-summary">
@@ -106,8 +106,7 @@ export default function Overview({ media }) {
           )}
         </div>
       </div>
-      <h2 className="cast-title">Cast</h2>
-      {renderCast(media.credits.cast)}
+      {renderCast(media.credits.cast, 'Cast')}
     </>
   )
 }
