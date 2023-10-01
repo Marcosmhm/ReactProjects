@@ -23,7 +23,7 @@ export function renderHeroMedia(media) {
     <>
       <Suspense fallback={<Loading />}>
         <Hero
-          image={`https://image.tmdb.org/t/p/original/${media.backdrop_path}`}
+          image={`https://image.tmdb.org/t/p/w1280/${media.backdrop_path}`}
           title={media.title ? media.title : media.name}
           rating={(media.vote_average / 2).toFixed(2)}
           reviews={media.vote_count}
@@ -95,7 +95,7 @@ export function renderCast(media, title) {
         to=''
       >
         <LazyLoadImage
-          src={`https://image.tmdb.org/t/p/original/${media.profile_path}`}
+          src={`https://image.tmdb.org/t/p/h632/${media.profile_path}`}
           className="slider-item slider-item-cast"
           effect="blur"
         />

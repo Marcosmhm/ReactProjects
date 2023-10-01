@@ -54,7 +54,9 @@ export default function Hero({ image, title, rating, reviews, airDate, seasons, 
               {overview}
             </p>
           </Link>
-          <button onClick={handleWatchTrailerClick} className="hero-button"><AiOutlinePlayCircle />Watch Trailer</button>
+          <button onClick={handleWatchTrailerClick} className="hero-button">
+            <AiOutlinePlayCircle />Watch Trailer
+          </button>
         </div>
       </section>
       {isModalOpen && (
