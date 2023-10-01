@@ -40,12 +40,13 @@ export default function MovieDetail() {
           >
             Overview
           </button>
-          <button className={`detail-button ${active === 'videos' ? 'button-border' : ''}`}
-            style={active === 'videos' ? activeStyles : []}
-            onClick={() => setActive('videos')}
-          >
-            Videos
-          </button>
+          {movie.videos.results.length >= 1 ?
+            <button className={`detail-button ${active === 'videos' ? 'button-border' : ''}`}
+              style={active === 'videos' ? activeStyles : []}
+              onClick={() => setActive('videos')}
+            >
+              Videos
+            </button> : ''}
           <button className={`detail-button ${active === 'photos' ? 'button-border' : ''}`}
             style={active === 'photos' ? activeStyles : []}
             onClick={() => setActive('photos')}
@@ -56,9 +57,9 @@ export default function MovieDetail() {
         <Suspense fallback={<Loading />}>
           <section className='detail-section'>
             {active === 'overview' && <Overview media={movie} />}
-            {active === 'videos' && <Videos media={movie.videos.results} 
-            selectedFilter
-            handleFilterChange />}
+            {active === 'videos' && <Videos media={movie.videos.results}
+              selectedFilter={selectedFilter}
+              onFilterChange={handleFilterChange} />}
             {active === 'photos' && <Photos media={movie.images} />}
             <div className="detail-recommendations">
               {renderMediaElements(movie.recommendations.results, 'More Like This')}

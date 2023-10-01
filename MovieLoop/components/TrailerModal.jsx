@@ -5,7 +5,7 @@ export default function modal({ onClose, videoUrl }) {
     file: {
       attributes: {
         crossOrigin: "true",
-      }
+      },
     }
   };
   return (

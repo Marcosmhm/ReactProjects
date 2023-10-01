@@ -51,21 +51,22 @@ export default function TvDetail() {
             Episodes
           </button>
           {tv.videos.results.length >= 1 ?
-          <button className={`detail-button ${active === 'videos' ? 'button-border' : ''}`}
-            style={active === 'videos' ? activeStyles : []}
-            onClick={() => setActive('videos')}
-          >
-            Videos
-          </button> : ''}
-          <button className={`detail-button ${active === 'photos' ? 'button-border' : ''}`}
-            style={active === 'photos' ? activeStyles : []}
-            onClick={() => setActive('photos')}
-          >
-            Photos
-          </button>
+            <button className={`detail-button ${active === 'videos' ? 'button-border' : ''}`}
+              style={active === 'videos' ? activeStyles : []}
+              onClick={() => setActive('videos')}
+            >
+              Videos
+            </button> : ''}
+          {tv.images.posters.length >= 1 ?
+            <button className={`detail-button ${active === 'photos' ? 'button-border' : ''}`}
+              style={active === 'photos' ? activeStyles : []}
+              onClick={() => setActive('photos')}
+            >
+              Photos
+            </button> : ''}
         </div>
-          <section className='detail-section'>
-        <Suspense fallback={<Loading />}>
+        <section className='detail-section'>
+          <Suspense fallback={<Loading />}>
             {active === 'overview' && <Overview media={tv} />}
             {active === 'videos' && <Videos media={tv.videos.results}
               selectedFilter
@@ -75,11 +76,11 @@ export default function TvDetail() {
               media={tv}
               selectedSeason={selectedSeason}
               onSeasonChange={handleSeasonChange} />}
-        </Suspense>
-            <div className="detail-recommendations">
-              {renderMediaElements(tv.recommendations.results, 'More Like This')}
-            </div>
-          </section>
+          </Suspense>
+          <div className="detail-recommendations">
+            {renderMediaElements(tv.recommendations.results, 'More Like This')}
+          </div>
+        </section>
       </div>
     </>
   )
