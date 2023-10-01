@@ -7,7 +7,7 @@ export default function Photos({ media }) {
     return (
       <div className="detail-image-card" key={`backdrop-${index}`}>
         <LazyLoadImage
-          src={`https://image.tmdb.org/t/p/original/${file_path}`} 
+          src={`https://image.tmdb.org/t/p/w1280/${file_path}`} 
           className="backdrop-image"
           effect="blur"
         />
@@ -18,7 +18,7 @@ export default function Photos({ media }) {
     return (
       <div className="detail-image-card" key={`poster-${index}`}>
         <LazyLoadImage
-          src={`https://image.tmdb.org/t/p/original/${file_path}`}
+          src={`https://image.tmdb.org/t/p/w500/${file_path}`}
           className="backdrop-image"
           effect="blur"
         />

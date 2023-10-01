@@ -156,9 +156,6 @@ a {
   margin-top: 1.5em;
 }
 
-.slider-title:not(:first-child) {
-}
-
 a > span {
   padding-top: 150%;
   width: 100%;

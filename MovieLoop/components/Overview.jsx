@@ -6,13 +6,15 @@ export default function Overview({ media }) {
     .map((director) => director.name) 
   const creators = media.created_by?.map((creator) => creator.name) || ''
 
-  const genres = media.genres.map((genre, index) => {
+  const genres = media.genres?.map((genre, index) => {
     return genre.name
   })
 
-  const companies = media.production_companies.map((companie, index) => {
+  const companies = media.production_companies?.map((companie, index) => {
     return companie.name.charAt(0).toUpperCase() + companie.name.slice(1)
   })
+
+  const cast = renderCast(media.credits?.cast, 'Cast')
 
   const date = new Date(media.release_date || media.first_air_date).toLocaleDateString('en-gb', {
     year: "numeric",
@@ -39,15 +41,15 @@ export default function Overview({ media }) {
     { title: media.original_title ? 'Released' : 'First Aired', content: toLocaleDateMedia(media.release_date || media.first_air_date) },
     { title: 'Last Aired', content: media.last_air_date ? toLocaleDateMedia(media.last_air_date) : '' },
     { title: 'Runtime', content: media.original_title ? media.runtime + ' minutes' : ''},
-    { title: media.created_by?.length >= 1 ? 'Creator' : directors.length >= 1 && 'Director', content: creators || directors },
+    { title: media.created_by?.length >= 1 ? 'Creator' : directors?.length >= 1 && 'Director', content: creators || directors },
     { title: 'Budget', content: toCurrencyStyle(media.budget) !== '$0.00' && toCurrencyStyle(media.budget)},
     { title: 'Revenue', content: toCurrencyStyle(media.revenue) !== '$0.00' && toCurrencyStyle(media.revenue) },
-    { title: 'Genre', content: genres.join(', ') },
+    { title: 'Genre', content: genres?.join(', ') },
     { title: 'Seasons', content: media.number_of_seasons},
     { title: 'Episodes', content: media.number_of_episodes },
     { title: 'Status', content: media.status },
     { title: 'Language', content: media.original_language },
-    { title: 'Production', content: companies.join(', ') }
+    { title: 'Production', content: companies?.join(', ') }
   ]
 
   const renderItems = detailItems.map((item, index) => {
@@ -64,21 +66,23 @@ export default function Overview({ media }) {
 
   let usProviders = ''
   let renderAvailableAt = ''
-  if ('US' in (media['watch/providers'].results) ) {
-    if('buy'in (media['watch/providers'].results.US)) {
-      usProviders = media['watch/providers'].results.US.buy
-    } else if ('flatrate' in (media['watch/providers'].results.US)) {
-      usProviders = media['watch/providers'].results.US.flatrate
+  if (media['watch/providers']) {
+    if ('US' in (media['watch/providers']?.results) ) {
+      if('buy'in (media['watch/providers'].results.US)) {
+        usProviders = media['watch/providers'].results.US.buy
+      } else if ('flatrate' in (media['watch/providers'].results.US)) {
+        usProviders = media['watch/providers'].results.US.flatrate
+      }
+      renderAvailableAt = usProviders.map((provider, index) => {
+        return (
+          <>
+            <img key={`provider-${index}`} src={`https://image.tmdb.org/t/p/original/${provider.logo_path}`}
+              className="company-logo"
+            />
+          </>
+        )
+      })
     }
-    renderAvailableAt = usProviders.map((provider, index) => {
-      return (
-        <>
-          <img key={`provider-${index}`} src={`https://image.tmdb.org/t/p/original/${provider.logo_path}`}
-            className="company-logo"
-          />
-        </>
-      )
-    })
   }
 
   return (
@@ -106,7 +110,7 @@ export default function Overview({ media }) {
           )}
         </div>
       </div>
-      {renderCast(media.credits.cast, 'Cast')}
+      {cast && renderCast(media.credits.cast, 'Cast')}
     </>
   )
 }

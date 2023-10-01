@@ -92,7 +92,7 @@ export function renderCast(media, title) {
     <>
       <Link
         key={`cast ${index}`}
-        to=''
+        to={`/person/${media.id}`}
       >
         <LazyLoadImage
           src={`https://image.tmdb.org/t/p/h632/${media.profile_path}`}

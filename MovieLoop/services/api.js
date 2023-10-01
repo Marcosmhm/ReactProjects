@@ -94,7 +94,21 @@ export async function getSpecifiShow(id) {
       }
   }
   const data = await res.json()
-  console.log(data)
+  return data
+}
+
+export async function getPersonDetail(id) {
+  const url = `https://api.themoviedb.org/3/person/${id}?language=en-US`
+  const res = await fetch(url, options)
+  if (!res.ok) {
+    throw {
+        message: "Failed to fetch Show",
+        statusText: res.statusText,
+        status: res.status
+      }
+  }
+  const data = await res.json()
+  console.log('pesonApi', data)
   return data
 }
 
