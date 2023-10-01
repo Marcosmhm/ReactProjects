@@ -2,10 +2,10 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 
-export default function Overview(media) {
-  const backdrops = media.backdrops.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }) => {
+export default function Overview({ media }) {
+  const backdrops = media.backdrops.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }, index) => {
     return (
-      <div className="detail-image-card">
+      <div className="detail-image-card" key={`backdrop-${index}`}>
         <LazyLoadImage
           src={`https://image.tmdb.org/t/p/original/${file_path}`} 
           className="backdrop-image"
@@ -14,9 +14,9 @@ export default function Overview(media) {
       </div>
     )
   })
-  const posters = media.posters.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }) => {
+  const posters = media.posters.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }, index) => {
     return (
-      <div className="detail-image-card">
+      <div className="detail-image-card" key={`poster-${index}`}>
         <LazyLoadImage
           src={`https://image.tmdb.org/t/p/original/${file_path}`}
           className="backdrop-image"

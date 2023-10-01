@@ -28,6 +28,7 @@ export default function Episodes({ media, selectedSeason = 1, onSeasonChange }) 
 
     return () => {
       isAborted = true
+      
     }
 
   }, [selectedSeason])
@@ -37,19 +38,19 @@ export default function Episodes({ media, selectedSeason = 1, onSeasonChange }) 
   for (let i = 1; i <= SeasonAmmout; i++) {
     seasonArray.push(i)
   }
-  const selectValues = seasonArray.map(season => {
-    return <option value={season}>Season {season}</option>
+  const selectValues = seasonArray.map((season, index) => {
+    return <option key={`option-${index}`} value={season}>Season {season}</option>
   })
 
-  const episodesElements = seasonData?.episodes?.map(episode => {
+  const episodesElements = seasonData?.episodes?.map((episode, index) => {
     return (
-      <div className="episode-card">
+      <div className="episode-card" key={`episode-${index}-${episode.season_number}`}>
         <div className="episode-still-container">
           <LazyLoadImage
             src={`https://image.tmdb.org/t/p/original/${episode.still_path}`}
             className="episode-still"
             effect="blur"
-          />
+            />
         </div>
         <div className="episode-heading">
           <span>E{episode.episode_number}</span>

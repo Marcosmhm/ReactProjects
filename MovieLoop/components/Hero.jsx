@@ -32,7 +32,7 @@ export default function Hero({ image, title, rating, reviews, airDate, seasons, 
           </div>
         </Link>
         <div className="hero-info">
-          <Link to={link} tyle={{ display: 'contents' }}>
+          <Link to={link} style={{ display: 'contents' }}>
             <h1>{title}</h1>
             <div className="hero-container">
               <div className="hero-rating">

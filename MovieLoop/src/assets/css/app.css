@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
   background-color: #141414;
   font-family: "Roboto", "Helvetica Neue" , Helvetica, Roboto, Arial, sans-serif;
   color: #FFF;
@@ -48,11 +48,6 @@ html, body {
   max-width: 80%;
   margin: auto auto;
   cursor: pointer;
-}
-
-h1 {
-  margin: 0;
-  padding: 0;
 }
 
 a {

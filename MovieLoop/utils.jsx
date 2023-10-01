@@ -1,10 +1,13 @@
+import { Suspense, lazy } from "react";
 import { Link } from "react-router-dom"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-import Hero from "./components/Hero"
-import Slider from "./components/Slider"
+const Hero = lazy(() => import("./components/Hero"));
+const Slider = lazy(() => import ("./components/Slider"))
 import Stars from "./components/Stars"
+import Loading from "./components/Loading"
+import { key } from "localforage";
 
 export function renderHeroMedia(media) {
   const mediaType = media.original_title ? 'movie' : 'tv'
@@ -18,6 +21,7 @@ export function renderHeroMedia(media) {
  
   const mediaELement = (
     <>
+      <Suspense fallback={<Loading />}>
         <Hero
           image={`https://image.tmdb.org/t/p/original/${media.backdrop_path}`}
           title={media.title ? media.title : media.name}
@@ -26,11 +30,12 @@ export function renderHeroMedia(media) {
           airDate={media.first_air_date ? media.first_air_date.slice(0, 4) : media.release_date.slice(0, 4)}
           seasons={
             media.number_of_seasons ? `${media.number_of_seasons} ${seasonString} `
-              : `${media.runtime} minutes`}
-          overview={media.overview}
-          link = {`/${mediaType}/${media.id}`}
-          url={url}
-        />
+            : `${media.runtime} minutes`}
+            overview={media.overview}
+            link = {`/${mediaType}/${media.id}`}
+            url={url}
+            />
+      </Suspense>
     </>
   )
   return (
@@ -41,9 +46,10 @@ export function renderHeroMedia(media) {
 }
 
 export function renderMediaElements(media, title) {
-  const mediaElements = media.map(media => (
+  const mediaElements = media.map((media, index) => (
     <>
       <Link
+        key={`${media.id} ${index}`}
         to={media.original_title  ? `../movie/${media.id}` : `../tv/${media.id}`}
       >
         <LazyLoadImage
@@ -81,9 +87,10 @@ export function renderMediaElements(media, title) {
 }
 
 export function renderCast(media, title) {
-  const castElements = media.map(media => (
+  const castElements = media.map((media, index) => (
     <>
       <Link
+        key={`cast ${index}`}
         to=''
       >
         <LazyLoadImage

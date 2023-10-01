@@ -1,17 +1,22 @@
-import Navbar from './Navbar'
-import Footer from './Footer'
+import { lazy } from 'react';
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom'
-import ScrollToTop from './ScrollToTop'
+const Footer = lazy(() => import('./Footer'));
+const Navbar = lazy(() => import('./Navbar'));
+const ScrollToTop = lazy(() => import('./ScrollToTop'));
+import Loading from './Loading';
 
 export default function Layout() {
   return (
     <>
-      <ScrollToTop />
-      <Navbar />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
+      <Suspense fallback={<Loading />}>
+        <ScrollToTop />
+        <Navbar />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </Suspense>
     </>
   )
 }

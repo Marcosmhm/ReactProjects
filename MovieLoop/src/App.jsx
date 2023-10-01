@@ -1,6 +1,4 @@
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom"
-
-import Navbar from "../components/Navbar"
 import Home, { loader as homeLoader } from "./pages/Home"
 import Movies, { loader as movieLoader } from "./pages/Movies"
 import Tv, { loader as tvLoader } from "./pages/Tv"

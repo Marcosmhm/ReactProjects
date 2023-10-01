@@ -1,8 +1,9 @@
 import { render } from "react-dom"
 import { renderCast } from "../utils"
 
-export default function Overview(media) {
-  const directors = media.credits.crew.filter(({ job }) => job === 'Director')
+export default function Overview({ media }) {
+  console.log(media)
+  const directors = media.credits?.crew.filter(({ job }) => job === 'Director')
     .map((director) => director.name)
   const creators = media.created_by?.map((creator) => creator.name) || ''
 
@@ -53,7 +54,7 @@ export default function Overview(media) {
   const renderItems = detailItems.map((item, index) => {
     if (item.content) {
       return (
-        <li key={index}>
+        <li key={`${item.title} ${index}`}>
           <span className="detail-li-title">{item.title}</span>
           <span className="detail-li-content">{item.content}</span>
         </li>
@@ -70,10 +71,10 @@ export default function Overview(media) {
     } else if ('flatrate' in (media['watch/providers'].results.US)) {
       usProviders = media['watch/providers'].results.US.flatrate
     }
-    renderAvailableAt = usProviders.map(provider => {
+    renderAvailableAt = usProviders.map((provider, index) => {
       return (
         <>
-          <img src={`https://image.tmdb.org/t/p/original/${provider.logo_path}`}
+          <img key={`provider-${index}`} src={`https://image.tmdb.org/t/p/original/${provider.logo_path}`}
             className="company-logo"
           />
         </>

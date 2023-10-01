@@ -1,9 +1,10 @@
 import { useLoaderData, useParams } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
 
-import Overview from '../../../components/Overview'
-import Photos from '../../../components/Photos'
-import Videos from '../../../components/Videos'
+const Overview = lazy(() => import('../../../components/Overview'))
+const Videos = lazy(() => import('../../../components/Videos'))
+const Photos = lazy(() => import('../../../components/Photos'))
+import Loading from '../../../components/Loading'
 import { getSpecificMovie } from '../../../services/api'
 import { renderHeroMedia, renderMediaElements } from '../../../utils'
 import '../../assets/css/mediaDetail.css'
@@ -33,13 +34,13 @@ export default function MovieDetail() {
       <div className="section-container">
         {renderHeroMedia(movie)}
         <div className="button-wrapper">
-          <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`} 
+          <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`}
             style={active === 'overview' ? activeStyles : []}
             onClick={() => setActive('overview')}
           >
             Overview
           </button>
-          <button className={`detail-button ${active === 'videos' ? 'button-border' : ''}`} 
+          <button className={`detail-button ${active === 'videos' ? 'button-border' : ''}`}
             style={active === 'videos' ? activeStyles : []}
             onClick={() => setActive('videos')}
           >
@@ -52,14 +53,18 @@ export default function MovieDetail() {
             Photos
           </button>
         </div>
-        <section className='detail-section'>
-          {active === 'overview' && Overview(movie)}
-          {active === 'videos' && Videos(movie.videos.results, selectedFilter, handleFilterChange)}
-          {active === 'photos' && Photos(movie.images)}
-          <div className="detail-recommendations">
-            {renderMediaElements(movie.recommendations.results, 'More Like This')}
-          </div>
-        </section>
+        <Suspense fallback={<Loading />}>
+          <section className='detail-section'>
+            {active === 'overview' && <Overview media={movie} />}
+            {active === 'videos' && <Videos media={movie.videos.results} 
+            selectedFilter
+            handleFilterChange />}
+            {active === 'photos' && <Photos media={movie.images} />}
+            <div className="detail-recommendations">
+              {renderMediaElements(movie.recommendations.results, 'More Like This')}
+            </div>
+          </section>
+        </Suspense>
       </div>
     </>
   )
