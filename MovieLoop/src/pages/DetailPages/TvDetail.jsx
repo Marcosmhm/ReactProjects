@@ -10,14 +10,7 @@ import { getSpecifiShow, getShowSeason } from '../../../services/api'
 import { renderHeroMedia, renderMediaElements } from '../../../utils'
 
 export function loader({params} ) {
-  const showPromise = getSpecifiShow(params.id)
-  const seasonPromise = getShowSeason(params.id)
-  return Promise.all([showPromise, seasonPromise]).then(([tv, seasonData]) => {
-    return {
-      tv,
-      seasonData
-    };
-  });
+  return getSpecifiShow(params.id)
 }
 
 export default function TvDetail() {
@@ -26,6 +19,7 @@ export default function TvDetail() {
   const [active, setActive] = useState('overview')
   
   const [selectedFilter, setSelectedFilter] = useState('All')
+  const [selectedSeason, setSelectedSeason] = useState(1)
   
 
   const activeStyles = {
@@ -35,12 +29,13 @@ export default function TvDetail() {
   }
 
   const handleFilterChange = filter => setSelectedFilter(filter);
+  const handleSeasonChange = season => setSelectedSeason(season)
 
   return (
     <>
-      <h3 className='detail-title'>{tv.tv.original_title}</h3>
+      <h3 className='detail-title'>{tv.original_title}</h3>
       <div className="section-container">
-        {renderHeroMedia(tv.tv)}
+        {renderHeroMedia(tv)}
         <div className="button-wrapper">
           <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`} 
             style={active === 'overview' ? activeStyles : []}
@@ -68,12 +63,15 @@ export default function TvDetail() {
           </button>
         </div>
         <section className='detail-section'>
-          {active === 'overview' && Overview(tv.tv)}
-          {active === 'videos' && Videos(tv.tv.videos.results, selectedFilter, handleFilterChange)}
-          {active === 'photos' && Photos(tv.tv.images)}
-          {active === 'episodes' && Episodes(tv.seasonData)}
+          {active === 'overview' && Overview(tv)}
+          {active === 'videos' && Videos(tv.videos.results, selectedFilter, handleFilterChange)}
+          {active === 'photos' && Photos(tv.images)}
+          {active === 'episodes' && <Episodes 
+                                      media={tv} 
+                                      selectedSeason={selectedSeason} 
+                                      onSeasonChange={handleSeasonChange}/>}
           <div className="detail-recommendations">
-            {renderMediaElements(tv.tv.recommendations.results, 'More Like This')}
+            {renderMediaElements(tv.recommendations.results, 'More Like This')}
           </div>
         </section>
       </div>

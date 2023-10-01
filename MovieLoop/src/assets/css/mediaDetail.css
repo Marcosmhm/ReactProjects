@@ -148,6 +148,51 @@ li {
   width: 100%;
 }
 
+.episodes-wrapper {
+  padding: 1em;
+  margin-top: 0.5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1em;
+}
+
+.episode-still {
+  width: 100%;
+}
+
+.episode-heading {
+  display: flex;
+  align-items: center;
+  padding-top: 0.25em;
+}
+
+.episode-heading span {
+  color: #2196f3;
+  margin-right: 0.5em;
+}
+
+.episode-heading h3 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.episode-overview {
+  display: -webkit-box;
+  margin: 0;
+  margin-top: 0.4em;
+  font-size: 0.9rem;
+  margin-bottom: 0.5em;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.episode-date {
+  font-size: 0.8rem;
+}
+
 .detail-recommendations {
   font-size: 1.5rem;
   padding-left: 0.7rem;
@@ -167,13 +212,14 @@ li {
     flex: 1;
     font-size: 1rem;
   }
-  
+
   .overview-img-container {
     width: 100%;
     margin-top: 1.5em;
     max-width: 350px;
     display: block;
-  } 
+  }
+
   .overview-poster {
     width: 100%
   }
@@ -189,22 +235,23 @@ li {
   } */
 
 }
-  
+
 @media (min-width: 1200px) {
   .detail-title {
     display: none;
   }
 
   .cast-title {
-    font-size: 1.5rem!important;
+    font-size: 1.5rem !important;
   }
+
   .overview-summary p {
     width: 90%;
   }
 
   .detail-button {
     width: unset;
-    background-color: #141414!important;
+    background-color: #141414 !important;
     margin: 1.5em 2.5em 0.5em 0;
     padding: 0;
     font-size: 1.4rem;
@@ -217,6 +264,6 @@ li {
   .button-wrapper {
     justify-content: center;
     width: 100%;
-    
+
   }
 }
