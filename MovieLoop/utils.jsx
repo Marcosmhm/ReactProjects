@@ -27,7 +27,7 @@ export function renderHeroMedia(media) {
           title={media.title ? media.title : media.name}
           rating={(media.vote_average / 2).toFixed(2)}
           reviews={media.vote_count}
-          airDate={media.first_air_date ? media.first_air_date.slice(0, 4) : media.release_date.slice(0, 4)}
+          airDate={media.first_air_date ? media.first_air_date.slice(0, 4) : media.release_date?.slice(0, 4)}
           seasons={
             media.number_of_seasons ? `${media.number_of_seasons} ${seasonString} `
             : `${media.runtime} minutes`}
@@ -87,6 +87,7 @@ export function renderMediaElements(media, title) {
 }
 
 export function renderCast(media, title) {
+  console.log(media)
   const castElements = media.map((media, index) => (
     <>
       <Link
@@ -100,7 +101,10 @@ export function renderCast(media, title) {
         />
         <div className="slider-item-cast-info">
           <span className="slider-item-cast-name">
-            {media.title ? media.title : media.name}
+            {media.name}
+          </span>
+          <span className="slider-item-cast-character">
+            {media.character}
           </span>
         </div>
       </Link>

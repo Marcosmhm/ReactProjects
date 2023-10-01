@@ -5,10 +5,10 @@ const Episodes = lazy(() => import('../../../components/Episodes'))
 const Overview = lazy(() => import('../../../components/Overview'))
 const Videos = lazy(() => import('../../../components/Videos'))
 const Photos = lazy(() => import('../../../components/Photos'))
-import '../../assets/css/mediaDetail.css'
-import { getSpecifiShow, getShowSeason } from '../../../services/api'
-import { renderHeroMedia, renderMediaElements } from '../../../utils'
 import Loading from "../../../components/Loading"
+import { getSpecifiShow } from '../../../services/api'
+import { renderHeroMedia, renderMediaElements } from '../../../utils'
+import '../../assets/css/mediaDetail.css'
 
 export function loader({ params }) {
   return getSpecifiShow(params.id)
@@ -21,6 +21,9 @@ export default function TvDetail() {
 
   const [selectedFilter, setSelectedFilter] = useState('All')
   const [selectedSeason, setSelectedSeason] = useState(1)
+
+  const moreLikeThis = renderMediaElements(tv.recommendations.results, 'More Like This')
+  console.log('oi', moreLikeThis)
 
 
   const activeStyles = {
@@ -69,8 +72,8 @@ export default function TvDetail() {
           <Suspense fallback={<Loading />}>
             {active === 'overview' && <Overview media={tv} />}
             {active === 'videos' && <Videos media={tv.videos.results}
-              selectedFilter
-              handleFilterChange />}
+              selectedFilter={selectedFilter}
+              handleFilterChange={handleFilterChange} />}
             {active === 'photos' && <Photos media={tv.images} />}
             {active === 'episodes' && <Episodes
               media={tv}
@@ -78,7 +81,9 @@ export default function TvDetail() {
               onSeasonChange={handleSeasonChange} />}
           </Suspense>
           <div className="detail-recommendations">
-            {renderMediaElements(tv.recommendations.results, 'More Like This')}
+            {
+             moreLikeThis.props.children.props.data.length >= 1 && moreLikeThis
+            }
           </div>
         </section>
       </div>

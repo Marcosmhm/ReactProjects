@@ -80,13 +80,6 @@ li {
   display: none;
 }
 
-.cast-title {
-  margin-bottom: 0;
-  font-size: 1.2rem !important;
-  font-weight: 400;
-  margin-top: 2em;
-  padding-left: 0.7rem;
-}
 
 .overview-available-container {
   display: flex;
@@ -104,10 +97,6 @@ li {
   margin-top: -0.5em;
 }
 
-.cast-slider {
-  padding-left: 0.7rem;
-  margin-bottom: 2em;
-}
 
 .detail-videos-container {
   display: grid;
@@ -198,6 +187,33 @@ li {
 
 .episode-date {
   font-size: 0.8rem;
+}
+
+.cast-title {
+  margin-bottom: 0;
+  font-size: 1.2rem !important;
+  font-weight: 400;
+  margin-top: 2em;
+  padding-left: 0.7rem;
+}
+
+.cast-slider {
+  padding-left: 0.7rem;
+  margin-bottom: 2em;
+  font-size: 1em;
+  letter-spacing: 0.2px;
+}
+
+.slider-item-cast-name {
+  font-size: 0.9rem;
+}
+
+.slider-item-cast-character {
+  display: block;
+  margin-top: 0.2em;
+  opacity: 1;
+  font-size: 0.8rem;
+  color: #80868b;
 }
 
 .detail-recommendations {
