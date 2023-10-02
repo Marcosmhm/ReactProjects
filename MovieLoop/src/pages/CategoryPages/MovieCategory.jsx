@@ -19,6 +19,10 @@ export function loader({ params }) {
       shortQuery: 'trending',
     },
     {
+      fullQuery: 'trending_movies',
+      shortQuery: 'trending',
+    },
+    {
       fullQuery: 'top_rated_movies',
       shortQuery: 'top_rated',
     },
@@ -63,17 +67,17 @@ export default function MovieCategory() {
     fetchMovies()
   }, []) 
 
-  const handleScroll = () => {
-    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isLoading) {
-      return;
-    }
-    fetchMovies();
-  };
+  // const handleScroll = () => {
+  //   if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isLoading) {
+  //     return;
+  //   }
+  //   fetchMovies();
+  // };
   
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isLoading]);
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, [isLoading]);
 
   
   return (
@@ -109,7 +113,7 @@ export default function MovieCategory() {
             )
           })}
         </div>
-        {/* <InfiniteScroll onScrollEnd={fetchMovies} isLoading={isLoading} /> */}
+        <InfiniteScroll onScrollEnd={fetchMovies} isLoading={isLoading} />
         {isLoading && <Loading />}
         {error && <p>Error: {error.message}</p>}
       </section>

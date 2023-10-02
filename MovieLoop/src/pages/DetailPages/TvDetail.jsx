@@ -80,9 +80,7 @@ export default function TvDetail() {
               onSeasonChange={handleSeasonChange} />}
           </Suspense>
           <div className="detail-recommendations">
-            {
-              moreLikeThis.props.children.props.data.length >= 1 && moreLikeThis
-            }
+            {moreLikeThis.props.children.props.data.length >= 1 && moreLikeThis}
           </div>
         </section>
       </div>

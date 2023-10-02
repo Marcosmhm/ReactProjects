@@ -10,12 +10,12 @@ import 'swiper/css/scrollbar'
 
 register()
 
-export default function Slider({ data, title, link }) {
+export default function Slider({ data, title, type, link }) {
   return (
     <>
       <div className="slider-title-wrapper">
         <h2 className='slider-title'>{title}</h2>
-        <Link to={`/movie/category/${link}`}>
+        <Link to={`/${type}/category/${link}`}>
           <span>Explore All</span>
         </Link>
       </div>

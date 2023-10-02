@@ -3,7 +3,7 @@ import { renderCast } from "../utils"
 import placeHolder from '../src/assets/images/poster_placeholder.jpg'
 export default function Overview({ media }) {
   const directors = media.credits?.crew.filter(({ job }) => job === 'Director')
-    .map((director) => director.name) 
+    .map((director) => director.name)
   const creators = media.created_by?.map((creator) => creator.name) || ''
 
   const genres = media.genres?.map((genre, index) => {
@@ -40,12 +40,12 @@ export default function Overview({ media }) {
   const detailItems = [
     { title: media.original_title ? 'Released' : 'First Aired', content: toLocaleDateMedia(media.release_date || media.first_air_date) },
     { title: 'Last Aired', content: media.last_air_date ? toLocaleDateMedia(media.last_air_date) : '' },
-    { title: 'Runtime', content: media.original_title ? media.runtime + ' minutes' : ''},
+    { title: 'Runtime', content: media.original_title ? media.runtime + ' minutes' : '' },
     { title: media.created_by?.length >= 1 ? 'Creator' : directors?.length >= 1 && 'Director', content: creators || directors },
-    { title: 'Budget', content: toCurrencyStyle(media.budget) !== '$0.00' && toCurrencyStyle(media.budget)},
+    { title: 'Budget', content: toCurrencyStyle(media.budget) !== '$0.00' && toCurrencyStyle(media.budget) },
     { title: 'Revenue', content: toCurrencyStyle(media.revenue) !== '$0.00' && toCurrencyStyle(media.revenue) },
     { title: 'Genre', content: genres?.join(', ') },
-    { title: 'Seasons', content: media.number_of_seasons},
+    { title: 'Seasons', content: media.number_of_seasons },
     { title: 'Episodes', content: media.number_of_episodes },
     { title: 'Status', content: media.status },
     { title: 'Language', content: media.original_language },
@@ -67,8 +67,8 @@ export default function Overview({ media }) {
   let usProviders = ''
   let renderAvailableAt = ''
   if (media['watch/providers']) {
-    if ('US' in (media['watch/providers']?.results) ) {
-      if('buy'in (media['watch/providers'].results.US)) {
+    if ('US' in (media['watch/providers']?.results)) {
+      if ('buy' in (media['watch/providers'].results.US)) {
         usProviders = media['watch/providers'].results.US.buy
       } else if ('flatrate' in (media['watch/providers'].results.US)) {
         usProviders = media['watch/providers'].results.US.flatrate
@@ -110,7 +110,11 @@ export default function Overview({ media }) {
           )}
         </div>
       </div>
-      {cast && renderCast(media.credits.cast, 'Cast')}
+      {cast &&
+        <>
+          <h2 className='slider-title'>Cast</h2>
+          {renderCast(media.credits.cast)}
+        </>}
     </>
   )
 }
