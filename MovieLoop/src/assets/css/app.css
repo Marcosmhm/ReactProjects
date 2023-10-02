@@ -16,6 +16,12 @@ html, body {
 }
 
 /* Watch trailer modal */
+.slider-title-wrapper {
+  display: flex;
+  margin-bottom: .5em;
+  margin-top: 1.5em;
+}
+
 .modal {
   display: flex;
   position: fixed;
@@ -154,8 +160,6 @@ footer {
 
 .slider-title {
   font-size: 1.2rem;
-  margin-bottom: .5em;
-  margin-top: 1.5em;
 }
 
 a > span {

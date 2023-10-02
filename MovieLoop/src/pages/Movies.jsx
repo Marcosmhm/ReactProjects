@@ -1,4 +1,4 @@
-import { defer, useLoaderData, Await } from "react-router-dom"
+import { defer, useLoaderData, Await, Link } from "react-router-dom"
 import { getDetails, getMovies } from "../../services/api"
 import { Suspense } from "react"
 

@@ -32,7 +32,6 @@ export default function KnownFor({ handleFilterChange, selectedFilter, ...props 
       </>
     ));
 
-  console.log(creditsArray)
   return (
     <>
       <select

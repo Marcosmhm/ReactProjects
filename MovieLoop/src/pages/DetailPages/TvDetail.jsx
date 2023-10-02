@@ -24,8 +24,6 @@ export default function TvDetail() {
   const [selectedSeason, setSelectedSeason] = useState(1)
 
   const moreLikeThis = renderMediaElements(tv.recommendations.results, 'More Like This')
-  console.log('oi', moreLikeThis)
-
 
   const activeStyles = {
     color: "#FFF",

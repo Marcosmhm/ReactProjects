@@ -3,7 +3,6 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 
 export default function Photos({ media }) {
-  console.log(media)
   const backdrops = media.backdrops?.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }, index) => {
     return (
       <div className="detail-image-card" key={`backdrop-${index}`}>

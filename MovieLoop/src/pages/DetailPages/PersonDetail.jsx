@@ -21,8 +21,6 @@ export default function PersonDetail() {
     backgroundColor: "#000"
   }
 
-  console.log(person)
-
   const personName = person.name
   const personBiography = person.biography || ''
   const personBirthDay = person.birthday || ''
@@ -33,7 +31,6 @@ export default function PersonDetail() {
   const personFacebookId = person.external_ids.facebook_id || ''
   const personInstagramId = person.external_ids.instagram_id  || ''
   const personTwitterId = person.external_ids.twitter_id  || ''
-
 
   const [active, setActive] = useState('known-for')
 

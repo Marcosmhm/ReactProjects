@@ -59,9 +59,6 @@ export function renderMediaElements(media, title) {
           />
         <div className="slider-item-info">
           <span className="slider-item-title">
-            {/* {
-              midia.title && midia.title.length > 18 ? `${midia.title.slice(0, 18)} ...` : midia.title
-            } */}
             {media.title ? media.title : media.name}
           </span>
           <div className="slider-item-review">
@@ -87,7 +84,6 @@ export function renderMediaElements(media, title) {
 }
 
 export function renderCast(media, title) {
-  console.log(media)
   const castElements = media.map((media, index) => (
     <>
       <Link

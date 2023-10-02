@@ -11,7 +11,10 @@ register()
 export default function Slider({ data, title }) {
   return (
     <>
-      <h2 className='slider-title'>{title}</h2>
+      <div className="slider-title-wrapper">
+        <h2 className='slider-title'>{title}</h2>
+        <span>oi</span>
+      </div>
       <Swiper className='slider'
         slidesPerView={'auto'}
         navigation
@@ -43,8 +46,8 @@ export default function Slider({ data, title }) {
       >
         {data.map((item, index) => (
           <SwiperSlide key={`slider-${index}`}>
-              {item}
-            </SwiperSlide>
+            {item}
+          </SwiperSlide>
         ))}
       </Swiper>
     </>
