@@ -4,6 +4,7 @@ import { useLoaderData, useParams } from 'react-router-dom'
 import { getPersonDetail } from '../../../services/api'
 const PersonOverview = lazy(() => import('../../../components/PersonOverview'))
 const KnownFor = lazy(() => import('../../../components/KnownFor'))
+const Photos = lazy(() => import('../../../components/Photos'))
 import Loading from '../../../components/Loading'
 import '../../assets/css/personDetail.css'
 
@@ -80,7 +81,7 @@ export default function PersonDetail() {
             selectedFilter={selectedFilter}
             handleFilterChange={handleFilterChange} />}
           {active === 'credits' && <KnownFor />}
-          {active === 'photos' && <KnownFor />}
+          {active === 'photos' && <Photos media={person.images}/>}
         </section>
       </Suspense>
     </>
