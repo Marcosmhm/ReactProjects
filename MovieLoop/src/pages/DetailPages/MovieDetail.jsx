@@ -28,6 +28,8 @@ export default function MovieDetail() {
 
   const handleFilterChange = filter => setSelectedFilter(filter);
 
+  const moreLikeThis = renderMediaElements(movie.recommendations.results, 'More Like This')
+
   return (
     <>
       <h3 className='detail-title'>{movie.original_title}</h3>
@@ -62,7 +64,9 @@ export default function MovieDetail() {
               onFilterChange={handleFilterChange} />}
             {active === 'photos' && <Photos media={movie.images} />}
             <div className="detail-recommendations">
-              {renderMediaElements(movie.recommendations.results, 'More Like This')}
+              {
+                moreLikeThis.props.children.props.data.length >= 1 && moreLikeThis
+              }
             </div>
           </section>
         </Suspense>
