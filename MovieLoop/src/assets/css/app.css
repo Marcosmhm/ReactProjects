@@ -16,12 +16,6 @@ html, body {
 }
 
 /* Watch trailer modal */
-.slider-title-wrapper {
-  display: flex;
-  margin-bottom: .5em;
-  margin-top: 1.5em;
-}
-
 .modal {
   display: flex;
   position: fixed;
@@ -153,13 +147,25 @@ footer {
   display: none;
 }
 
+/* Media */
 .media-section {
   padding-top: .5em;
   background-color: #141414;
 }
 
+.slider-title-wrapper {
+  display: flex;
+  margin-bottom: .5em;
+  margin-top: 1.5em;
+  align-items: baseline;
+  gap: .5em;
+}
 .slider-title {
   font-size: 1.2rem;
+}
+
+.slider-title-wrapper span{
+  color: #2196f3;
 }
 
 a > span {
@@ -179,6 +185,7 @@ a > span {
   display: none;
 }
 
+/* Footer */
 footer {
   padding-bottom: 3.5rem;
   margin-top: 3em;

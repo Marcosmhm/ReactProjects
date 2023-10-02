@@ -46,6 +46,7 @@ export function renderHeroMedia(media) {
 }
 
 export function renderMediaElements(media, title) {
+  console.log(media)
   const mediaElements = media.map((media, index) => (
     <>
       <Link
@@ -78,6 +79,7 @@ export function renderMediaElements(media, title) {
       <Slider
         title={title}
         data={mediaElements}
+        link={title.split(' ').join('_').toLowerCase()}
       />
     </>
   )

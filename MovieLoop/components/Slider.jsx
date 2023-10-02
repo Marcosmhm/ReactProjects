@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import { register } from 'swiper/element/bundle'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -8,12 +10,14 @@ import 'swiper/css/scrollbar'
 
 register()
 
-export default function Slider({ data, title }) {
+export default function Slider({ data, title, link }) {
   return (
     <>
       <div className="slider-title-wrapper">
         <h2 className='slider-title'>{title}</h2>
-        <span>oi</span>
+        <Link to={`/movie/category/${link}`}>
+          <span>Explore All</span>
+        </Link>
       </div>
       <Swiper className='slider'
         slidesPerView={'auto'}

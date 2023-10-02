@@ -38,7 +38,7 @@ export async function getDetails(type, randomNumber) {
 
 export async function getMovies(query) {
   let url
-  query ==='trending' ? url = `https://api.themoviedb.org/3/trending/movie/day?language=en-US` :
+  query ==='trending' ? url = `https://api.themoviedb.org/3/trending/movie/day?language=en-US&page=1` :
   url = `https://api.themoviedb.org/3/movie/${query}`
   const res = await fetch(url, options)
   if (!res.ok) {
