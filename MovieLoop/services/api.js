@@ -79,7 +79,6 @@ export async function getShows(query) {
       }
   }
   const data = await res.json()
-  console.log(data.results)
   return data.results
 }
 
@@ -98,7 +97,7 @@ export async function getSpecifiShow(id) {
 }
 
 export async function getPersonDetail(id) {
-  const url = `https://api.themoviedb.org/3/person/${id}?append_to_response=combined_credits&language=en-US`
+  const url = `https://api.themoviedb.org/3/person/${id}?append_to_response=combined_credits%2Cexternal_ids&language=en-US`
   const res = await fetch(url, options)
   if (!res.ok) {
     throw {

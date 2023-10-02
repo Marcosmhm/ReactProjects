@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { LazyLoadComponent, LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css";
+import Loading from "./Loading";
 
 
 export default function Episodes({ media, selectedSeason = 1, onSeasonChange }) {
@@ -47,7 +48,7 @@ export default function Episodes({ media, selectedSeason = 1, onSeasonChange }) 
       <div className="episode-card" key={`episode-${index}-${episode.season_number}`}>
         <div className="episode-still-container">
           <LazyLoadImage
-            src={`https://image.tmdb.org/t/p/w500/${episode.still_path}`}
+            src={`https://image.tmdb.org/t/p/w342/${episode.still_path}`}
             className="episode-still"
             effect="blur"
             />
@@ -73,7 +74,7 @@ export default function Episodes({ media, selectedSeason = 1, onSeasonChange }) 
   return (
     <>
       <select
-        className='detail-videos-filter'
+        className='detail-media-filter'
         id="filter"
         value={selectedSeason}
         onChange={(e) => onSeasonChange(e.target.value)}

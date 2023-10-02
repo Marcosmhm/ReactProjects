@@ -5,9 +5,10 @@ const Overview = lazy(() => import('../../../components/MediaOverview'))
 const Videos = lazy(() => import('../../../components/Videos'))
 const Photos = lazy(() => import('../../../components/Photos'))
 import Loading from '../../../components/Loading'
+
 import { getSpecificMovie } from '../../../services/api'
 import { renderHeroMedia, renderMediaElements } from '../../../utils'
-import '../../assets/css/mediaDetail.css'
+
 
 export function loader({ params }) {
   return getSpecificMovie(params.id)

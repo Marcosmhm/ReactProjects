@@ -36,7 +36,7 @@ export default function KnownFor({ handleFilterChange, selectedFilter, ...props 
   return (
     <>
       <select
-        className='detail-videos-filter'
+        className='detail-media-filter'
         id="filter"
         value={selectedFilter}
         onChange={(e) => handleFilterChange(e.target.value)}

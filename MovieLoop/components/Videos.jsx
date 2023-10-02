@@ -35,7 +35,7 @@ export default function DetailNavbar({media, selectedFilter, onFilterChange}) {
       <div className="test">
       </div>
       <select
-        className='detail-videos-filter'
+        className='detail-media-filter'
         id="filter"
         value={selectedFilter}
         onChange={(e) => onFilterChange(e.target.value)}

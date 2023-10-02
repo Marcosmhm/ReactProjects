@@ -8,16 +8,16 @@ import { renderHeroMedia, renderMediaElements } from "../../utils"
 
 
 
-const randomNumber = (max) => Math.floor(Math.random() * max)
+const randomNumber = (max) => Math.floor((Math.random() * max))
 const mediaType = ['tv', 'movie']
 
 export function loader() {
   return defer({ 
-    movies : getTrending('movie'),
-    tv: getTrending('tv'),
     banner: 
       getDetails(mediaType[randomNumber(2)], randomNumber(20)
-    )
+    ),
+    movies : getTrending('movie'),
+    tv: getTrending('tv'),
   })
 }
 

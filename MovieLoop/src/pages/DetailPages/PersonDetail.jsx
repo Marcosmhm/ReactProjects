@@ -28,7 +28,11 @@ export default function PersonDetail() {
   const personPlaceOfBirth = person.place_of_birth || ''
   const personPosterUrl = person.profile_path || ''
   const personKnownFor = person.known_for_department || ''
-  const personCredits = person.combined_credits
+  const personCredits = person.combined_credits || ''
+  const personFacebookId = person.external_ids.facebook_id || ''
+  const personInstagramId = person.external_ids.instagram_id  || ''
+  const personTwitterId = person.external_ids.twitter_id  || ''
+
 
   const [active, setActive] = useState('known-for')
 
@@ -37,41 +41,47 @@ export default function PersonDetail() {
 
   return (
     <>
+      <h3 className='detail-title'>{personName}</h3>
       <Suspense fallback={<Loading />}>
-        <PersonOverview
-          name={personName}
-          biography={personBiography}
-          birthDay={personBirthDay}
-          placeOfBirth={personPlaceOfBirth}
-          knownFor={personKnownFor}
-          url={`https://image.tmdb.org/t/p/h632/${personPosterUrl}`}
-        />
-        <div className="button-wrapper">
-          <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`}
-            style={active === 'known-for' ? activeStyles : []}
-            onClick={() => setActive('known-for')}
-          >
-            Know For
-          </button>
-          <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`}
-            style={active === 'credits' ? activeStyles : []}
-            onClick={() => setActive('credits')}
-          >
-            Credits
-          </button>
-          <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`}
-            style={active === 'photos' ? activeStyles : []}
-            onClick={() => setActive('photos')}
-          >
-            Photos
-          </button>
-        </div>
-        {active === 'known-for' && <KnownFor
-          credits={personCredits}
-          selectedFilter={selectedFilter} 
-          handleFilterChange={handleFilterChange}/>}
-        {active === 'credits' && <KnownFor />}
-        {active === 'photos' && <KnownFor />}
+        <section className="section-container">
+          <PersonOverview
+            name={personName}
+            biography={personBiography}
+            birthDay={personBirthDay}
+            placeOfBirth={personPlaceOfBirth}
+            knownFor={personKnownFor}
+            facebook={personFacebookId}
+            instagram={personInstagramId}
+            twitter={personTwitterId}
+            url={`https://image.tmdb.org/t/p/h632/${personPosterUrl}`}
+          />
+          <div className="button-wrapper">
+            <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`}
+              style={active === 'known-for' ? activeStyles : []}
+              onClick={() => setActive('known-for')}
+            >
+              Work
+            </button>
+            <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`}
+              style={active === 'credits' ? activeStyles : []}
+              onClick={() => setActive('credits')}
+            >
+              Credits
+            </button>
+            <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`}
+              style={active === 'photos' ? activeStyles : []}
+              onClick={() => setActive('photos')}
+            >
+              Photos
+            </button>
+          </div>
+          {active === 'known-for' && <KnownFor
+            credits={personCredits}
+            selectedFilter={selectedFilter}
+            handleFilterChange={handleFilterChange} />}
+          {active === 'credits' && <KnownFor />}
+          {active === 'photos' && <KnownFor />}
+        </section>
       </Suspense>
     </>
   )
