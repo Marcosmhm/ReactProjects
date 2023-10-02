@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import { Link } from "react-router-dom"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css";
+
 import placeHolder from './src/assets/images/poster_placeholder.jpg'
 const Hero = lazy(() => import("./components/Hero"));
 const Slider = lazy(() => import("./components/Slider"))
@@ -46,7 +47,7 @@ export function renderHeroMedia(media) {
 }
 
 export function renderMediaElements(media, title) {
-  console.log(media)
+  console.log('salve', media)
   const mediaElements = media.map((media, index) => (
     <>
       <Link

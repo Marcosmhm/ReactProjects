@@ -41,7 +41,7 @@
 @media (min-width: 1200px) {
   .navbar-principal {
     border-right: 1px solid #202124;
-    height: 100vh;
+    /* height: 100vh; */
     top: 0;
     width: 6rem;
     flex-direction: column;

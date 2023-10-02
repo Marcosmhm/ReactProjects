@@ -1,9 +1,17 @@
 import { useEffect } from "react";
 
-const handleScroll = ({ fetchFunction, isLoading }) => {
-  if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isLoading) {
-    return;
-  }
-  return () => fetchFunction;
+const InfiniteScroll = ({ onScrollEnd, isLoading }) => {
+  const handleScroll = () => {
+    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isLoading) {
+      return;
+    }
+    onScrollEnd();
+  };
+  
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isLoading]);
 };
-export default handleScroll
+
+export default InfiniteScroll;

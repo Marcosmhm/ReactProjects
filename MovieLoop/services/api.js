@@ -36,7 +36,7 @@ export async function getDetails(type, randomNumber) {
   return data
 }
 
-export async function getMovies(query, page) {
+export async function getMovies(query, page = 1) {
   let url
   query ==='trending' ? url = `https://api.themoviedb.org/3/trending/movie/day?language=en-US&page=${page}` :
   url = `https://api.themoviedb.org/3/movie/${query}?&page=${page}`
