@@ -8,7 +8,7 @@ export default function PersonOverview({ ...props }) {
     if (line) {
       return (
         <>
-          <p key={index}>{line}</p>
+          <p key={`biography-${index}`}>{line}</p>
         </>
       )
     }

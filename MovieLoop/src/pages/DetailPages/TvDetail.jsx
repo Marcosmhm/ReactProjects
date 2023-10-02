@@ -2,7 +2,7 @@ import { useState, lazy, Suspense } from "react"
 import { useLoaderData, useParams } from 'react-router-dom'
 
 const Episodes = lazy(() => import('../../../components/Episodes'))
-const Overview = lazy(() => import('../../../components/Overview'))
+const Overview = lazy(() => import('../../../components/MediaOverview'))
 const Videos = lazy(() => import('../../../components/Videos'))
 const Photos = lazy(() => import('../../../components/Photos'))
 import Loading from "../../../components/Loading"

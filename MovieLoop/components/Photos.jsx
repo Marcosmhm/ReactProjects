@@ -3,7 +3,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 
 export default function Photos({ media }) {
-  const backdrops = media.backdrops.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }, index) => {
+  const backdrops = media.backdrops?.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }, index) => {
     return (
       <div className="detail-image-card" key={`backdrop-${index}`}>
         <LazyLoadImage
@@ -14,7 +14,7 @@ export default function Photos({ media }) {
       </div>
     )
   })
-  const posters = media.posters.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }, index) => {
+  const posters = media.posters?.filter(({ iso_639_1 }) => iso_639_1 === 'en').map(({ file_path }, index) => {
     return (
       <div className="detail-image-card" key={`poster-${index}`}>
         <LazyLoadImage
@@ -25,6 +25,8 @@ export default function Photos({ media }) {
       </div>
     )
   })
+
+  const profiles = ''
 
   return (
     <>
