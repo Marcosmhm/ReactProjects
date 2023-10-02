@@ -36,10 +36,10 @@ export async function getDetails(type, randomNumber) {
   return data
 }
 
-export async function getMovies(query) {
+export async function getMovies(query, page) {
   let url
-  query ==='trending' ? url = `https://api.themoviedb.org/3/trending/movie/day?language=en-US&page=1` :
-  url = `https://api.themoviedb.org/3/movie/${query}`
+  query ==='trending' ? url = `https://api.themoviedb.org/3/trending/movie/day?language=en-US&page=${page}` :
+  url = `https://api.themoviedb.org/3/movie/${query}?&page=${page}`
   const res = await fetch(url, options)
   if (!res.ok) {
     throw {
