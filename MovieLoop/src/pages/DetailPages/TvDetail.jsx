@@ -37,7 +37,7 @@ export default function TvDetail() {
 
   return (
     <>
-      <h3 className='detail-title'>{tv.original_title}</h3>
+      <h3 className='detail-title'>{tv.original_name}</h3>
       <div className="section-container">
         {renderHeroMedia(tv)}
         <div className="button-wrapper">
