@@ -112,7 +112,7 @@ export default function Overview({ media }) {
       </div>
       {cast &&
         <>
-          <h2 className='slider-title'>Cast</h2>
+          <h2 className='media-detail-title detail-sliders'>Cast</h2>
           {renderCast(media.credits.cast)}
         </>}
     </>

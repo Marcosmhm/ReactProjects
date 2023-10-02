@@ -82,7 +82,7 @@ export function renderMediaElements(media, title) {
         title={title}
         data={mediaElements}
         type={type}
-        link={title.split(' ').join('_').toLowerCase()}
+        link={title?.split(' ').join('_').toLowerCase()}
       />
     </>
   )

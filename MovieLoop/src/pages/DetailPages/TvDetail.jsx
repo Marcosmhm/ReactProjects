@@ -23,7 +23,7 @@ export default function TvDetail() {
   const [selectedFilter, setSelectedFilter] = useState('All')
   const [selectedSeason, setSelectedSeason] = useState(1)
 
-  const moreLikeThis = renderMediaElements(tv.recommendations.results, 'More Like This')
+  const moreLikeThis = renderMediaElements(tv.recommendations.results)
 
   const activeStyles = {
     color: "#FFF",
@@ -79,8 +79,11 @@ export default function TvDetail() {
               selectedSeason={selectedSeason}
               onSeasonChange={handleSeasonChange} />}
           </Suspense>
-          <div className="detail-recommendations">
-            {moreLikeThis.props.children.props.data.length >= 1 && moreLikeThis}
+          <div className="detail-sliders">
+            {moreLikeThis && <>
+              <h2 className="media-detail-title">More Like This</h2>
+              {moreLikeThis}
+            </>}
           </div>
         </section>
       </div>

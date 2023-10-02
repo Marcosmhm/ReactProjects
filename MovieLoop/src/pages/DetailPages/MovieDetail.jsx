@@ -29,7 +29,7 @@ export default function MovieDetail() {
 
   const handleFilterChange = filter => setSelectedFilter(filter);
 
-  const moreLikeThis = renderMediaElements(movie.recommendations.results, 'More Like This')
+  const moreLikeThis = renderMediaElements(movie.recommendations.results)
 
   return (
     <>
@@ -64,10 +64,11 @@ export default function MovieDetail() {
               selectedFilter={selectedFilter}
               onFilterChange={handleFilterChange} />}
             {active === 'photos' && <Photos media={movie.images} />}
-            <div className="detail-recommendations">
-              {
-                moreLikeThis.props.children.props.data.length >= 1 && moreLikeThis
-              }
+            <div className="detail-sliders">
+              {moreLikeThis && <>
+                <h2 className="media-detail-title">More Like This</h2>
+                {moreLikeThis}
+              </>}
             </div>
           </section>
         </Suspense>
