@@ -1,9 +1,11 @@
-import { useLoaderData, useParams } from 'react-router-dom'
+import { useLoaderData, useParams, Link } from 'react-router-dom'
 import { useState, lazy, Suspense } from 'react'
+import { BiArrowBack } from 'react-icons/bi'
 
 const Overview = lazy(() => import('../../../components/MediaOverview'))
 const Videos = lazy(() => import('../../../components/Videos'))
 const Photos = lazy(() => import('../../../components/Photos'))
+
 import Loading from '../../../components/Loading'
 
 import { getSpecificMovie } from '../../../services/api'
@@ -33,7 +35,14 @@ export default function MovieDetail() {
 
   return (
     <>
-      <h3 className='detail-title'>{movie.original_title}</h3>
+      <div className='detail-title'>
+        <span className="title-back-button">
+          <Link to={'..'} relative='path' >
+            {<BiArrowBack size={22} />}
+          </Link>
+        </span>
+        {movie.original_title}
+      </div>
       <div className="section-container">
         {renderHeroMedia(movie)}
         <div className="button-wrapper">

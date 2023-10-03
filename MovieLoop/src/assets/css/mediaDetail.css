@@ -2,6 +2,11 @@
   background-color: #141414;
 }
 
+.title-back-button {
+  position: absolute;
+  left: 2em;
+}
+
 .detail-title {
   position: fixed;
   top: 0;

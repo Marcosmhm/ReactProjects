@@ -1,10 +1,11 @@
 import { useState, lazy, Suspense } from "react"
-import { useLoaderData, useParams } from 'react-router-dom'
+import { useLoaderData, useParams, Link } from 'react-router-dom'
 
 const Episodes = lazy(() => import('../../../components/Episodes'))
 const Overview = lazy(() => import('../../../components/MediaOverview'))
 const Videos = lazy(() => import('../../../components/Videos'))
 const Photos = lazy(() => import('../../../components/Photos'))
+import { BiArrowBack } from 'react-icons/bi'
 import Loading from "../../../components/Loading"
 
 import { getSpecifiShow } from '../../../services/api'
@@ -34,9 +35,17 @@ export default function TvDetail() {
   const handleFilterChange = filter => setSelectedFilter(filter);
   const handleSeasonChange = season => setSelectedSeason(season)
 
+
   return (
     <>
-      <h3 className='detail-title'>{tv.original_name}</h3>
+      <div className='detail-title'>
+      <span className="title-back-button">
+          <Link to={'..'} relative='path' >
+            {<BiArrowBack size={22} />}
+          </Link>
+        </span>
+        {tv.name}
+      </div>
       <div className="section-container">
         {renderHeroMedia(tv)}
         <div className="button-wrapper">
