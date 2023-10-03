@@ -1,7 +1,3 @@
-.detail-section {
-  background-color: #141414;
-}
-
 .title-back-button {
   position: absolute;
   left: 2em;
@@ -13,7 +9,6 @@
   width: 100%;
   text-align: center;
   background-color: #141414;
-  font-size: 0.9rem;
   font-weight: normal;
   padding: 1em;
   z-index: 2;
@@ -39,7 +34,6 @@ button {
 
 ul {
   list-style: none;
-  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 0.2em;

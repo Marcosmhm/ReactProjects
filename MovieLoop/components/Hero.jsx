@@ -34,7 +34,7 @@ export default function Hero({ image, title, rating, reviews, airDate, seasons, 
         <div className="hero-info">
           <Link to={link} style={{ display: 'contents' }}>
             <h1>{title}</h1>
-            <div className="hero-container">
+            <div className="hero-container-info-container">
               <div className="hero-rating">
                 <Stars
                   rating={rating}
