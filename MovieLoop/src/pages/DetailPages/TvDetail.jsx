@@ -72,7 +72,7 @@ export default function TvDetail() {
             {active === 'overview' && <Overview media={tv} />}
             {active === 'videos' && <Videos media={tv.videos.results}
               selectedFilter={selectedFilter}
-              handleFilterChange={handleFilterChange} />}
+              onFilterChange={handleFilterChange} />}
             {active === 'photos' && <Photos media={tv.images} />}
             {active === 'episodes' && <Episodes
               media={tv}
