@@ -7,6 +7,7 @@ import TvDetail, { loader as tvDetailLoader } from "./pages/DetailPages/TvDetail
 import MovieCategory, {loader as movieCategoryLoader} from "./pages/CategoryPages/MovieCategory"
 import TvCategory, {loader as tvCategoryLoader} from "./pages/CategoryPages/TvCategory"
 import PersonDetail, {loader as personDetailLoader} from "./pages/DetailPages/PersonDetail"
+import Search from "./pages/Search"
 import Layout from "../components/Layout"
 
 import "./assets/css/app.css"
@@ -23,6 +24,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/tv/category/:query" element={<TvCategory />} loader={tvCategoryLoader} />
     <Route path="/tv/:id" element={<TvDetail />} loader={tvDetailLoader} />
     <Route path="/person/:id" element={<PersonDetail />} loader={personDetailLoader} />
+    <Route path="/search" element={<Search />} />
     <Route path="*" element="404" />
   </Route>
 ))

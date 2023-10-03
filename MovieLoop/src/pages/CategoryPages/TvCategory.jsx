@@ -53,9 +53,11 @@ export default function TvCategory() {
       const showData = await getShows(query, page)
       setData(prevData => [...prevData, ...showData])
       setPage(prevPage => prevPage + 1)
+
     } catch (e) {
       console.log(e)
       setError(e)
+      
     } finally {
       setIsLoading(false)
     }

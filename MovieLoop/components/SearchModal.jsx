@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 
-import { searchMulti } from "../services/api";
-
 function useOnClickOutside(ref, handler) {
   useEffect(
     () => {
@@ -17,6 +15,7 @@ function useOnClickOutside(ref, handler) {
       return () => {
         document.removeEventListener("mousedown", listener);
         document.removeEventListener("touchstart", listener);
+        history.goBack
       };
     },
     [ref, handler]
@@ -24,24 +23,21 @@ function useOnClickOutside(ref, handler) {
 }
 
 export default function SeachModal({ onClose }) {
-  const modalRef = useRef(null);
+  const ref = useRef();
   const navigate = useNavigate();
 
   const [searchValue, setSearchValue] = useState("");
 
   const handleInputChange = (event) => {
     setSearchValue(event.target.value);
-    navigate(`/search?query=${(event.target.value)}`)
+    navigate(`/search/?query=${(event.target.value)}`)
   };
 
-  useEffect(() => {
-    searchMulti(searchValue)
-  }, [searchValue])
-  useOnClickOutside(modalRef, () => onClose(false))
+  useOnClickOutside(ref, () => onClose(false));
 
   return (
     <>
-      <div className="search-modal" ref={modalRef}>
+      <div className="search-modal" ref={ref}>
         <div className="search-modal-content">
           <input
             className="search-input"
