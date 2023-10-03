@@ -55,7 +55,7 @@ export default function Overview({ media }) {
   const renderItems = detailItems.map((item, index) => {
     if (item.content) {
       return (
-        <li key={`${item.title} ${index}`}>
+        <li key={`${item.title}-${index}`}>
           <span className="detail-li-title">{item.title}</span>
           <span className="detail-li-content">{item.content}</span>
         </li>

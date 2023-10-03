@@ -16,7 +16,7 @@ export default function KnownFor({ handleFilterChange, selectedFilter, ...props 
     .sort((a, b) => b.vote_count - a.vote_count)
     .map((item, index) => (
       <>
-        <div className="a">
+        <div className="a" key={item.id}>
           <Link to={`/${item.media_type}/${item.id}`}>
             <LazyLoadImage
               key={`${item.id}-${index}`}

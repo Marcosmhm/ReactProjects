@@ -51,7 +51,7 @@ export function renderMediaElements(media, title) {
   const mediaElements = media.map((media, index) => (
     <>
       <Link
-        key={`${media.id} ${index}`}
+        key={`${media.id}-${index}`}
         to={media.original_title ? `../movie/${media.id}` : `../tv/${media.id}`}
       >
           <LazyLoadImage
@@ -91,7 +91,7 @@ export function renderCast(media, title) {
   const castElements = media.map((media, index) => (
     <>
       <Link
-        key={`cast ${index}`}
+        key={`cast-${index}`}
         to={`/person/${media.id}`}
       >
         <LazyLoadImage

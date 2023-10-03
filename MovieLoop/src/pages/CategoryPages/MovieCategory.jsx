@@ -73,7 +73,7 @@ export default function MovieCategory() {
           {data.map((media, index) => {
             return (
               <Link
-              key={`${media.id} ${index}`}
+              key={`${media.id}-${index}`}
               to={media.original_title ? `../movie/${media.id}` : `../tv/${media.id}`}
               >
                 <LazyLoadImage

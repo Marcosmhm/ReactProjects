@@ -3,7 +3,7 @@ import { useParams, useLocation, Link, useNavigate } from "react-router-dom"
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { searchMulti } from "../../services/api"
-import SeachModal from "../../components/SearchModal";
+import SearchModal from "../../components/SearchModal";
 import Stars from "../../components/Stars";
 import placeHolder from '../assets/images/poster_placeholder.jpg'
 
