@@ -5,6 +5,7 @@ import Tv, { loader as tvLoader } from "./pages/Tv"
 import MovieDetail, { loader as movieDetailLoader } from "./pages/DetailPages/MovieDetail"
 import TvDetail, { loader as tvDetailLoader } from "./pages/DetailPages/TvDetail"
 import MovieCategory, {loader as movieCategoryLoader} from "./pages/CategoryPages/MovieCategory"
+import TvCategory, {loader as tvCategoryLoader} from "./pages/CategoryPages/TvCategory"
 import PersonDetail, {loader as personDetailLoader} from "./pages/DetailPages/PersonDetail"
 import Layout from "../components/Layout"
 
@@ -19,7 +20,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/movie/category/:query" element={<MovieCategory />} loader={movieCategoryLoader} />
     <Route path="/movie/:id" element={<MovieDetail />} loader={movieDetailLoader} />
     <Route path="/tv" element={<Tv />} loader={tvLoader} />
-    <Route path="/tv/category/:query" element={'<Tv />'} />
+    <Route path="/tv/category/:query" element={<TvCategory />} loader={tvCategoryLoader} />
     <Route path="/tv/:id" element={<TvDetail />} loader={tvDetailLoader} />
     <Route path="/person/:id" element={<PersonDetail />} loader={personDetailLoader} />
     <Route path="*" element="404" />

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-import { getMovies } from "../../../services/api"
+import { getShows } from "../../../services/api"
 import InfiniteScroll from "../../../components/InfineScroll";
 import Loading from "../../../components/Loading";
 import Stars from "../../../components/Stars";
@@ -15,19 +15,19 @@ let title = ''
 export function loader({ params }) {
   const queryArray = [
     {
-      fullQuery: 'popular_movies',
+      fullQuery: 'popular_shows',
       shortQuery: 'trending',
     },
     {
-      fullQuery: 'trending_movies',
+      fullQuery: 'trending_shows',
       shortQuery: 'trending',
     },
     {
-      fullQuery: 'top_rated_movies',
+      fullQuery: 'top_rated_shows',
       shortQuery: 'top_rated',
     },
     {
-      fullQuery: 'upcoming_movies',
+      fullQuery: 'upcoming_shows',
       shortQuery: 'upcoming',
     },
   ]
@@ -37,23 +37,23 @@ export function loader({ params }) {
   const match = queryArray.find((query) => query.fullQuery === params.query);
   query = match ? match.shortQuery : null;
 
-  return getMovies(query)
+  return getShows(query)
 }
 
-export default function MovieCategory() {
+export default function TvCategory() {
   const [page, setPage] = useState(1)
   const [data, setData] = useState(useLoaderData())
   console.log('loader', data)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  const fetchMovies = async () => {
+  const fetchShows = async () => {
     setIsLoading(true)
     setError(null)
     try {
-      const movieData = await getMovies(query, page)
-      console.log('fetch', movieData)
-      setData(prevData => [...prevData, ...movieData])
+      const showData = await getShows(query, page)
+      console.log('fetch', showData)
+      setData(prevData => [...prevData, ...showData])
       setPage(prevPage => prevPage + 1)
     } catch (e) {
       console.log(e)
@@ -64,7 +64,7 @@ export default function MovieCategory() {
   }
 
   useEffect(() => {
-    fetchMovies()
+    fetchShows()
   }, []) 
   
   return (
@@ -100,7 +100,7 @@ export default function MovieCategory() {
             )
           })}
         </div>
-        <InfiniteScroll onScrollEnd={fetchMovies} isLoading={isLoading} />
+        <InfiniteScroll onScrollEnd={fetchShows} isLoading={isLoading} />
         {isLoading && <Loading />}
         {error && <p>Error: {error.message}</p>}
       </section>

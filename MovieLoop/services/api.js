@@ -66,10 +66,10 @@ export async function getSpecificMovie(id) {
   return data
 }
 
-export async function getShows(query) {
+export async function getShows(query, page = 1) {
   let url
-  query ==='trending' ? url = `https://api.themoviedb.org/3/trending/tv/day?language=en-US` :
-  url = `https://api.themoviedb.org/3/tv/${query}`
+  query ==='trending' ? url = `https://api.themoviedb.org/3/trending/tv/day?language=en-US&page=${page}` :
+  url = `https://api.themoviedb.org/3/tv/${query}?&page=${page}`
   const res = await fetch(url, options)
   if (!res.ok) {
     throw {
