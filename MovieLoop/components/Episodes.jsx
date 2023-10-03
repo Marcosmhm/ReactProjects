@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { LazyLoadComponent, LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css";
+import placeHodlder from '../src/assets/images/poster_placeholder.jpg'
 import Loading from "./Loading";
 
 
@@ -57,7 +58,7 @@ export default function Episodes({ media, selectedSeason = 1, onSeasonChange }) 
       <div className="episode-card" key={`episode-${index}-${episode.season_number}`}>
         <div className="episode-still-container">
           <LazyLoadImage
-            src={`https://image.tmdb.org/t/p/w342/${episode.still_path}`}
+            src={episode.still_path ? `https://image.tmdb.org/t/p/w400/${episode.still_path}` : placeHodlder}
             className="episode-still"
             effect="blur"
             />
