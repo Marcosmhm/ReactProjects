@@ -127,4 +127,15 @@ export async function getShowSeason(id) {
   return allSeasonData
 }
 
+export async function searchMulti(query) {
+  try {
+    const url = `https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=false&language=en-US&page=1`
+    const res = await fetch(url, options)
+    const data = await res.json()
+    console.log(data)
+  } catch (error) {
+    console.log(e)
+  }
+}
+
 
