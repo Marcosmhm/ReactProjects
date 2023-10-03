@@ -1,6 +1,6 @@
 .infinite-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   padding: .7em;
   gap: .5em;
   grid-row-gap: 1em;
@@ -13,7 +13,7 @@
 
 @media (min-width: 1024px) {
   .infinite-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
 

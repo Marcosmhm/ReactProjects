@@ -44,12 +44,12 @@ export default function Search() {
           {data.map((media, index) => {
             return (
               <Link
-                key={`${media.id} ${index}`}
-                to={media.original_title ? `../movie/${media.id}` : `../tv/${media.id}`}
+                key={`${media.id}-${index}`}
+                to={media.original_title ? `../movie/${media.id}` : media.original_name ? `../tv/${media.id}` : `../person/${media.id}`}
               >
                 <LazyLoadImage
-                  src={media.poster_path ? `https://image.tmdb.org/t/p/w342/${media.poster_path}` : placeHolder}
-                  className="slider-item"
+                  src={media.poster_path ? `https://image.tmdb.org/t/p/w342/${media.poster_path}` : `https://image.tmdb.org/t/p/w342/${media.profile_path}` || placeHolder}
+                  className="slider-item search-image"
                   effect="blur"
                 />
                 <div className="slider-item-info">
@@ -58,10 +58,10 @@ export default function Search() {
                   </span>
                   <div className="slider-item-review">
                     <Stars
-                      rating={(media.vote_average?.toFixed(2) / 2)}
+                      rating={(media.vote_average?.toFixed(2) / 2) || (media.popularity?.toFixed(2) / 2)}
                     />
                     <span className="slider-item-reviews-vote">
-                      {media.vote_average?.toFixed(2)}
+                      {media.vote_average?.toFixed(2) || `${media.popularity?.toFixed(2)} popularity`}
                     </span>
                   </div>
                 </div>
