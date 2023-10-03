@@ -43,7 +43,6 @@ export function loader({ params }) {
 export default function MovieCategory() {
   const [page, setPage] = useState(1)
   const [data, setData] = useState(useLoaderData())
-  console.log('loader', data)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
 
@@ -52,7 +51,6 @@ export default function MovieCategory() {
     setError(null)
     try {
       const movieData = await getMovies(query, page)
-      console.log('fetch', movieData)
       setData(prevData => [...prevData, ...movieData])
       setPage(prevPage => prevPage + 1)
     } catch (e) {

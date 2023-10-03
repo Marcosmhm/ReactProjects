@@ -19,7 +19,7 @@ export function loader({ params }) {
       shortQuery: 'trending',
     },
     {
-      fullQuery: 'trending_shows',
+      fullQuery: 'trending_tv_shows',
       shortQuery: 'trending',
     },
     {
@@ -43,7 +43,6 @@ export function loader({ params }) {
 export default function TvCategory() {
   const [page, setPage] = useState(1)
   const [data, setData] = useState(useLoaderData())
-  console.log('loader', data)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
 
@@ -52,7 +51,6 @@ export default function TvCategory() {
     setError(null)
     try {
       const showData = await getShows(query, page)
-      console.log('fetch', showData)
       setData(prevData => [...prevData, ...showData])
       setPage(prevPage => prevPage + 1)
     } catch (e) {
