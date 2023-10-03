@@ -45,10 +45,10 @@ export default function Search() {
             return (
               <Link
                 key={`${media.id}-${index}`}
-                to={media.original_title ? `../movie/${media.id}` : media.original_name ? `../tv/${media.id}` : `../person/${media.id}`}
+                to={media.media_type === 'movie' ? `../movie/${media.id}` : media.media_type === 'tv' ? `../tv/${media.id}` : media.media_type === 'person' ? `../person/${media.id}` : ''}
               >
                 <LazyLoadImage
-                  src={media.poster_path ? `https://image.tmdb.org/t/p/w342/${media.poster_path}` : `https://image.tmdb.org/t/p/w342/${media.profile_path}` || placeHolder}
+                  src={media.poster_path ? `https://image.tmdb.org/t/p/w342/${media.poster_path}` : media.profile_path ? `https://image.tmdb.org/t/p/w342/${media.profile_path}` : placeHolder}
                   className="slider-item search-image"
                   effect="blur"
                 />
