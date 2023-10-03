@@ -52,7 +52,6 @@ export default function Overview({ media }) {
     if (item.content) {
       return (
         <li key={`${item.title}-${index}`}>
-          {console.log(item.title)}
           <span className="detail-li-title">{item.title}</span>
           <span className="detail-li-content">{item.content}</span>
         </li>
@@ -61,15 +60,15 @@ export default function Overview({ media }) {
     return null
   })
 
-  let usProviders = []
-  let renderAvailableAt = []
-
-
+  let renderAvailableAt = ``
+  let usProviders = ``
+  
+  
   if (media['watch/providers'].results.US) {
     media['watch/providers'].results.US?.buy ? usProviders = [...media['watch/providers'].results.US.buy] : usProviders
     media['watch/providers'].results.US?.rent ? usProviders = [...media['watch/providers'].results.US.rent] : usProviders
-    usProviders = [...media['watch/providers'].results.US?.flatrate] || usProviders
-    renderAvailableAt = usProviders.map((provider, index) => {
+    media['watch/providers'].results.US?.flatrate ? usProviders = [...media['watch/providers'].results.US.flatrate] : usProviders
+    renderAvailableAt = usProviders?.map((provider, index) => {
       return (
         <>
           <img key={`provider-${index}`} src={`https://image.tmdb.org/t/p/original/${provider.logo_path}`}
@@ -114,7 +113,7 @@ export default function Overview({ media }) {
           <ul>
             {renderItems}
           </ul>
-          {renderAvailableAt && (
+          {usProviders && (
           <>
             <h2>Available At: </h2>
             <div className="overview-available-container">
