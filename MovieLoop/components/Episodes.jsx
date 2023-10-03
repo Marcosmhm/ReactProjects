@@ -6,6 +6,8 @@ import Loading from "./Loading";
 
 export default function Episodes({ media, selectedSeason = 1, onSeasonChange }) {
   const [seasonData, setSeasonData] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+  
   const id = media.id
 
   useEffect(() => {
@@ -19,10 +21,17 @@ export default function Episodes({ media, selectedSeason = 1, onSeasonChange }) 
     };
     async function getSeason() {
       if (!isAborted) {
-        const url = `https://api.themoviedb.org/3/tv/${id}/season/${selectedSeason}?language=en-US`
-        const res = await fetch(url, options)
-        const data = await res.json()
-        setSeasonData(data)
+        try {
+          setIsLoading(true)
+          const url = `https://api.themoviedb.org/3/tv/${id}/season/${selectedSeason}?language=en-US`
+          const res = await fetch(url, options)
+          const data = await res.json()
+          setSeasonData(data)
+        } catch(e) {
+          console.log(e)
+        } finally {
+          setIsLoading(false)
+        }
       }
     }
     getSeason()
@@ -82,6 +91,7 @@ export default function Episodes({ media, selectedSeason = 1, onSeasonChange }) 
         {selectValues}
       </select>
       <>
+        {isLoading && <Loading />}
         <LazyLoadComponent>
           <div className="episodes-wrapper">
             {episodesElements}
