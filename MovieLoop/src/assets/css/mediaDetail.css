@@ -250,12 +250,15 @@ li {
   .overview-img-container {
     width: 100%;
     max-width: 350px;
+    min-width: 300px;
     display: block;
     margin-top: -1em;
   }
 
   .overview-poster {
-    width: 100%
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
