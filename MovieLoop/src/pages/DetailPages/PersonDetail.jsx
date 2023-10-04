@@ -61,12 +61,6 @@ export default function PersonDetail() {
               Work
             </button>
             <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`}
-              style={active === 'credits' ? activeStyles : []}
-              onClick={() => setActive('credits')}
-            >
-              Credits
-            </button>
-            <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`}
               style={active === 'photos' ? activeStyles : []}
               onClick={() => setActive('photos')}
             >
