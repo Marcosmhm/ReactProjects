@@ -79,25 +79,6 @@ export default function Overview({ media }) {
     })
   }
 
-  // if (media['watch/providers']) {
-  //   if ('US' in (media['watch/providers']?.results)) {
-  //     if ('buy' in (media['watch/providers'].results.US)) {
-  //       usProviders = media['watch/providers'].results.US.buy
-  //     } else if ('flatrate' in (media['watch/providers'].results.US)) {
-  //       usProviders = media['watch/providers'].results.US.flatrate
-  //     }
-  //     renderAvailableAt = usProviders.map((provider, index) => {
-  //       return (
-  //         <>
-  //           <img key={`provider-${index}`} src={`https://image.tmdb.org/t/p/original/${provider.logo_path}`}
-  //             className="company-logo"
-  //           />
-  //         </>
-  //       )
-  //     })
-  //   }
-  // }
-
   return (
     <>
       <div className="detail-overview">

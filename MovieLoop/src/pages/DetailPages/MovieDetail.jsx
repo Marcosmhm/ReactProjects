@@ -31,7 +31,7 @@ export default function MovieDetail() {
 
   const handleFilterChange = filter => setSelectedFilter(filter);
 
-  const moreLikeThis = renderMediaElements(movie.recommendations.results)
+  const moreLikeThis = movie.recommendations.results >= 1 ? renderMediaElements(movie.recommendations.results) : ``
 
   return (
     <>
@@ -74,10 +74,11 @@ export default function MovieDetail() {
               onFilterChange={handleFilterChange} />}
             {active === 'photos' && <Photos media={movie.images} />}
             <div className="detail-sliders">
-              {moreLikeThis && <>
-                <h2 className="media-detail-title">More Like This</h2>
-                {moreLikeThis}
-              </>}
+              {moreLikeThis && (
+                <>
+                  <h2 className="media-detail-title">More Like This</h2>
+                  {moreLikeThis}
+                </>)}
             </div>
           </section>
         </Suspense>

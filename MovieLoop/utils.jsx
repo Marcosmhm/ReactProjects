@@ -95,7 +95,7 @@ export function renderCast(media, title) {
         to={`/person/${media.id}`}
       >
         <LazyLoadImage
-          src={`https://image.tmdb.org/t/p/h632/${media.profile_path}`}
+          src={media.profile_path ? `https://image.tmdb.org/t/p/h632/${media.profile_path}` : placeHolder}
           className="slider-item slider-item-cast"
           effect="blur"
         />

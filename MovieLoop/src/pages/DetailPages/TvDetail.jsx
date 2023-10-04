@@ -24,7 +24,7 @@ export default function TvDetail() {
   const [selectedFilter, setSelectedFilter] = useState('All')
   const [selectedSeason, setSelectedSeason] = useState(1)
 
-  const moreLikeThis = renderMediaElements(tv.recommendations.results)
+  const moreLikeThis = tv.recommendations.results.length >= 1 ? renderMediaElements(tv.recommendations.results) : `` 
 
   const activeStyles = {
     color: "#FFF",
@@ -39,7 +39,7 @@ export default function TvDetail() {
   return (
     <>
       <div className='detail-title'>
-      <span className="title-back-button">
+        <span className="title-back-button">
           <Link to={'..'} relative='path' >
             {<BiArrowBack size={22} />}
           </Link>
@@ -89,10 +89,11 @@ export default function TvDetail() {
               onSeasonChange={handleSeasonChange} />}
           </Suspense>
           <div className="detail-sliders">
-            {moreLikeThis && <>
-              <h2 className="media-detail-title">More Like This</h2>
-              {moreLikeThis}
-            </>}
+            {moreLikeThis &&
+              <>
+                <h2 className="media-detail-title">More Like This</h2>
+                {moreLikeThis}
+              </>}
           </div>
         </section>
       </div>

@@ -57,12 +57,13 @@ export async function getSpecificMovie(id) {
   const res = await fetch(url, options)
   if (!res.ok) {
     throw {
-        message: "Failed to fetch Movie",
-        statusText: res.statusText,
-        status: res.status
-      }
+      message: "Failed to fetch Movie",
+      statusText: res.statusText,
+      status: res.status
+    }
   }
   const data = await res.json()
+  console.log(data)
   return data
 }
 
