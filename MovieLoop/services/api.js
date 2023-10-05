@@ -261,15 +261,15 @@ export async function deleteSession(sessionId) {
   }
 }
 
-export async function addToFavorite(type, mediaId, sessionId) {
+export async function addToFavorite(type, mediaId, sessionId, bool) {
   const favoriteOptions = {
     method: 'POST',
     headers: {
       accept: 'application/json',
       'content-type': 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYzk0MzE2M2E0MmYwMzg0ZDdiZTgzNDU5NTY1MDFmYSIsInN1YiI6IjY1MTAwOTRjZTFmYWVkMDExZDVlNGMxMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WN37scDQwPXBjLN95yWB-xpw3f58E8OEKw3IlDRyMWc'
+      Authorization: `${import.meta.env.VITE_TMDB_KEY}`
     },
-    body: JSON.stringify({media_type: type, media_id: mediaId, favorite: true})
+    body: JSON.stringify({media_type: type, media_id: mediaId, favorite: bool})
   };
   try {
     const url = `https://api.themoviedb.org/3/account/${sessionId}/favorite`
@@ -282,6 +282,7 @@ export async function addToFavorite(type, mediaId, sessionId) {
       }
     } 
     const data = await res.json()
+    console.log(data)
     return data
   } catch (e) {
     console.log(e)
