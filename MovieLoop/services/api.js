@@ -260,3 +260,50 @@ export async function deleteSession(sessionId) {
     console.log(e)  
   }
 }
+
+export async function addToFavorite(type, mediaId, sessionId) {
+  const favoriteOptions = {
+    method: 'POST',
+    headers: {
+      accept: 'application/json',
+      'content-type': 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYzk0MzE2M2E0MmYwMzg0ZDdiZTgzNDU5NTY1MDFmYSIsInN1YiI6IjY1MTAwOTRjZTFmYWVkMDExZDVlNGMxMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WN37scDQwPXBjLN95yWB-xpw3f58E8OEKw3IlDRyMWc'
+    },
+    body: JSON.stringify({media_type: type, media_id: mediaId, favorite: true})
+  };
+  try {
+    const url = `https://api.themoviedb.org/3/account/${sessionId}/favorite`
+    const res = await fetch(url, favoriteOptions)
+    if(!res.ok) {
+      throw {
+        message: "Failed to fetch favorites",
+        statusText: res.statusText,
+        status: res.status
+      }
+    } 
+    const data = await res.json()
+    return data
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+export async function getUserFavorites(sessionId) {
+  const allFavorites = []
+  try {
+    const url = `https://api.themoviedb.org/3/account/20489679/favorite/movies?language=en-US&page=1&sort_by=created_at.asc`
+    const res = await fetch(url, options)
+    if(!res.ok) {
+      throw {
+        message: "Failed to fetch favorites",
+        statusText: res.statusText,
+        status: res.status
+      }
+    } 
+    const data = await res.json()
+    console.log(data.results)
+    return data.results
+  } catch (e) {
+    console.log(e)
+  }
+}

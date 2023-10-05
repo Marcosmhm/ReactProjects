@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -8,7 +8,7 @@ const Hero = lazy(() => import("./components/Hero"));
 const Slider = lazy(() => import("./components/Slider"))
 import Stars from "./components/Stars"
 import Loading from "./components/Loading"
-import { key } from "localforage";
+import { getUserFavorites, addToFavorite } from "./services/api";
 
 export function renderHeroMedia(media) {
   const mediaType = media.original_title ? 'movie' : 'tv'
@@ -47,18 +47,33 @@ export function renderHeroMedia(media) {
 }
 
 export function renderMediaElements(media, title) {
+  let [getUserFavoriteData, setGetUserFavoriteData] = useState([])
+  const getFavorites = async () => {
+    const results = await getUserFavorites()
+    setGetUserFavoriteData(results)
+  }
+
+  console.log(getUserFavoriteData)
+
+  useEffect(() => {
+    getFavorites()
+  }, [])
+
   let type = media[0]?.title ? `movie` : `tv`
   const mediaElements = media.map((media, index) => (
     <>
+      {getUserFavoriteData.some(movie => movie.id === media.id) ?
+        <span onClick={() => addToFavorite(type, media.id, localStorage.getItem('sessionId'))}>❤️</span> :
+        <span onClick={() => addToFavorite(type, media.id, localStorage.getItem('sessionId'))}>♡</span>}
       <Link
         key={`${media.id}-${index}`}
         to={media.original_title ? `../movie/${media.id}` : `../tv/${media.id}`}
       >
-          <LazyLoadImage
-            src={media.poster_path ? `https://image.tmdb.org/t/p/w342/${media.poster_path}` : placeHolder}
-            className="slider-item"
-            effect="blur"
-          />
+        <LazyLoadImage
+          src={media.poster_path ? `https://image.tmdb.org/t/p/w342/${media.poster_path}` : placeHolder}
+          className="slider-item"
+          effect="blur"
+        />
         <div className="slider-item-info">
           <span className="slider-item-title">
             {media.title ? media.title : media.name}
