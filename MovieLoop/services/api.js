@@ -196,7 +196,8 @@ export async function getToken() {
         status: res.status
       }
     }
-    const data = await res.jsoo()
+    const data = await res.json()
+    localStorage.setItem('token', data.request_token)
     return data.request_token
   } catch (e) {
     console.log(e)
@@ -214,8 +215,8 @@ export async function createSession(token) {
     body: JSON.stringify({request_token: token})
   };
   try {
-    const url = `https://api.themoviedb.org/3/authentication/session/new`
-    const res = await fetch(url, validateTokenOptions)
+    const url = `https://api.themoviedb.org/3/authentication/session/new?request_token${token}`
+    const res = await fetch(url, createSessionOptions)
     if(!res.ok) {
       throw {
         message: "Failed to validate token",
@@ -224,9 +225,38 @@ export async function createSession(token) {
       }
     }  
     const data = await res.json()
+    localStorage.setItem('sessionId', data.session_id)
+    localStorage.setItem('isLoggedIn', 'true')
     return data.session_id
   } catch (e) {
     console.log(e)  
   }
 }
 
+export async function deleteSession(sessionId) {
+  const deleteSessionOptions = {
+    method: 'Delete',
+    headers: {
+      accept: 'application/json',
+      'content-type': 'application/json',
+      Authorization: `${import.meta.env.VITE_TMDB_KEY}`
+    },
+    body: JSON.stringify({session_id: sessionId})
+  };
+  try {
+    const url = `https://api.themoviedb.org/3/authentication/session`
+    const res = await fetch(url, deleteSessionOptions)
+    if(!res.ok) {
+      throw {
+        message: "Failed to validate token",
+        statusText: res.statusText,
+        status: res.status
+      }
+    } 
+    localStorage.clear() 
+    localStorage.setItem('isLoggedIn', 'false')
+    window.location.href = '/'
+  } catch (e) {
+    console.log(e)  
+  }
+}

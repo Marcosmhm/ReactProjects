@@ -1,14 +1,17 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink,} from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { GoHome } from 'react-icons/go'
 import { PiFilmSlate, PiTelevisionSimpleBold } from 'react-icons/pi'
 import { AiOutlineSearch } from 'react-icons/ai'
+import { BiLogIn, BiLogOut } from 'react-icons/bi'
 
+import { getToken, deleteSession } from '../services/api'
 import "../src/assets/css/navbar.css"
 import SeachModal from './SearchModal'
 
 export default function Sidebar() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [loggedState, setLoggedState] = useState(localStorage.getItem('isLoggedIn'))
 
   function handleModalOpen() {
     return setIsModalOpen(true)
@@ -18,6 +21,16 @@ export default function Sidebar() {
     setIsModalOpen(false)
   }
 
+  const handleLoginClick = async () => {
+    const loginToken = await getToken()
+    if (loginToken) window.location.href = `https://www.themoviedb.org/authenticate/${loginToken}?redirect_to=http://localhost:5173/favorites`
+  }
+
+  const handleLogoutClick = async () => {
+    localStorage.setItem('isLoggedIn', 'false')
+    setLoggedState('false')
+    deleteSession(localStorage.getItem('sessionId'))
+  }
   return (
     <>
       <nav className='navbar-principal'>
@@ -36,6 +49,13 @@ export default function Sidebar() {
             <AiOutlineSearch size={32} />
           </button>
         </span>
+        {loggedState === 'false' ? 
+          <button >
+            <BiLogIn size={32} onClick={handleLoginClick} />
+          </button> : loggedState === 'true' ?
+          <button>
+            <BiLogOut size={32} onClick={handleLogoutClick} />
+          </button> : ''}
         {isModalOpen && <SeachModal onClose={handleCloseModal} isOpen={isModalOpen} />}
       </nav>
     </>
