@@ -9,6 +9,8 @@ import TvCategory, {loader as tvCategoryLoader} from "./pages/CategoryPages/TvCa
 import PersonDetail, {loader as personDetailLoader} from "./pages/DetailPages/PersonDetail"
 import Search from "./pages/Search"
 import Layout from "../components/Layout"
+import AuthRequired from "./pages/UserPages/AuthRequired"
+import UserFavorites, {loader as favoritesLoader} from "./pages/UserPages/UserFavorites"
 
 import "./assets/css/app.css"
 
@@ -25,6 +27,9 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/tv/:id" element={<TvDetail />} loader={tvDetailLoader} />
     <Route path="/person/:id" element={<PersonDetail />} loader={personDetailLoader} />
     <Route path="/search" element={<Search />} />
+    <Route element={<AuthRequired />}>
+      <Route path="/favorites" element={<UserFavorites />} loader={favoritesLoader} />
+    </Route>
     <Route path="*" element="404" />
   </Route>
 ))

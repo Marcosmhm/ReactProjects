@@ -1,14 +1,16 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 
 import placeHolder from './src/assets/images/poster_placeholder.jpg'
 const Hero = lazy(() => import("./components/Hero"));
 const Slider = lazy(() => import("./components/Slider"))
 import Stars from "./components/Stars"
 import Loading from "./components/Loading"
-import { key } from "localforage";
+import { getUserFavorites, addToFavorite } from "./services/api";
+import FavoriteMedia from "./components/FavoriteMedia";
 
 export function renderHeroMedia(media) {
   const mediaType = media.original_title ? 'movie' : 'tv'
@@ -47,18 +49,41 @@ export function renderHeroMedia(media) {
 }
 
 export function renderMediaElements(media, title) {
+  let [getUserFavoriteData, setGetUserFavoriteData] = useState([])
   let type = media[0]?.title ? `movie` : `tv`
+
+  const getFavorites = async () => {
+    const results = await getUserFavorites(localStorage.getItem('sessionId'), type);
+    setGetUserFavoriteData([...results.map(media => media.id)]);
+  }
+
+  const handleFavoriteClick = async (type, mediaId, bool) => {
+    await addToFavorite(type, mediaId, localStorage.getItem('sessionId'), bool);
+    await getFavorites();
+  }
+
+  useEffect(() => {
+    getFavorites()
+  }, [])
+
   const mediaElements = media.map((media, index) => (
     <>
+      {<FavoriteMedia
+        data={media}
+        getUserData={getUserFavoriteData}
+        handleClick={handleFavoriteClick}
+        className={'add-to-favorites-button'}
+        type={media.title ? `movie` : `tv`}
+        key={index} />}
       <Link
         key={`${media.id}-${index}`}
         to={media.original_title ? `../movie/${media.id}` : `../tv/${media.id}`}
       >
-          <LazyLoadImage
-            src={media.poster_path ? `https://image.tmdb.org/t/p/w342/${media.poster_path}` : placeHolder}
-            className="slider-item"
-            effect="blur"
-          />
+        <LazyLoadImage
+          src={media.poster_path ? `https://image.tmdb.org/t/p/w342/${media.poster_path}` : placeHolder}
+          className="slider-item"
+          effect="blur"
+        />
         <div className="slider-item-info">
           <span className="slider-item-title">
             {media.title ? media.title : media.name}
