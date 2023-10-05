@@ -50,12 +50,12 @@ export default function Sidebar() {
           </button>
         </span>
         {loggedState === 'false' ? 
-          <button >
+          <span >
             <BiLogIn size={32} onClick={handleLoginClick} />
-          </button> : loggedState === 'true' ?
-          <button>
+          </span> : loggedState === 'true' ?
+          <span>
             <BiLogOut size={32} onClick={handleLogoutClick} />
-          </button> : ''}
+          </span> : ''}
         {isModalOpen && <SeachModal onClose={handleCloseModal} isOpen={isModalOpen} />}
       </nav>
     </>

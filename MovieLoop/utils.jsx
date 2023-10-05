@@ -2,6 +2,7 @@ import { Suspense, lazy, useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 
 import placeHolder from './src/assets/images/poster_placeholder.jpg'
 const Hero = lazy(() => import("./components/Hero"));
@@ -9,6 +10,7 @@ const Slider = lazy(() => import("./components/Slider"))
 import Stars from "./components/Stars"
 import Loading from "./components/Loading"
 import { getUserFavorites, addToFavorite } from "./services/api";
+import FavoriteMedia from "./components/FavoriteMedia";
 
 export function renderHeroMedia(media) {
   const mediaType = media.original_title ? 'movie' : 'tv'
@@ -48,17 +50,16 @@ export function renderHeroMedia(media) {
 
 export function renderMediaElements(media, title) {
   let [getUserFavoriteData, setGetUserFavoriteData] = useState([])
-  const [loading, setLoading] = useState(true);
   let type = media[0]?.title ? `movie` : `tv`
 
   const getFavorites = async () => {
-      const results = await getUserFavorites(localStorage.getItem('sessionId'), type);
-      setGetUserFavoriteData([...results.map(media => media.id)]);
+    const results = await getUserFavorites(localStorage.getItem('sessionId'), type);
+    setGetUserFavoriteData([...results.map(media => media.id)]);
   }
 
-  const handleFavoriteClick = async (mediaId, bool) => {
-      await addToFavorite(type, mediaId, localStorage.getItem('sessionId'), bool);
-      await getFavorites();
+  const handleFavoriteClick = async (type, mediaId, bool) => {
+    await addToFavorite(type, mediaId, localStorage.getItem('sessionId'), bool);
+    await getFavorites();
   }
 
   useEffect(() => {
@@ -67,11 +68,12 @@ export function renderMediaElements(media, title) {
 
   const mediaElements = media.map((media, index) => (
     <>
-    {
-      getUserFavoriteData.includes(media.id) ?
-        <span  onClick={() => handleFavoriteClick(media.id, false)}>❤️</span> :
-        <span  onClick={() => handleFavoriteClick(media.id, true)}>♡</span>
-    }
+      {<FavoriteMedia
+        data={media}
+        getUserData={getUserFavoriteData}
+        handleClick={handleFavoriteClick}
+        className={'add-to-favorites-button'}
+        type={media.title ? `movie` : `tv`} />}
       <Link
         key={`${media.id}-${index}`}
         to={media.original_title ? `../movie/${media.id}` : `../tv/${media.id}`}

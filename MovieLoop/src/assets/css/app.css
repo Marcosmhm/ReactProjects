@@ -160,9 +160,20 @@ footer {
   color: #2196f3;
 }
 
-.add-to-favorites-button {
+.add-to-favorites-button,
+.add-to-favorite-search  {
   position: absolute;
-  top: 0;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 5;
+  font-size: 1.2rem;
+}
+
+.add-to-favorite-search {
+  position: relative;
+  top: 95%;
+  left: 90%;
 }
 
 a > span {
@@ -235,6 +246,7 @@ footer a {
     white-space: nowrap;
     overflow: hidden;
     margin: .3em 0;
+    width: calc(100% - 15px );
   }
 
   .slider-item-review {
