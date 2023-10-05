@@ -53,15 +53,14 @@ export function renderMediaElements(media, title) {
 
   const getFavorites = async () => {
     try {
-      const results = await getUserFavorites();
-      setGetUserFavoriteData([...results.map(movie => movie.id)]);
+      const results = await getUserFavorites(localStorage.getItem('sessionId'), type);
+      setGetUserFavoriteData([...results.map(media => media.id)]);
     } catch (error) {
       console.error('Error fetching favorites:', error);
     } finally {
       setLoading(false); // Set loading to false when done
     }
   }
-
 
   const handleFavoriteClick = async (mediaId, bool) => {
     try {

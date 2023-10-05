@@ -31,8 +31,7 @@ export default function MovieDetail() {
 
   const handleFilterChange = filter => setSelectedFilter(filter);
 
-  const moreLikeThis = movie.recommendations.results >= 1 ? renderMediaElements(movie.recommendations.results) : ``
-
+  const moreLikeThis = movie.recommendations.results.length >= 1 ? renderMediaElements(movie.recommendations.results) : ``
   return (
     <>
       <div className='detail-title'>

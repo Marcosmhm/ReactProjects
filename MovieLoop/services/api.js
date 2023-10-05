@@ -77,7 +77,6 @@ export async function getSpecificMovie(id) {
       }
     }
     const data = await res.json()
-    console.log(data)
     return data
   } catch (e) {
     console.log(e)
@@ -289,10 +288,12 @@ export async function addToFavorite(type, mediaId, sessionId, bool) {
   }
 }
 
-export async function getUserFavorites(sessionId) {
+export async function getUserFavorites(sessionId, type) {
+
   const allFavorites = []
+  type === 'movie' ? type = 'movies' : 'tv'
   try {
-    const url = `https://api.themoviedb.org/3/account/20489679/favorite/movies?language=en-US&page=1&sort_by=created_at.asc`
+    const url = `https://api.themoviedb.org/3/account/${sessionId}/favorite/${type}?language=en-US&page=1&sort_by=created_at.asc`
     const res = await fetch(url, options)
     if(!res.ok) {
       throw {
@@ -304,6 +305,7 @@ export async function getUserFavorites(sessionId) {
     const data = await res.json()
     console.log(data.results)
     return data.results
+
   } catch (e) {
     console.log(e)
   }
