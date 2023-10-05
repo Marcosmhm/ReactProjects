@@ -1,9 +1,10 @@
-import { NavLink,} from 'react-router-dom'
+import { NavLink, } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { GoHome } from 'react-icons/go'
 import { PiFilmSlate, PiTelevisionSimpleBold } from 'react-icons/pi'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiLogIn, BiLogOut } from 'react-icons/bi'
+import { MdOutlineFavoriteBorder } from 'react-icons/md'
 
 import { getToken, deleteSession } from '../services/api'
 import "../src/assets/css/navbar.css"
@@ -49,13 +50,17 @@ export default function Sidebar() {
             <AiOutlineSearch size={32} />
           </button>
         </span>
-        {loggedState === 'false' ? 
+        {loggedState === 'false' ?
           <span >
             <BiLogIn size={32} onClick={handleLoginClick} />
-          </span> : loggedState === 'true' ?
-          <span>
-            <BiLogOut size={32} onClick={handleLogoutClick} />
-          </span> : ''}
+          </span> : loggedState === 'true' ? (
+            <>
+              <NavLink to='/favorites'>
+              {({ isActive }) => isActive ? <MdOutlineFavoriteBorder size={32} color='#2779a7' /> : <MdOutlineFavoriteBorder size={32} />}
+              </NavLink>
+              <span>
+                <BiLogOut size={32} onClick={handleLogoutClick} style={{marginLeft: '-5px'}} />
+              </span></>) : ''}
         {isModalOpen && <SeachModal onClose={handleCloseModal} isOpen={isModalOpen} />}
       </nav>
     </>

@@ -73,7 +73,8 @@ export function renderMediaElements(media, title) {
         getUserData={getUserFavoriteData}
         handleClick={handleFavoriteClick}
         className={'add-to-favorites-button'}
-        type={media.title ? `movie` : `tv`} />}
+        type={media.title ? `movie` : `tv`}
+        key={index} />}
       <Link
         key={`${media.id}-${index}`}
         to={media.original_title ? `../movie/${media.id}` : `../tv/${media.id}`}

@@ -10,6 +10,7 @@ import PersonDetail, {loader as personDetailLoader} from "./pages/DetailPages/Pe
 import Search from "./pages/Search"
 import Layout from "../components/Layout"
 import AuthRequired from "./pages/UserPages/AuthRequired"
+import UserFavorites, {loader as favoritesLoader} from "./pages/UserPages/UserFavorites"
 
 import "./assets/css/app.css"
 
@@ -27,7 +28,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/person/:id" element={<PersonDetail />} loader={personDetailLoader} />
     <Route path="/search" element={<Search />} />
     <Route element={<AuthRequired />}>
-      <Route path="/favorites" element={'favoritos aqui'} />
+      <Route path="/favorites" element={<UserFavorites />} loader={favoritesLoader} />
     </Route>
     <Route path="*" element="404" />
   </Route>
