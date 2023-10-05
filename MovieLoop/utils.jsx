@@ -52,24 +52,13 @@ export function renderMediaElements(media, title) {
   let type = media[0]?.title ? `movie` : `tv`
 
   const getFavorites = async () => {
-    try {
       const results = await getUserFavorites(localStorage.getItem('sessionId'), type);
       setGetUserFavoriteData([...results.map(media => media.id)]);
-    } catch (error) {
-      console.error('Error fetching favorites:', error);
-    } finally {
-      setLoading(false); // Set loading to false when done
-    }
   }
 
   const handleFavoriteClick = async (mediaId, bool) => {
-    try {
       await addToFavorite(type, mediaId, localStorage.getItem('sessionId'), bool);
-    } catch (error) {
-      console.error('Error handling favorite click:', error);
-    } finally {
       await getFavorites();
-    }
   }
 
   useEffect(() => {
@@ -78,11 +67,11 @@ export function renderMediaElements(media, title) {
 
   const mediaElements = media.map((media, index) => (
     <>
-      {
-        getUserFavoriteData.includes(media.id) ?
-          <span onClick={() => handleFavoriteClick(media.id, false)}>❤️</span> :
-          <span onClick={() => handleFavoriteClick(media.id, true)}>♡</span>
-      }
+    {
+      getUserFavoriteData.includes(media.id) ?
+        <span  onClick={() => handleFavoriteClick(media.id, false)}>❤️</span> :
+        <span  onClick={() => handleFavoriteClick(media.id, true)}>♡</span>
+    }
       <Link
         key={`${media.id}-${index}`}
         to={media.original_title ? `../movie/${media.id}` : `../tv/${media.id}`}

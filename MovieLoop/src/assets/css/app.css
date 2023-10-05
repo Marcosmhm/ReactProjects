@@ -160,6 +160,11 @@ footer {
   color: #2196f3;
 }
 
+.add-to-favorites-button {
+  position: absolute;
+  top: 0;
+}
+
 a > span {
   padding-top: 150%;
   width: 100%;
