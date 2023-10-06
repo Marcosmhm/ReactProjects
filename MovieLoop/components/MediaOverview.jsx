@@ -1,4 +1,3 @@
-import { render } from "react-dom"
 import { renderCast } from "../utils"
 import placeHolder from '../src/assets/images/poster_placeholder.jpg'
 

@@ -25,14 +25,6 @@ export default function Home() {
   const location = useLocation()
   const dataPromise = useLoaderData()
 
-  function renderMovies(movies) {
-    return (
-      <>
-        {renderMediaElements(movies, 'Trending Movies')}
-      </>
-    )
-  }
-
   function renderTvShows(tv) {
     return (
       <>
@@ -51,7 +43,7 @@ export default function Home() {
           </Await>
           <section className="media-section">
             <Await resolve={dataPromise.movies}>
-              {renderMovies}
+              {(movies) => renderMediaElements(movies, 'Trending Movies')}
             </Await>
             <Await resolve={dataPromise.tv}>
               {renderTvShows}

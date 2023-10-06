@@ -6,6 +6,7 @@ import placeHodlder from '../src/assets/images/poster_placeholder.jpg'
 import Loading from "./Loading";
 
 export default function Episodes({ media, selectedSeason = 1, onSeasonChange }) {
+
   const [seasonData, setSeasonData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   
@@ -38,10 +39,8 @@ export default function Episodes({ media, selectedSeason = 1, onSeasonChange }) 
     getSeason()
 
     return () => {
-      isAborted = true
-      
+      isAborted = true 
     }
-
   }, [selectedSeason])
 
   const seasonArray = []

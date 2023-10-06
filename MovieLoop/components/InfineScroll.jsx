@@ -7,10 +7,18 @@ const InfiniteScroll = ({ onScrollEnd, isLoading }) => {
     }
     onScrollEnd();
   };
-  
+
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    let isAborted = false
+
+    if (!isAborted) {
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+    
+    return () => {
+      isAborted = true
+    }
   }, [isLoading]);
 };
 

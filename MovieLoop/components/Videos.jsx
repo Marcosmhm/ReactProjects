@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import ReactPlayer from 'react-player'
 
 export default function DetailNavbar({media, selectedFilter, onFilterChange}) {

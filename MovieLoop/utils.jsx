@@ -2,7 +2,6 @@ import { Suspense, lazy, useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 
 import placeHolder from './src/assets/images/poster_placeholder.jpg'
 const Hero = lazy(() => import("./components/Hero"));

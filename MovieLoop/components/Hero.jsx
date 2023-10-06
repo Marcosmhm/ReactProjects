@@ -27,7 +27,6 @@ export default function Hero({ image, title, rating, reviews, airDate, seasons, 
             <img
               src={image}
               className="hero-poster"
-
             />
           </div>
         </Link>
