@@ -40,7 +40,10 @@ export default function UserFavorites() {
   return (
     <>
       <section className="section-container">
-        <h2 className="category-title search-title">Your Favorites</h2>
+        {allFavorites.length >= 1 ? 
+          <h2 className="category-title search-title">Your Favorites</h2> : 
+          <h2 className="category-title search-title">Add a movie to your favorites</h2>
+        }
         <div className="infinite-grid">
           {allFavorites.map((media, index) => {
             return (

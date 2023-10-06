@@ -50,7 +50,7 @@ export default function Sidebar() {
             <AiOutlineSearch size={32} />
           </button>
         </span>
-        {loggedState === 'false' ?
+        {loggedState === 'false' || !loggedState ?
           <span >
             <BiLogIn size={32} onClick={handleLoginClick} />
           </span> : loggedState === 'true' ? (
