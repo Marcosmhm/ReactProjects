@@ -1,5 +1,5 @@
 import { useState, lazy, Suspense } from "react"
-import { useLoaderData, useParams, Link } from 'react-router-dom'
+import { useLoaderData, useParams, Link, useNavigate } from 'react-router-dom'
 
 const Episodes = lazy(() => import('../../../components/Episodes'))
 const Overview = lazy(() => import('../../../components/MediaOverview'))
@@ -17,6 +17,7 @@ export function loader({ params }) {
 }
 
 export default function TvDetail() {
+  const navigation = useNavigate()
   const [season, setSeason] = useState(1)
   const tv = useLoaderData()
   const [active, setActive] = useState('overview')
@@ -40,9 +41,7 @@ export default function TvDetail() {
     <>
       <div className='detail-title'>
         <span className="title-back-button">
-          <Link to={'..'} relative='path' >
-            {<BiArrowBack size={22} />}
-          </Link>
+            {<BiArrowBack size={22} onClick={() => navigation(-1)} />}
         </span>
         {tv.name}
       </div>

@@ -1,4 +1,4 @@
-import { useLoaderData, useParams, Link } from 'react-router-dom'
+import { useLoaderData, useParams, Link, Navigate, useNavigate } from 'react-router-dom'
 import { useState, lazy, Suspense } from 'react'
 import { BiArrowBack } from 'react-icons/bi'
 
@@ -17,6 +17,7 @@ export function loader({ params }) {
 }
 
 export default function MovieDetail() {
+  const  navigation = useNavigate()
   const [active, setActive] = useState('overview')
 
   const [selectedFilter, setSelectedFilter] = useState('All')
@@ -36,9 +37,7 @@ export default function MovieDetail() {
     <>
       <div className='detail-title'>
         <span className="title-back-button">
-          <Link to={'..'} relative='path' >
-            {<BiArrowBack size={22} />}
-          </Link>
+            {<BiArrowBack size={22} onClick={() => navigation(-1)} />}
         </span>
         {movie.original_title}
       </div>

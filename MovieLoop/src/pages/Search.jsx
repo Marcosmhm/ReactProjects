@@ -32,10 +32,8 @@ export default function Search() {
         fetchData(query);
       }
     }
-
     return () => {
       isAborted = true
-
     }
   }, [query])
 
