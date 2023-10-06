@@ -10,7 +10,7 @@ export default function AuthRequired() {
     return await createSession(localStorage.getItem('token'))
   }
 
-  if (params.get('denied') === 'true') {
+  if (params.get('denied') === 'true' || localStorage.getItem('isLoggedIn') === 'false' ) {
     return <Navigate to="/"
       state={{
         message: "You must log in first",
