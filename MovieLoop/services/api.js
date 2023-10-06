@@ -281,7 +281,7 @@ export async function addToFavorite(type, mediaId, sessionId, bool) {
       }
     } 
     const data = await res.json()
-    console.log(data)
+    console.log('api', data)
     return data
   } catch (e) {
     console.log(e)
@@ -303,7 +303,7 @@ export async function getUserFavorites(sessionId, type) {
       }
     } 
     const data = await res.json()
-    console.log(data.results)
+    console.log('api', data.results)
     return data.results
 
   } catch (e) {

@@ -4,25 +4,29 @@ import { useLoaderData, Link } from "react-router-dom"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css";
 
+import placeHolder from '../../assets/images/poster_placeholder.webp'
 import { getUserFavorites } from "../../../services/api"
 import FavoriteMedia  from '../../../components/FavoriteMedia'
 import Stars  from '../../../components/Stars'
 
 export async function loader() {
   const sessionId = localStorage.getItem('sessionId')
-  const[ movieFavorites, tvFavorites] = await Promise.all([
+  const [movieFavorites, tvFavorites] = await Promise.all([
     getUserFavorites(sessionId, 'movie'),
     getUserFavorites(sessionId, 'tv')
   ])
-  return { movieFavorites, tvFavorites}
+  return {movieFavorites, tvFavorites}
 }
 
 export default function UserFavorites() {
-  const { movieFavorites } = useLoaderData()
-  const { tvFavorites } = useLoaderData()
+  const { movieFavorites, tvFavorites }  = useLoaderData()
+  console.log(useLoaderData())
+  console.log('all'. allFavorites)
+  console.log('mv'. movieFavorites)
+  console.log('tv'. tvFavorites)
   const allFavorites = [...movieFavorites, ...tvFavorites]
   let [getUserFavoriteData, setGetUserFavoriteData] = useState()
-  console.log(allFavorites)
+
   const getFavorites = async () => {
     setGetUserFavoriteData([...movieFavorites.map(media => media.id), ...tvFavorites.map(media => media.id)]);
     console.log('salve', getUserFavoriteData)
