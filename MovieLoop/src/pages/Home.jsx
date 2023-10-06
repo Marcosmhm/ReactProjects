@@ -41,7 +41,6 @@ export default function Home() {
     )
   }
 
-  console.log(location)
   return (
     <>
       {/* {location.state.message} */}

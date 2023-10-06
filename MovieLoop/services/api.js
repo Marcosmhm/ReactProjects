@@ -116,7 +116,6 @@ export async function getSpecifiShow(id) {
       }
     }
     const data = await res.json()
-    console.log(data)
     return data
   } catch (e) {
     console.log(e)
@@ -253,7 +252,6 @@ export async function deleteSession(sessionId) {
       }
     } 
     localStorage.clear() 
-    localStorage.setItem('isLoggedIn', 'false')
     window.location.href = '/'
   } catch (e) {
     console.log(e)  
@@ -281,7 +279,6 @@ export async function addToFavorite(type, mediaId, sessionId, bool) {
       }
     } 
     const data = await res.json()
-    console.log('api', data)
     return data
   } catch (e) {
     console.log(e)

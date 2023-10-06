@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { LazyLoadComponent, LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css";
+
 import placeHodlder from '../src/assets/images/poster_placeholder.jpg'
 import Loading from "./Loading";
-
 
 export default function Episodes({ media, selectedSeason = 1, onSeasonChange }) {
   const [seasonData, setSeasonData] = useState([])

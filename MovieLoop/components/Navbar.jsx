@@ -60,7 +60,9 @@ export default function Sidebar() {
               </NavLink>
               <span>
                 <BiLogOut size={32} onClick={handleLogoutClick} style={{marginLeft: '-5px'}} />
-              </span></>) : ''}
+              </span>
+            </>) : ''
+          }
         {isModalOpen && <SeachModal onClose={handleCloseModal} isOpen={isModalOpen} />}
       </nav>
     </>

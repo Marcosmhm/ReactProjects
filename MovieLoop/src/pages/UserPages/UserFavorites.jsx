@@ -22,13 +22,10 @@ export default function UserFavorites() {
   let revalidator = useRevalidator()
   const {movieFavorites, tvFavorites} =  useLoaderData()
   const allFavorites = [...movieFavorites, ...tvFavorites]
-  console.log('loader', useLoaderData())
   const [getUserFavoriteData, setGetUserFavoriteData] = useState(allFavorites.map(media => media.id))
 
   const getFavorites = async () => {
-    console.log(movieFavorites)
     setGetUserFavoriteData([...allFavorites.map(media => media.id)]);
-    console.log('salve', getUserFavoriteData)
     revalidator.revalidate()
   }
 
