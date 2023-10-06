@@ -13,6 +13,7 @@ select {
 .person-overview-container {
   padding: 4.5em 1em 1em 1em;
   background-color: #000;
+  min-height: 490px ;
 }
 
 .person-overview-container > span {
@@ -41,6 +42,10 @@ select {
 .person-list {
   margin: 3em 0;
   gap: 0.5em;
+}
+
+.person-buttons {
+  clear: both;
 }
 
 .person-credits-wrapper {
@@ -85,4 +90,31 @@ select {
 .person-social-svg {
   fill: white;
   height: 1.3rem;
+}
+
+@media (min-width: 1024px) {
+  .person-overview-container > span {
+    float: none;
+  }
+
+  .person-poster-img {
+    min-width: 300px;
+    width: 100%;
+  }
+
+  .person-overview-container {
+    display: flex;
+    font-size: 1.3rem;
+    gap: 3em;
+  }
+
+  .person-overview-info {
+    width: 60%;
+    font-size: 1.2rem;
+  }
+
+  .person-overview-container h1{
+    top: 70px;
+    position: absolute;
+  }
 }

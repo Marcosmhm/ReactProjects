@@ -15,6 +15,7 @@ export default function Overview({ media }) {
   })
 
   const cast = renderCast(media.credits?.cast, 'Cast')
+  console.log(cast)
 
   function toLocaleDateMedia(media) {
     return new Date(media).toLocaleDateString('en-gb', {
@@ -103,7 +104,7 @@ export default function Overview({ media }) {
           )}
         </div>
       </div>
-      {cast &&
+      {cast.props.children.props.children.props.data.length >= 1 &&
         <>
           <h2 className='media-detail-title detail-sliders'>Cast</h2>
           {renderCast(media.credits.cast)}

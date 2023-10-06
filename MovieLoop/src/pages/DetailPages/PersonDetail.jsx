@@ -1,5 +1,6 @@
 import { lazy, Suspense, useState } from 'react'
-import { useLoaderData, useParams } from 'react-router-dom'
+import { useLoaderData, useParams, useNavigate } from 'react-router-dom'
+import { BiArrowBack } from 'react-icons/bi'
 
 import { getPersonDetail } from '../../../services/api'
 const PersonOverview = lazy(() => import('../../../components/PersonOverview'))
@@ -13,6 +14,7 @@ export function loader({ params }) {
 }
 
 export default function PersonDetail() {
+  const navigation = useNavigate()
   const person = useLoaderData()
 
   const activeStyles = {
@@ -39,7 +41,12 @@ export default function PersonDetail() {
 
   return (
     <>
-      <h3 className='detail-title'>{personName}</h3>
+      <div className='detail-title'>
+        <span className="title-back-button">
+            {<BiArrowBack size={22} onClick={() => navigation(-1)} />}
+        </span>
+        {personName}
+      </div>
       <Suspense fallback={<Loading />}>
         <section className="section-container">
           <PersonOverview
@@ -53,14 +60,14 @@ export default function PersonDetail() {
             twitter={personTwitterId}
             url={`https://image.tmdb.org/t/p/h632/${personPosterUrl}`}
           />
-          <div className="button-wrapper">
-            <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`}
+          <div className="button-wrapper person-buttons">
+            <button className={`detail-button ${active === 'known-for' ? 'button-border' : ''}`}
               style={active === 'known-for' ? activeStyles : []}
               onClick={() => setActive('known-for')}
             >
               Work
             </button>
-            <button className={`detail-button ${active === 'overview' ? 'button-border' : ''}`}
+            <button className={`detail-button ${active === 'photos' ? 'button-border' : ''}`}
               style={active === 'photos' ? activeStyles : []}
               onClick={() => setActive('photos')}
             >

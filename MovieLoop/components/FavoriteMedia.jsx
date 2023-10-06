@@ -17,6 +17,7 @@ export default function FavoriteMedia({ data, getUserData, handleClick, classNam
       theme: "dark",
       });
   }
+
   return (
     <>
       {localStorage.getItem('isLoggedIn') === 'true' ? (
