@@ -164,7 +164,6 @@ footer {
 
 .add-to-favorites-button,
 .add-to-favorite-search {
-  float: right;
   cursor: pointer;
   z-index: 5;
   font-size: 1.2rem;
