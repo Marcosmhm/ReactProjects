@@ -1,3 +1,7 @@
+<a name="readme-top"></a>
+
+
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -45,9 +49,9 @@ MovieLoop is a React-based website that allows the user to search for movies by 
 ### Built With
 
 * [![React][React.js]][React-url]
-* ![JavaScript][javascript]
-* ![HTML][html]
-* ![CSS][css]
+* !JavaScript[javascript]
+* !HTML[html]
+* !CSS[css]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
