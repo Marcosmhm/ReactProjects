@@ -41,7 +41,7 @@ export function loader({ params }) {
 }
 
 export default function MovieCategory() {
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(2)
   const [data, setData] = useState(useLoaderData())
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
