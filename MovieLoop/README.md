@@ -25,23 +25,16 @@
 MovieLoop is a React-based website that allows the user to search for movies by title, view trending and upcoming movies and bookmark their favorite movies
 
 
-
-
-
 ## Layout mobile
 <div align="center">
   <img src="./src//assets/images/mobile-layout.png/" alt="Logo">
 </div>
 
 
-
-
-
 ## Layout web
 <div align="center">
   <img src="./src//assets/images/desktop-layout.png/" alt="Logo">
 </div>
-
 
 
 
@@ -57,6 +50,18 @@ MovieLoop is a React-based website that allows the user to search for movies by 
 
 
 
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* [Img Shields](https://shields.io)
+* [React Icons](https://react-icons.github.io/react-icons/search)
+* [TMDB API][TMDB-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
 
 <!-- CONTACT -->
 ## Contact
@@ -65,19 +70,6 @@ Marcos Henrique de Moraes - mh.moraes@hotmail.com
 
 Linkedin: https://www.linkedin.com/in/marcoshenriquem/
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* [Img Shields](https://shields.io)
-* [React Icons](https://react-icons.github.io/react-icons/search)
-* [TMDB API][TMDB-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
