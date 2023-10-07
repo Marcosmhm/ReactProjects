@@ -187,6 +187,11 @@ a>span {
   border: 3px solid #202124;
 }
 
+.slider-item:hover {
+  -webkit-transform: scale(.9);
+	transform: scale(.9);
+}
+
 .slider-item-info {
   display: none;
 }
