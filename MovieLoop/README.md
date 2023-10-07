@@ -2,12 +2,13 @@
 MovieLoop is a React-based website that allows the user to search for movies by title, view trending and upcoming movies and add bookmark their favorite movies
 
 
+<div align="center">
 ## Layout mobile
-![Mobile 1] <img src="./src//assets/images/mobile-layout.png/" alt="Logo">
+!Mobile <img src="./src//assets/images/mobile-layout.png/" alt="Logo">
 
 ## Layout web
-![Web 1] <img src="./src//assets/images/desktop-layout.png/" alt="Logo">
-
+!Web 1 <img src="./src//assets/images/desktop-layout.png/" alt="Logo">
+</div>
 
 
 
