@@ -26,7 +26,7 @@ MovieLoop is a React-based website that allows the user to search for movies by 
 
 ## Layout mobile
 <div align="center">
-!Mobile <img src="./src//assets/images/mobile-layout.png/" alt="Logo">
+  <img src="./src//assets/images/mobile-layout.png/" alt="Logo">
 </div>
 
 
@@ -35,7 +35,7 @@ MovieLoop is a React-based website that allows the user to search for movies by 
 
 ## Layout web
 <div align="center">
-!Web 1 <img src="./src//assets/images/desktop-layout.png/" alt="Logo">
+  <img src="./src//assets/images/desktop-layout.png/" alt="Logo">
 </div>
 
 
