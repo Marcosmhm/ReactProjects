@@ -13,6 +13,10 @@
   cursor: pointer;
 }
 
+.navbar-principal span {
+  cursor: pointer;
+}
+
 .navbar-principal button{
   background-color: #000;
   color: #FFF;
