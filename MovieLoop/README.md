@@ -4,6 +4,7 @@
   <ol>
     <li>
       <ul>
+        <a href="#about-the-project">About The Project</a>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -17,13 +18,20 @@
 
 ## About The Project
 <h1 align="center">MovieLoop</h1>
-MovieLoop is a React-based website that allows the user to search for movies by title, view trending and upcoming movies and add bookmark their favorite movies
+MovieLoop is a React-based website that allows the user to search for movies by title, view trending and upcoming movies and bookmark their favorite movies
+
+
+
 
 
 ## Layout mobile
 <div align="center">
 !Mobile <img src="./src//assets/images/mobile-layout.png/" alt="Logo">
 </div>
+
+
+
+
 
 ## Layout web
 <div align="center">
