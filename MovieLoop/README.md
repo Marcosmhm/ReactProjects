@@ -1,3 +1,21 @@
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+
+
+
+## About The Project
 <h1 align="center">MovieLoop</h1>
 MovieLoop is a React-based website that allows the user to search for movies by title, view trending and upcoming movies and add bookmark their favorite movies
 
@@ -12,21 +30,6 @@ MovieLoop is a React-based website that allows the user to search for movies by 
 !Web 1 <img src="./src//assets/images/desktop-layout.png/" alt="Logo">
 </div>
 
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
 
 
 
