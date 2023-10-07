@@ -3,10 +3,14 @@ MovieLoop is a React-based website that allows the user to search for movies by 
 
 
 ## Layout mobile
-![Mobile 1] <img src="./src//assets/images/mobile-layout.png/" alt="Logo" width="80" height="80">
+![Mobile 1] <img src="./src//assets/images/mobile-layout.png/" alt="Logo">
 
 ## Layout web
-![Web 1] <img src="./src//assets/images/desktop-layout.png/" alt="Logo" width="80" height="80">
+![Web 1] <img src="./src//assets/images/desktop-layout.png/" alt="Logo">
+
+
+
+
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -23,6 +27,8 @@ MovieLoop is a React-based website that allows the user to search for movies by 
 </details>
 
 
+
+
 ### Built With
 
 * [![React][React.js]][React-url]
@@ -31,6 +37,7 @@ MovieLoop is a React-based website that allows the user to search for movies by 
 * ![CSS][css]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
@@ -46,6 +53,8 @@ Linkedin: https://www.linkedin.com/in/marcoshenriquem/
 
 
 
+
+
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
@@ -54,6 +63,8 @@ Linkedin: https://www.linkedin.com/in/marcoshenriquem/
 * [TMDB API][TMDB-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
