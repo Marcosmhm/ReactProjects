@@ -11,7 +11,6 @@ import Loading from "../../../components/Loading"
 import { getSpecifiShow } from '../../../services/api'
 import { renderHeroMedia, renderMediaElements } from '../../../utils'
 
-
 export function loader({ params }) {
   return getSpecifiShow(params.id)
 }
