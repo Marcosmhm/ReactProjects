@@ -11,7 +11,6 @@ import Loading from '../../../components/Loading'
 import { getSpecificMovie } from '../../../services/api'
 import { renderHeroMedia, renderMediaElements } from '../../../utils'
 
-
 export function loader({ params }) {
   return getSpecificMovie(params.id)
 }
