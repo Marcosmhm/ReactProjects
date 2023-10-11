@@ -6,8 +6,6 @@ import Loading from "../../components/Loading"
 
 import { renderHeroMedia, renderMediaElements } from "../../utils"
 
-
-
 const randomNumber = (max) => Math.floor((Math.random() * max))
 const mediaType = ['tv', 'movie']
 
