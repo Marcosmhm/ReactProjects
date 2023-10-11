@@ -15,8 +15,6 @@ import { ToastContainer } from "react-toastify"
 
 import "./assets/css/app.css"
 
-
-
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />} >
     <Route index element={<Home />} loader={homeLoader} />
