@@ -17,7 +17,7 @@ const vehicles = [
     transmission: "Automatic",
     seats: 5,
     price_per_day: 45.0,
-    image_url: "",
+    image_url: "/src/assets/images/2021-honda-civic.png",
   },
   {
     make: "Ford",
@@ -27,7 +27,7 @@ const vehicles = [
     transmission: "Automatic",
     seats: 7,
     price_per_day: 60.0,
-    image_url: "toyota-camry.jpg",
+    image_url: "/src/assets/images/2020-ford-explorer.png",
   },
   {
     make: "Chevrolet",
@@ -37,7 +37,7 @@ const vehicles = [
     transmission: "Automatic",
     seats: 5,
     price_per_day: 55.0,
-    image_url: "toyota-camry.jpg",
+    image_url: "/src/assets/images/2021-chevrolet-silverado.png",
   },
   {
     make: "Honda",
@@ -58,7 +58,7 @@ const vehicles = [
     transmission: "Manual",
     seats: 5,
     price_per_day: 35.0,
-    image_url: "toyota-camry.jpg",
+    image_url: "src/assets/images/2021-volkswagen-golf.png",
   },
 ];
 
