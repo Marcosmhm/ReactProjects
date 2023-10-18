@@ -11,13 +11,14 @@ function Navbar() {
   return (
     <>
       <header>
-        <nav>
-          <div className="menu">
-          <h1 className="nav-logo">Rent Wheels</h1>
-            <button className="menu-button" onClick={handleMenuOpen}>
-              <GiHamburgerMenu />
-            </button>
-          </div>
+        <div className="container">
+          <nav>
+            <div className="menu">
+              <h2 className="nav-logo">Rent Wheels</h2>
+              <button className="menu-button" onClick={handleMenuOpen}>
+                <GiHamburgerMenu />
+              </button>
+            </div>
             <ul className={isMenuOpen ? "open" : "closed"}>
               <li>Home</li>
               <li>Contact</li>
@@ -26,7 +27,8 @@ function Navbar() {
               <li>Login</li>
               <li className="nav-sing-up">Sing Up</li>
             </ul>
-        </nav>
+          </nav>
+        </div>
       </header>
     </>
   );
