@@ -176,7 +176,6 @@ nav li {
 /* WHY US */
 .why-container {
   display: flex;
-  position: relative;
 }
 
 .why-container img {
@@ -186,7 +185,6 @@ nav li {
 .why-list {
   margin-top: 1em;
   display: flex;
-  margin-left: auto;
 }
 
 .why-list ul {

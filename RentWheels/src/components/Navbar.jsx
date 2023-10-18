@@ -45,8 +45,6 @@ function Navbar() {
               <li className="about" onClick={(e) => handleClickScroll(e)}>
                 About us
               </li>
-              <li>Login</li>
-              <li className="nav-sing-up">Sing Up</li>
             </ul>
           </nav>
         </div>
