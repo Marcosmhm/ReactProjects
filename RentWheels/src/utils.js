@@ -7,7 +7,6 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "./firebase";
-import { useEffect, useState } from "react";
 
 const provider = new GoogleAuthProvider()
 
@@ -31,7 +30,7 @@ export const handleSingIn = (e, email, password) => {
     });
 };
 
-export const handleSubmit = (e, email, password) => {
+export const handleSingUp = (e, email, password) => {
   e.preventDefault();
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {

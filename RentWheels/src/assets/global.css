@@ -205,5 +205,72 @@ nav li {
 }
 
 
+/* AUTH */
+.form-body {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 4em 0;
+  background-color: #fff;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.input input {
+  padding: 0.5em;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 5px;
+}
+
+.form-btn-container {
+  display: flex;
+  margin-top: 1em;
+  justify-content: center;
+
+}
+
+.form-btn-container button {
+  border: none;
+  background-color: unset;
+  font-weight: 700;
+}
+
+.form-close-btn {
+  background: none;
+  font-size: 32px;
+  cursor: pointer;
+  border: none;
+}
+
+
 
 

@@ -1,13 +1,11 @@
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom"
 import Layout from "./components/Layout"
-import Login from './components/Login'
-import SingUp from "./components/Singup"
+import LoginSingup from "./components/LoginSingup"
 
 const router = createBrowserRouter(createRoutesFromElements(
   <>
     <Route path="/" element={<Layout />}/>
-    <Route path="/login" element={<Login />} />
-    <Route path="/singup" element={<SingUp />} />
+    <Route path="/test" element={<LoginSingup />} />
     <Route path="*" element="404" />
   </>
 ))
