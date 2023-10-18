@@ -74,10 +74,11 @@ nav li {
 }
 
 .home-section {
-  min-height: 92vh;
+  height: 70vh;
   background-image: url("./images/pexels-brady-knoll-3221163.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center top;
   color: black;
   z-index: 1;
 }
