@@ -68,6 +68,12 @@ nav li {
 }
 
 /* Main */
+
+.title {
+  text-align: center;
+  margin: 1em 0;
+}
+
 .orange-text {
   color: #e76f51;
 }
@@ -111,10 +117,6 @@ nav li {
 }
 
 /* INVENTORY */
-.inventory-title {
-  text-align: center;
-  margin: 1em 0;
-}
 .inventory-btn-container {
   display: flex;
   gap: 1em;
@@ -169,6 +171,30 @@ nav li {
   padding: 0.5em 1em;
   border-radius: 10px;
   margin-top: 1em;
+}
+
+/* WHY US */
+.why-container {
+  display: flex;
+  position: relative;
+}
+
+.why-container img {
+  display: none;
+}
+
+.why-list {
+  margin-top: 1em;
+  display: flex;
+  margin-left: auto;
+}
+
+.why-list ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 0;
 }
 
 

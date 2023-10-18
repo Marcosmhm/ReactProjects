@@ -12,7 +12,7 @@ function Inventory() {
     <>
       <section className="inventory-section"> 
         <div className="container">
-        <h1 className="inventory-title">
+        <h1 className="title">
           <span className="orange-text">LATEST</span> INVENTORY
         </h1>
           <div className="inventory-btn-container">
