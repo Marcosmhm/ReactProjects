@@ -13,7 +13,7 @@ function LoginSingup({ onClose }) {
         <div className="form-container">
           <button onClick={onClose} className="form-close-btn">&times;</button>
           <div className="form-header">
-            <span className="form-title">Sign Up</span>
+            <span className="form-title">Sign In</span>
           </div>
           <div className="form-inputs">
             <div className="input">

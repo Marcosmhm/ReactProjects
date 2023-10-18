@@ -30,12 +30,18 @@ function Navbar() {
 
   function handleLoginClick() {
     document.body.style.overflow = "hidden";
+    handleMenuOpen()
     return setIsFormOpen(true);
   }
 
   function handleCloseForm() {
     document.body.style.overflow = "unset";
     setIsFormOpen(false);
+  }
+
+  const handleNavClick = (e) => {
+    handleClickScroll(e)
+    handleMenuOpen()
   }
 
   return (
@@ -50,16 +56,17 @@ function Navbar() {
               </button>
             </div>
             <ul className={isMenuOpen ? "open" : "closed"}>
-              <li className="home" onClick={(e) => handleClickScroll(e)}>
+              <li className="home" onClick={(e) => handleNavClick(e)}>
                 Home
               </li>
-              <li className="why" onClick={(e) => handleClickScroll(e)}>
+              <li className="why" onClick={(e) => handleNavClick(e)}>
                 Why Choose us
               </li>
-              <li className="about" onClick={(e) => handleClickScroll(e)}>
+              <li className="about" onClick={(e) => handleNavClick(e)}>
                 About us
               </li>
-              {authUser ? (
+              {authUser 
+              ? (
                 <li onClick={handleLogOut}>Log Out</li>
               ) : (
                 <li onClick={handleLoginClick}> Login</li>
