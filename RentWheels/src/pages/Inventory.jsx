@@ -12,6 +12,9 @@ function Inventory() {
     <>
       <section className="inventory-section"> 
         <div className="container">
+        <h1 className="inventory-title">
+          <span className="orange-text">LATEST</span> INVENTORY
+        </h1>
           <div className="inventory-btn-container">
             <button className="inventory-btn" onClick={() => handleVehicleTypeClick("all")}>All</button>
             <button className="inventory-btn" onClick={() => handleVehicleTypeClick("manual")}>

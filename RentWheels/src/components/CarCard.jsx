@@ -10,12 +10,15 @@ function CarCard({ filter }) {
       return (
         <div className="car-card" key={`${vehicle.make}-${index}`}>
           <div className="image-container">
+            <span>
+
             <img src={vehicle.image_url.toString()} alt="" />
+            </span>
           </div>
           <h3>
             {vehicle.year} {vehicle.make} {vehicle.model}
           </h3>
-          <button>BOOK NOW</button>
+          <button className="car-card-btn">BOOK NOW</button>
         </div>
       );
     });

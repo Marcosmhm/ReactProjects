@@ -4,7 +4,7 @@ function Home() {
       <section className="home-section">
         <div className="container">
           <div className="home-text">
-            <h1>EASY AND FAST WAY TO RENT YOUR CAR</h1>
+            <h1> <span className="orange-text">EASY</span> AND <span className="orange-text">FAST</span> WAY TO RENT YOUR CAR</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe,
               magni veniam neque dolore velit reprehenderit architecto quibusdam

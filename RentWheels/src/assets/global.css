@@ -68,6 +68,10 @@ nav li {
 }
 
 /* Main */
+.orange-text {
+  color: #e76f51;
+}
+
 .container {
   width: 90%;
   margin: 0 auto;
@@ -107,6 +111,10 @@ nav li {
 }
 
 /* INVENTORY */
+.inventory-title {
+  text-align: center;
+  margin: 1em 0;
+}
 .inventory-btn-container {
   display: flex;
   gap: 1em;
@@ -126,8 +134,41 @@ nav li {
 
 .cars-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1em;
   grid-auto-rows: 1fr
+}
+
+.car-card {
+  text-align: center;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.image-container span {
+  padding-top: 80%;
+}
+
+.image-container img {
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.car-card-btn {
+  border: none;
+  color: #fff;
+  background-color: #e76f51;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  margin-top: 1em;
 }
 
 
