@@ -197,6 +197,14 @@ nav li {
   padding: 0;
 }
 
+/* ABOUT */
+.our-container {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
 
 
 
