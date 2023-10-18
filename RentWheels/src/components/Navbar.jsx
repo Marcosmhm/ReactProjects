@@ -8,6 +8,22 @@ function Navbar() {
     setIsMenuOpen((prevState) => !prevState);
   };
 
+  const handleClickScroll = (e) => {
+    console.log(e.target.classList.value);
+    const element = document.getElementById(e.target.classList.value);
+    const offset = -80;  // Adjust this value to control the offset after scrolling
+
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY + offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <>
       <header>
@@ -20,10 +36,15 @@ function Navbar() {
               </button>
             </div>
             <ul className={isMenuOpen ? "open" : "closed"}>
-              <li>Home</li>
-              <li>Contact</li>
-              <li>About us</li>
-              <li>Why Choose us</li>
+              <li className="home" onClick={(e) => handleClickScroll(e)}>
+                Home
+              </li>
+              <li className="why" onClick={(e) => handleClickScroll(e)}>
+                Why Choose us
+              </li>
+              <li className="about" onClick={(e) => handleClickScroll(e)}>
+                About us
+              </li>
               <li>Login</li>
               <li className="nav-sing-up">Sing Up</li>
             </ul>

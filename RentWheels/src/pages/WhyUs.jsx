@@ -1,7 +1,7 @@
 function WhyUs() {
   return (
     <>
-      <section>
+      <section id="why">
         <div className="container">
           <h1 className="title">
             WHY <span className="orange-text">CHOOSE US</span>

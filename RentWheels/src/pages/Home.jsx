@@ -1,7 +1,7 @@
 function Home() {
   return (
     <>
-      <section className="home-section">
+      <section id="home" className="home-section">
         <div className="container">
           <div className="home-text">
             <h1> <span className="orange-text">EASY</span> AND <span className="orange-text">FAST</span> WAY TO RENT YOUR CAR</h1>
