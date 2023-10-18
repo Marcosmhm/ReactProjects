@@ -1,4 +1,4 @@
-export const vehicles = [
+const vehicles = [
   {
     make: "Toyota",
     model: "Camry",
@@ -49,7 +49,7 @@ export const vehicles = [
     price_per_day: 40.0,
     image_url: "path/to/image5.jpg",
   },
-  
+
   {
     make: "Volkswagen",
     model: "Golf",
@@ -61,3 +61,5 @@ export const vehicles = [
     image_url: "path/to/image6.jpg",
   },
 ];
+
+export default vehicles

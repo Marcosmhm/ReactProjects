@@ -1,11 +1,21 @@
+import { useState } from "react";
+import CarCard from "../components/CarCard";
+
 function Inventory() {
+  const [filteredVehicle, setFilteredVehicle] = useState('all')
+
+  const handleVehicleTypeClick = async (type) => {
+    await setFilteredVehicle(type)
+  }
+
   return (
     <>
       <div className="inventory-btn-container">
-        <button>Manual</button>
-        <button>Automatic</button>
+        <button onClick={() => handleVehicleTypeClick('all')}>All</button>
+        <button onClick={() => handleVehicleTypeClick('manual')}>Manual</button>
+        <button onClick={() => handleVehicleTypeClick('automatic')}>Automatic</button>
       </div>
-      <h1>Latest Inventory</h1>
+      <CarCard filter={filteredVehicle} />
     </>
   );
 }
