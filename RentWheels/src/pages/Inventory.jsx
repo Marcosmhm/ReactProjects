@@ -1,21 +1,33 @@
-import { useState } from "react";
-import CarCard from "../components/CarCard";
+import { Suspense, lazy, useState } from "react";
+const CarCard = lazy(() => import("../components/CarCard"));
 
 function Inventory() {
-  const [filteredVehicle, setFilteredVehicle] = useState('all')
+  const [filteredVehicle, setFilteredVehicle] = useState("all");
 
   const handleVehicleTypeClick = async (type) => {
-    await setFilteredVehicle(type)
-  }
+    await setFilteredVehicle(type);
+  };
 
   return (
     <>
-      <div className="inventory-btn-container">
-        <button onClick={() => handleVehicleTypeClick('all')}>All</button>
-        <button onClick={() => handleVehicleTypeClick('manual')}>Manual</button>
-        <button onClick={() => handleVehicleTypeClick('automatic')}>Automatic</button>
-      </div>
-      <CarCard filter={filteredVehicle} />
+      <section className="inventory-section"> 
+        <div className="container">
+          <div className="inventory-btn-container">
+            <button className="inventory-btn" onClick={() => handleVehicleTypeClick("all")}>All</button>
+            <button className="inventory-btn" onClick={() => handleVehicleTypeClick("manual")}>
+              Manual
+            </button>
+            <button className="inventory-btn" onClick={() => handleVehicleTypeClick("automatic")}>
+              Automatic
+            </button>
+          </div>
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <div className="cars-grid">
+              <CarCard filter={filteredVehicle} />
+            </div>
+          </Suspense>
+        </div>
+      </section>
     </>
   );
 }

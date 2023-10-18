@@ -7,7 +7,7 @@ const vehicles = [
     transmission: "Automatic",
     seats: 5,
     price_per_day: 50.0,
-    image_url: "path/to/image1.jpg",
+    image_url:"/src/assets/images/toyota-camry-removebg-preview.png",
   },
   {
     make: "Honda",
@@ -17,7 +17,7 @@ const vehicles = [
     transmission: "Automatic",
     seats: 5,
     price_per_day: 45.0,
-    image_url: "path/to/image2.jpg",
+    image_url: "",
   },
   {
     make: "Ford",
@@ -27,7 +27,7 @@ const vehicles = [
     transmission: "Automatic",
     seats: 7,
     price_per_day: 60.0,
-    image_url: "path/to/image3.jpg",
+    image_url: "toyota-camry.jpg",
   },
   {
     make: "Chevrolet",
@@ -37,7 +37,7 @@ const vehicles = [
     transmission: "Automatic",
     seats: 5,
     price_per_day: 55.0,
-    image_url: "path/to/image4.jpg",
+    image_url: "toyota-camry.jpg",
   },
   {
     make: "Honda",
@@ -47,7 +47,7 @@ const vehicles = [
     transmission: "Manual",
     seats: 5,
     price_per_day: 40.0,
-    image_url: "path/to/image5.jpg",
+    image_url: "src/assets/images/2022-honda-civic-mugen-front-view-removebg-preview.png",
   },
 
   {
@@ -58,7 +58,7 @@ const vehicles = [
     transmission: "Manual",
     seats: 5,
     price_per_day: 35.0,
-    image_url: "path/to/image6.jpg",
+    image_url: "toyota-camry.jpg",
   },
 ];
 
