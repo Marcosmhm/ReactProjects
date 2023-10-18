@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,6 +45,12 @@ function Navbar() {
               </li>
               <li className="about" onClick={(e) => handleClickScroll(e)}>
                 About us
+              </li>
+              <li>
+                <Link to='/login'>Login</Link>
+              </li>
+              <li>
+                <Link to='/singup'>Sing Up</Link>
               </li>
             </ul>
           </nav>
