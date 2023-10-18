@@ -1,27 +1,14 @@
 import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { handleSingIn } from "../utils";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSingIn = (e) => {
-    e.preventDefault()
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-        const user = userCredential.user
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
-
   return ( 
     <>
       <div className="sign-up-container">
-      <form onSubmit={handleSingIn}>
+      <form onSubmit={(e) => handleSingIn(e, email, password)}>
         <h1>Create Account</h1>
         <input
           type="email"
