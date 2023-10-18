@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import { handleLogOut } from "../utils";
+import { handleLogOut, handleClickScroll } from "../utils";
 import { auth } from "../firebase.js";
 import { onAuthStateChanged } from 'firebase/auth'
 
@@ -25,22 +25,6 @@ function Navbar() {
 
   const handleMenuOpen = () => {
     setIsMenuOpen((prevState) => !prevState);
-  };
-
-  const handleClickScroll = (e) => {
-    console.log(e.target.classList.value);
-    const element = document.getElementById(e.target.classList.value);
-    const offset = -80;
-
-    if (element) {
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY + offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
   };
 
   return (

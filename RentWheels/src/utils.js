@@ -51,3 +51,19 @@ export const logInWithGoogle = () => {
       console.error(error.message)
   })
 }
+
+export const handleClickScroll = (e) => {
+  console.log(e.target.classList.value);
+  const element = document.getElementById(e.target.classList.value);
+  const offset = -70;
+
+  if (element) {
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY + offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
+};
