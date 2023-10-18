@@ -7,7 +7,7 @@ function SingUp() {
   
   return ( 
     <>
-      <div className="sign-up-container">
+      <div className="form-container">
       <form onSubmit={(e) => handleSubmit(e, email, password)}>
         <h1>Create Account</h1>
         <input

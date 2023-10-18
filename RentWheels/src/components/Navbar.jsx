@@ -1,9 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { handleLogOut } from "../utils";
+import { auth } from "../firebase.js";
+import { onAuthStateChanged } from 'firebase/auth'
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [authUser, setAuthUser] = useState(null)
+
+  useEffect(() => {
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthUser(user);
+      } else {
+        setAuthUser(null);
+      }
+    });
+
+    return () => {
+      listen();
+    };
+  }, []);
 
   const handleMenuOpen = () => {
     setIsMenuOpen((prevState) => !prevState);
@@ -47,11 +65,14 @@ function Navbar() {
                 About us
               </li>
               <li>
-                <Link to='/login'>Login</Link>
+                <Link to="/login">Login</Link>
               </li>
               <li>
-                <Link to='/singup'>Sing Up</Link>
+                <Link to="/singup">Sing Up</Link>
               </li>
+              {authUser
+              ? <li onClick={handleLogOut}>Log Out</li> 
+              : null}
             </ul>
           </nav>
         </div>

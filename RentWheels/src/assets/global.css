@@ -127,6 +127,7 @@ nav li {
   border-radius: 10px;
   padding: 0.25em 0.5em;
   color: #e76f51;
+  background-color: unset;
   margin-bottom: 1em;
 }
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { handleSingIn } from "../utils";
+import { handleSingIn, logInWithGoogle } from "../utils";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -7,7 +7,8 @@ function Login() {
 
   return ( 
     <>
-      <div className="sign-up-container">
+      <div className="form-container">
+      <button onClick={logInWithGoogle}></button>
       <form onSubmit={(e) => handleSingIn(e, email, password)}>
         <h1>Create Account</h1>
         <input
