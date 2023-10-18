@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
-import { handleSingIn, handleSingUp } from "../utils";
-import { useState } from "react";
+import { FcGoogle } from 'react-icons/fc'
+import { handleSingIn, handleSingUp, logInWithGoogle } from "../utils";
+
 
 function LoginSingup({ onClose }) {
   const [email, setEmail] = useState("");
@@ -16,6 +18,10 @@ function LoginSingup({ onClose }) {
             <span className="form-title">Sign In</span>
           </div>
           <div className="form-inputs">
+            <div className="input">
+              <FcGoogle />
+              <button className="google-btn" onClick={logInWithGoogle}>Log In with Google</button>
+            </div>
             <div className="input">
               <AiOutlineMail className="input-icon" />
               <input
