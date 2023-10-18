@@ -11,7 +11,7 @@ function Navbar() {
   const handleClickScroll = (e) => {
     console.log(e.target.classList.value);
     const element = document.getElementById(e.target.classList.value);
-    const offset = -80;  // Adjust this value to control the offset after scrolling
+    const offset = -80;
 
     if (element) {
       const elementPosition = element.getBoundingClientRect().top;

@@ -16,56 +16,53 @@ function WhyUs() {
                 <li>
                   <h4>Customer Support</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Asperiores aut repudiandae vitae tempora, quisquam error ea
-                    quae? Cumque nobis sed modi aspernatur ut rerum, suscipit
-                    corporis, accusamus aliquam odit alias.
+                    Our dedicated customer support team is here to assist you at
+                    any time. We strive to provide you with exceptional service
+                    and quick resolutions to your inquiries. Your satisfaction
+                    is our top priority.
                   </p>
                 </li>
                 <li>
                   <h4>Best Price</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Repellendus blanditiis maxime totam assumenda atque quod
-                    nobis fugit doloremque quam suscipit, magni facilis? Omnis
-                    modi ab beatae corrupti facilis, velit iste?
+                    We guarantee the best prices for our rental vehicles. Our
+                    transparent pricing and cost-effective options ensure that
+                    you get the most value for your money without compromising
+                    on quality.
                   </p>
                 </li>
                 <li>
                   <h4>Verified Car Brand</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Exercitationem reprehenderit dolor consectetur laudantium a
-                    error perferendis! Reiciendis nesciunt cupiditate recusandae
-                    id molestiae, mollitia est ipsa temporibus consequatur
-                    optio! Et, voluptatibus?
+                    Choose from a wide range of well-maintained and verified car
+                    brands. We offer vehicles from trusted manufacturers to
+                    ensure a safe and enjoyable driving experience for our
+                    customers.
                   </p>
                 </li>
                 <li>
                   <h4>Location</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Adipisci, eaque explicabo ipsum vel ipsam laudantium
-                    reprehenderit aliquid deserunt aut est, earum tenetur
-                    assumenda temporibus magni eum. Vel voluptatibus natus at?
+                    Our convenient locations make it easy for you to pick up and
+                    drop off your rental car. We have strategic placements to
+                    provide accessibility and flexibility for your travel needs.
                   </p>
                 </li>
                 <li>
-                  <h4>Experienced Drives</h4>
+                  <h4>Experienced Drivers</h4>
                   <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Provident accusamus debitis neque ut eum exercitationem ab
-                    vitae assumenda, explicabo id unde officia incidunt minima?
-                    Quasi quae optio excepturi sapiente molestias.
+                    Our experienced and professional drivers ensure a smooth and
+                    safe journey. They are knowledgeable about the routes and
+                    destinations, making your trip enjoyable and hassle-free.
                   </p>
                 </li>
                 <li>
-                  <h4>Free Cancelation</h4>
+                  <h4>Free Cancellation</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Placeat quia consequuntur adipisci dolore officia, at
-                    voluptatum eum sit. Harum, maiores! Sit ab enim voluptate
-                    iure necessitatibus ducimus magnam consequuntur doloribus!
+                    We understand plans may change. Enjoy the freedom of
+                    canceling your reservation at no cost. We believe in
+                    providing flexibility to our customers for a stress-free
+                    booking experience.
                   </p>
                 </li>
               </ul>
