@@ -1,7 +1,7 @@
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom"
 import Layout from "./components/Layout"
-import Login from './pages/Login'
-import SingUp from "./pages/Singup"
+import Login from './components/Login'
+import SingUp from "./components/Singup"
 
 const router = createBrowserRouter(createRoutesFromElements(
   <>
