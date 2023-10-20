@@ -86,7 +86,8 @@ nav li {
 
 .home-section {
   height: 70vh;
-  background-image: url("./images/pexels-brady-knoll-3221163.jpg");
+  background:rgba(0, 0, 0, 0.5) url("./images/pexels-brady-knoll-3221163.jpg");
+  background-blend-mode: overlay;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
@@ -196,12 +197,22 @@ nav li {
   padding: 0;
 }
 
+.why-list li {
+  box-shadow: 0 0.5rem 1rem rgba(60, 113, 250, 0.25);
+  padding: 1em;
+}
+
 /* ABOUT */
 .our-container {
   margin-top: 1em;
   display: flex;
   flex-direction: column;
   gap: 1em;
+}
+
+.our-container div {
+  box-shadow: 0 0.5rem 1rem rgba(60, 113, 250, 0.25);
+  padding: 1em;
 }
 
 
