@@ -55,7 +55,7 @@ function Navbar() {
                 <GiHamburgerMenu />
               </button>
             </div>
-            <ul className={isMenuOpen ? "open" : "closed"}>
+            <ul className={isMenuOpen ? "open growDown" : "closed"}>
               <li className="home" onClick={(e) => handleNavClick(e)}>
                 Home
               </li>
