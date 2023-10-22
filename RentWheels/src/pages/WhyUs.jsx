@@ -1,3 +1,5 @@
+import { FcCustomerSupport, FcCurrencyExchange, FcApproval } from 'react-icons/fc'
+
 function WhyUs() {
   return (
     <>
@@ -13,6 +15,7 @@ function WhyUs() {
             />
             <div className="why-cards-cotainer">
               <div className="flex-card">
+                <FcCustomerSupport size={64} />
                 <h3>Customer Support</h3>
                 <p>
                   Our dedicated customer support team is here to assist you at
@@ -22,6 +25,7 @@ function WhyUs() {
                 </p>
               </div>
               <div className="flex-card">
+                <FcCurrencyExchange size={64} />
                 <h3>Best Price</h3>
                 <p>
                   We guarantee the best prices for our rental vehicles. Our
@@ -31,27 +35,12 @@ function WhyUs() {
                 </p>
               </div>
               <div className="flex-card">
+                <FcApproval size={64} />
                 <h3>Verified Car Brand</h3>
                 <p>
                   Choose from a wide range of well-maintained and verified car
                   brands. We offer vehicles from trusted manufacturers to ensure
                   a safe and enjoyable driving experience for our customers.
-                </p>
-              </div>
-              <div className="flex-card">
-                <h3>Location</h3>
-                <p>
-                  Our convenient locations make it easy for you to pick up and
-                  drop off your rental car. We have strategic placements to
-                  provide accessibility and flexibility for your travel needs.
-                </p>
-              </div>
-              <div className="flex-card">
-                <h3>Experienced Drivers</h3>
-                <p>
-                  Our experienced and professional drivers ensure a smooth and
-                  safe journey. They are knowledgeable about the routes and
-                  destinations, making your trip enjoyable and hassle-free.
                 </p>
               </div>
               <div className="flex-card">
