@@ -14,7 +14,7 @@ function WhyUs() {
             <div className="why-list">
               <ul>
                 <li>
-                  <h4>Customer Support</h4>
+                  <h3>Customer Support</h3>
                   <p>
                     Our dedicated customer support team is here to assist you at
                     any time. We strive to provide you with exceptional service
@@ -23,7 +23,7 @@ function WhyUs() {
                   </p>
                 </li>
                 <li>
-                  <h4>Best Price</h4>
+                  <h3>Best Price</h3>
                   <p>
                     We guarantee the best prices for our rental vehicles. Our
                     transparent pricing and cost-effective options ensure that
@@ -32,7 +32,7 @@ function WhyUs() {
                   </p>
                 </li>
                 <li>
-                  <h4>Verified Car Brand</h4>
+                  <h3>Verified Car Brand</h3>
                   <p>
                     Choose from a wide range of well-maintained and verified car
                     brands. We offer vehicles from trusted manufacturers to
@@ -41,7 +41,7 @@ function WhyUs() {
                   </p>
                 </li>
                 <li>
-                  <h4>Location</h4>
+                  <h3>Location</h3>
                   <p>
                     Our convenient locations make it easy for you to pick up and
                     drop off your rental car. We have strategic placements to
@@ -49,7 +49,7 @@ function WhyUs() {
                   </p>
                 </li>
                 <li>
-                  <h4>Experienced Drivers</h4>
+                  <h3>Experienced Drivers</h3>
                   <p>
                     Our experienced and professional drivers ensure a smooth and
                     safe journey. They are knowledgeable about the routes and
@@ -57,7 +57,7 @@ function WhyUs() {
                   </p>
                 </li>
                 <li>
-                  <h4>Free Cancellation</h4>
+                  <h3>Free Cancellation</h3>
                   <p>
                     We understand plans may change. Enjoy the freedom of
                     canceling your reservation at no cost. We believe in
