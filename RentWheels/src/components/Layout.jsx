@@ -9,8 +9,8 @@ function Layout() {
     <>
       <Navbar />
       <Home />
-      <Inventory />
       <WhyUs />
+      <Inventory />
       <About />
     </>
    );

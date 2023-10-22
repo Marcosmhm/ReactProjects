@@ -102,6 +102,13 @@ nav li {
   padding: 1em;
 }
 
+#about,
+#why {
+  text-align: center;
+}
+
+/* HOME */
+
 .home-section {
   height: 70vh;
   background:rgba(0, 0, 0, 0.5) url("./images/pexels-brady-knoll-3221163.jpg");
@@ -115,6 +122,10 @@ nav li {
 
 .home-text {
   color: white;
+}
+
+.home-subtitle {
+  margin: 1em 0;
 }
 
 .home-btn-container {
@@ -304,7 +315,30 @@ nav li {
   font-weight: 700;
 }
 
+/* BOOK FORM */
+.book-car-form-container {
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);;
+  margin-top: 2em;
+  border-radius: 5px;
+  padding: 2em 1.5em;
+}
 
+.book-car-input-container {
+  margin: 1.5em 0;
+}
 
+.book-car-input-container label{
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+.book-car-input {
+  padding: 0.5em;
+  width: 100%;
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
 
 
