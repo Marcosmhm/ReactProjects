@@ -6,7 +6,7 @@ function About() {
             <h1 className="title orange-text">ABOUT US</h1>
           <div className="our-container">
             <div className="our-story-container">
-              <h4>OUR STORY</h4>
+              <h3>Our Story</h3>
               <p>
                 Our story began with a vision to revolutionize the way people
                 travel. We started with a belief that renting a car should be
@@ -16,7 +16,7 @@ function About() {
               </p>
             </div>
             <div className="our-approach-container">
-              <h4>OUR APPROACH</h4>
+              <h3>Our Approach</h3>
               <p>
                 our approach is simple - to provide you with a seamless and
                 enjoyable rental experience. We focus on offering a diverse
@@ -25,7 +25,7 @@ function About() {
               </p>
             </div>
             <div className="our-mission-container">
-              <h4>OUR MISSION</h4>
+              <h3>Our Mission</h3>
               <p>
                 Our mission is to empower you with the freedom to explore and
                 make your journey unforgettable. We strive to create a world
