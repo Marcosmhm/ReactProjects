@@ -6,8 +6,9 @@ const vehicles = [
     type: "Sedan",
     transmission: "Automatic",
     seats: 5,
-    price_per_day: 50.0,
-    image_url:"/src/assets/images/toyota-camry-removebg-preview.png",
+    image_url: "/src/assets/images/toyota-camry-removebg-preview.png",
+    name: "Toyota Camry 2022",
+    price_per_day: 45.0, 
   },
   {
     make: "Honda",
@@ -16,8 +17,9 @@ const vehicles = [
     type: "Sedan",
     transmission: "Automatic",
     seats: 5,
-    price_per_day: 45.0,
     image_url: "/src/assets/images/2021-honda-civic.png",
+    name: "Honda Civic 2021",
+    price_per_day: 40.0, 
   },
   {
     make: "Ford",
@@ -26,8 +28,9 @@ const vehicles = [
     type: "SUV",
     transmission: "Automatic",
     seats: 7,
-    price_per_day: 60.0,
     image_url: "/src/assets/images/2020-ford-explorer.png",
+    name: "Ford Explorer 2020",
+    price_per_day: 50.0, 
   },
   {
     make: "Chevrolet",
@@ -36,8 +39,9 @@ const vehicles = [
     type: "Truck",
     transmission: "Automatic",
     seats: 5,
-    price_per_day: 55.0,
     image_url: "/src/assets/images/2021-chevrolet-silverado.png",
+    name: "Chevrolet Silverado 2021",
+    price_per_day: 55.0, 
   },
   {
     make: "Honda",
@@ -46,10 +50,10 @@ const vehicles = [
     type: "Sedan",
     transmission: "Manual",
     seats: 5,
-    price_per_day: 40.0,
     image_url: "src/assets/images/2022-honda-civic-mugen-front-view-removebg-preview.png",
+    name: "Honda Civic 2022",
+    price_per_day: 42.0, 
   },
-
   {
     make: "Volkswagen",
     model: "Golf",
@@ -57,9 +61,10 @@ const vehicles = [
     type: "Hatchback",
     transmission: "Manual",
     seats: 5,
-    price_per_day: 35.0,
     image_url: "src/assets/images/2021-volkswagen-golf.png",
+    name: "Volkswagen Golf 2021",
+    price_per_day: 38.0, 
   },
 ];
 
-export default vehicles
+export default vehicles;
