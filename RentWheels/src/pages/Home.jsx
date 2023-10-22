@@ -6,10 +6,7 @@ function Home() {
           <div className="home-text">
             <h1> <span className="orange-text">EASY</span> AND <span className="orange-text">FAST</span> WAY TO RENT YOUR CAR</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe,
-              magni veniam neque dolore velit reprehenderit architecto quibusdam
-              non, earum doloribus blanditiis sit dignissimos impedit
-              consequatur illum quas, eaque expedita molestiae?
+              Rent the car of your dreams. Unbeatable prices, unlimited miles, flexible pick-up options and much more.
             </p>
             <div className="home-btn-container">
               <button className="home-btn">Get Started</button>
