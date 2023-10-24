@@ -1,5 +1,5 @@
 import { FcCustomerSupport, FcCurrencyExchange, FcApproval } from 'react-icons/fc'
-
+import { MdOutlineMoneyOffCsred } from 'react-icons/md'
 function WhyUs() {
   return (
     <>
@@ -44,6 +44,7 @@ function WhyUs() {
                 </p>
               </div>
               <div className="flex-card">
+                <MdOutlineMoneyOffCsred size={64} color='green'/>
                 <h3>Free Cancellation</h3>
                 <p>
                   We understand plans may change. Enjoy the freedom of canceling
