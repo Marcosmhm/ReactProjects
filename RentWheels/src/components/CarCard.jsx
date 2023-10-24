@@ -1,14 +1,28 @@
 import { useState } from "react";
 import vehicles from "../data/vehicles.js";
+import toyotaCamry from "../assets/images/toyota-camry-removebg-preview.png";
 
 function CarCard({ filter }) {
-  const [vehicleData, setVehicleData] = useState([{}]);
+  const [vehicleData, setVehicleData] = useState({
+    id: 1,
+    make: "Toyota",
+    model: "Camry",
+    year: 2022,
+    type: "Sedan",
+    transmission: "Automatic",
+    seats: 5,
+    image_url: toyotaCamry,
+    name: "Toyota Camry 2022",
+    price_per_day: 45.0,
+  });
 
-  const handleVehicleClick = (id) => {
+  const handleVehicleClick = (id, e) => {
     const newData = vehicles.filter((vehicle) => vehicle.id === id)[0];
-    console.log(newData);
     setVehicleData(newData);
-    console.log("oi", vehicleData);
+    if (document.querySelector(".active")) {
+      document.querySelector(".active").classList.remove("active");
+    }
+    e.target.classList.add("active");
   };
 
   const renderVehicles = vehicles
@@ -19,7 +33,11 @@ function CarCard({ filter }) {
     })
     .map((vehicle, index) => {
       return (
-        <div className="car-div" onClick={() => handleVehicleClick(vehicle.id)}>
+        <div
+          key={`car-${index}`}
+          className={`car-div ${index === 0 ? 'active' : ""}`}
+          onClick={(e) => handleVehicleClick(vehicle.id, e)}
+        >
           {vehicle.name}
         </div>
       );
@@ -60,6 +78,7 @@ function CarCard({ filter }) {
             <span className="list-content">{vehicleData.type}</span>
           </li>
         </ul>
+        <button className="selected-vehicle-button">RESERVE NOW</button>
       </div>
     </>
   );
