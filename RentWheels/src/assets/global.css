@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
 
+/* VARIABLES */
 :root {
   --primary-color: #e76f51
 }
 
+/* CSS RESET */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -42,6 +44,9 @@ header {
   z-index: 15;
 }
 
+nav ul {
+  transition: all .5s ease-in-out;
+}
 
 nav ul.open {
   background-color: #fff;
@@ -59,9 +64,11 @@ nav ul.open {
   0% {
       transform: scaleY(0)
   }
+
   80% {
       transform: scaleY(1.1)
   }
+
   100% {
       transform: scaleY(1)
   }
@@ -89,15 +96,15 @@ nav li {
   list-style: none;
 }
 
+.orange-text {
+  color: var(--primary-color);
+}
+
 /* Main */
 
 .title {
   text-align: center;
   margin: 1em 0;
-}
-
-.orange-text {
-  color: var(--primary-color);
 }
 
 .container {
@@ -110,6 +117,8 @@ nav li {
 #why {
   text-align: center;
 }
+
+
 
 /* HOME */
 
@@ -148,6 +157,32 @@ nav li {
 
 .home-btn:hover {
   background-color: #f4a261;
+}
+
+/* BOOK FORM */
+.book-car-form-container {
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);;
+  margin-top: 2em;
+  border-radius: 5px;
+  padding: 2em 1.5em;
+}
+
+.book-car-input-container {
+  margin: 1.5em 0;
+}
+
+.book-car-input-container label{
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+.book-car-input {
+  padding: 0.5em;
+  width: 100%;
+  opacity: 0.6;
+  font-size: 0.9rem;
 }
 
 /* INVENTORY */
@@ -193,7 +228,9 @@ nav li {
 }
 
 .image-container img {
- max-width: 100%;
+  object-fit: cover;
+  width: 340px;
+  height: 207px;
 }
 
 .selected-vehicle-price {
@@ -209,15 +246,16 @@ nav li {
   list-style: none;
   padding: 0;
   margin: 0;
-  border: 1px solid var(--primary-color);
+  border-left:2px solid var(--primary-color);
+  border-right:2px solid var(--primary-color);
   text-align: center;
   font-size: 0.9rem;
 }
 
 .selected-vehicle li {
   display: flex;
-  padding: 0.4em;
-  border-bottom: 1px solid var(--primary-color);
+  padding: 0.6em 0.4em;
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .list-title {
@@ -225,7 +263,7 @@ nav li {
   flex: 1;
   min-width: 50%;
   margin-right: 1.5rem;
-  border-right: 1px solid var(--primary-color);
+  border-right: 2px solid var(--primary-color);
 }
 
 .list-content {
@@ -251,11 +289,6 @@ nav li {
 
 .why-container img {
   display: none;
-}
-
-.why-cards-container {
-  margin-top: 1em;
-  display: flex;
 }
 
 .flex-card {
@@ -309,6 +342,8 @@ nav li {
   padding: 4em 0;
   height: 100vh;
   background-color: #fff;
+  transform-origin: top center;
+  animation: growDown 300ms ease-in-out forwards;
 }
 
 .form-title {
@@ -355,30 +390,5 @@ nav li {
   font-weight: 700;
 }
 
-/* BOOK FORM */
-.book-car-form-container {
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);;
-  margin-top: 2em;
-  border-radius: 5px;
-  padding: 2em 1.5em;
-}
-
-.book-car-input-container {
-  margin: 1.5em 0;
-}
-
-.book-car-input-container label{
-  display: block;
-  font-size: 1rem;
-  margin-bottom: 0.5em;
-  font-weight: 700;
-}
-
-.book-car-input {
-  padding: 0.5em;
-  width: 100%;
-  opacity: 0.6;
-  font-size: 0.9rem;
-}
 
 

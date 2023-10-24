@@ -10,7 +10,7 @@ function Inventory() {
 
   return (
     <>
-      <section className="inventory-section"> 
+      <section className="inventory-section" id="fleet"> 
         <div className="container">
         <h1 className="title">
           <span className="orange-text">LATEST</span> INVENTORY

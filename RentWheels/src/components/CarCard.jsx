@@ -35,7 +35,7 @@ function CarCard({ filter }) {
       return (
         <div
           key={`car-${index}`}
-          className={`car-div ${index === 0 ? 'active' : ""}`}
+          className={`car-div ${vehicle.id === vehicleData.id ? 'active' : ""}`}
           onClick={(e) => handleVehicleClick(vehicle.id, e)}
         >
           {vehicle.name}

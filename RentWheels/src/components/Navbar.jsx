@@ -62,6 +62,9 @@ function Navbar() {
               <li className="why" onClick={(e) => handleNavClick(e)}>
                 Why Choose us
               </li>
+              <li className="fleet" onClick={(e) => handleNavClick(e)}>
+                Inventory
+              </li>
               <li className="about" onClick={(e) => handleNavClick(e)}>
                 About us
               </li>
