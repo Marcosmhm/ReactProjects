@@ -1,3 +1,5 @@
+import toyotaCamry from "../assets/images/toyota-camry-removebg-preview.png"
+
 const vehicles = [
   {
     id: 1,
@@ -7,7 +9,7 @@ const vehicles = [
     type: "Sedan",
     transmission: "Automatic",
     seats: 5,
-    image_url: "/src/assets/images/toyota-camry-removebg-preview.png",
+    image_url: toyotaCamry,
     name: "Toyota Camry 2022",
     price_per_day: 45.0, 
   },
