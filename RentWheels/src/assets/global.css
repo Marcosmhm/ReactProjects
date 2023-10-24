@@ -227,6 +227,10 @@ nav li {
   border-radius: 5px;
 }
 
+.flex-card svg {
+  margin: 0 auto 1em;
+}
+
 .flex-card h3 {
   margin-bottom: 1em;
 }
