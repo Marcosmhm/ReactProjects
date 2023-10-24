@@ -1,5 +1,6 @@
 const vehicles = [
   {
+    id: 1,
     make: "Toyota",
     model: "Camry",
     year: 2022,
@@ -11,6 +12,7 @@ const vehicles = [
     price_per_day: 45.0, 
   },
   {
+    id: 2,
     make: "Honda",
     model: "Civic",
     year: 2021,
@@ -22,6 +24,7 @@ const vehicles = [
     price_per_day: 40.0, 
   },
   {
+    id: 3,
     make: "Ford",
     model: "Explorer",
     year: 2020,
@@ -33,6 +36,7 @@ const vehicles = [
     price_per_day: 50.0, 
   },
   {
+    id: 4,
     make: "Chevrolet",
     model: "Silverado",
     year: 2021,
@@ -44,6 +48,7 @@ const vehicles = [
     price_per_day: 55.0, 
   },
   {
+    id: 5,
     make: "Honda",
     model: "Civic",
     year: 2022,
@@ -55,6 +60,7 @@ const vehicles = [
     price_per_day: 42.0, 
   },
   {
+    id: 6,
     make: "Volkswagen",
     model: "Golf",
     year: 2021,
