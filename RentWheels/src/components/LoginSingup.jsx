@@ -19,8 +19,8 @@ function LoginSingup({ onClose }) {
           </div>
           <div className="form-inputs">
             <div className="input">
-              <FcGoogle />
-              <button className="google-btn" onClick={logInWithGoogle}>Log In with Google</button>
+              <FcGoogle className="input-icon"/>
+              <button className="google-btn" onClick={logInWithGoogle}>Sing In with Google</button>
             </div>
             <div className="input">
               <AiOutlineMail className="input-icon" />
