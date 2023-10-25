@@ -5,7 +5,7 @@ function About() {
         <div className="container">
             <h1 className="title orange-text">ABOUT US</h1>
           <div className="our-container">
-            <div className="flex-card">
+            <div className="flex-card story">
               <h3>Our Story</h3>
               <p>
                 Our story began with a vision to revolutionize the way people
@@ -15,7 +15,7 @@ function About() {
                 and innovation.
               </p>
             </div>
-            <div className="flex-card">
+            <div className="flex-card approach">
               <h3>Our Approach</h3>
               <p>
                 our approach is simple - to provide you with a seamless and
@@ -24,7 +24,7 @@ function About() {
                 service. Your satisfaction is our measure of success
               </p>
             </div>
-            <div className="flex-card">
+            <div className="flex-card mission">
               <h3>Our Mission</h3>
               <p>
                 Our mission is to empower you with the freedom to explore and
