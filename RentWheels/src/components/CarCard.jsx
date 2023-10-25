@@ -46,7 +46,7 @@ function CarCard({ filter }) {
   const renderVehicleInfo = (
     <>
       <div className="selected-vehicle">
-        <div className="image-container">
+        <div className="inventory-image-container">
           <img src={vehicleData.image_url} alt="" />
         </div>
         <div className="selected-vehicle-price">
