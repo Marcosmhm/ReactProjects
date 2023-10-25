@@ -52,9 +52,8 @@ export const logInWithGoogle = () => {
 }
 
 export const handleClickScroll = (e) => {
-  console.log(e.target.classList.value);
   const element = document.getElementById(e.target.classList.value);
-  const offset = -70;
+  const offset = -60;
 
   if (element) {
     const elementPosition = element.getBoundingClientRect().top;
