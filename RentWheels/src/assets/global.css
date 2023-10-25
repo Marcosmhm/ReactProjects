@@ -64,6 +64,7 @@ nav ul.open {
   visibility: visible;
 }
 
+/* MOBILE MENU ANIMATION */
 @keyframes shrink {
   0% {
     transform: scaleY(1.1);
@@ -140,18 +141,18 @@ nav li {
 /* HOME */
 
 .home-section {
-  height: 70vh;
+  height: 20rem;
   background:rgba(0, 0, 0, 0.5) url("./images/pexels-brady-knoll-3221163.jpg");
   background-blend-mode: overlay;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center;
   color: black;
   z-index: 1;
 }
 
 .home-text {
-  color: white;
+  color: #fff;
 }
 
 .home-subtitle {
@@ -317,8 +318,36 @@ nav li {
   border-radius: 5px;
 }
 
-.flex-card svg {
+.flex-card svg,
+.flex-card img {
   margin: 0 auto 1em;
+}
+
+.flex-card img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 180px;
+}
+
+.our-container .flex-card {
+  background-blend-mode: overlay;
+  color: white;
+}
+
+.our-container .story {
+  background: rgba(0, 0, 0, 0.6) url("./images/team.avif");
+  background-size: cover;
+  
+}
+
+.our-container .approach {
+  background: rgba(0, 0, 0, 0.6) url("./images/approach.avif");
+  background-size: cover;
+}
+
+.our-container .mission {
+  background: rgba(0, 0, 0, 0.6) url("./images/mission.avif");
+  background-size: cover;
 }
 
 .flex-card h3 {
