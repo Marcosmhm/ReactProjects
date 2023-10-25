@@ -2,9 +2,11 @@ import BookForm from "../components/BookForm";
 
 function Home() {
   const handleBookClick = () => {
-    document
-      .querySelector("#book-car")
-      .scrollIntoView({ behavior: "smooth" });
+    const id = 'book-car';
+    const yOffset = -70; 
+    const element = document.getElementById(id);
+    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({top: y, behavior: 'smooth'});
   };
 
   return (
@@ -22,7 +24,6 @@ function Home() {
             </p>
             <div className="home-btn-container">
               <button onClick={handleBookClick} className="home-btn">Get Started</button>
-              <button className="home-btn">Learn More</button>
             </div>
           </div>
         </div>
