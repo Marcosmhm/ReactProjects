@@ -23,7 +23,7 @@ function Home() {
               flexible pick-up options and much more.
             </p>
             <div className="home-btn-container">
-              <button onClick={handleBookClick} className="home-btn">Get Started</button>
+              <button onClick={handleBookClick} className="home-btn">GET STARTED</button>
             </div>
           </div>
         </div>
