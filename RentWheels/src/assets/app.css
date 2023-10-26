@@ -172,6 +172,7 @@ nav li {
   margin-right: 1em;
   color: #fff;
   width: 70%;
+  border: 0;
 }
 
 .home-btn:hover {
