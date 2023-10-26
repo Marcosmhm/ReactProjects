@@ -318,6 +318,11 @@ nav li {
   height: 207px;
 }
 
+.selected-vehicle-list {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
 .selected-vehicle-price {
   background-color: var(--primary-color);
   color: #fff;
