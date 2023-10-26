@@ -49,6 +49,7 @@ function CarCard({ filter }) {
         <div className="inventory-image-container">
           <img src={vehicleData.image_url} alt="" />
         </div>
+        <div className="selected-vehicle-list">
         <div className="selected-vehicle-price">
           ${vehicleData.price_per_day} / Per day
         </div>
@@ -79,6 +80,7 @@ function CarCard({ filter }) {
           </li>
         </ul>
         <button className="selected-vehicle-button">RESERVE NOW</button>
+        </div>
       </div>
     </>
   );
