@@ -35,7 +35,7 @@ function CarCard({ filter }) {
       return (
         <div
           key={`car-${index}`}
-          className={`car-div ${vehicle.id === vehicleData.id ? 'active' : ""}`}
+          className={`car-div ${vehicle.id === vehicleData.id ? "active" : ""}`}
           onClick={(e) => handleVehicleClick(vehicle.id, e)}
         >
           {vehicle.name}
@@ -50,36 +50,36 @@ function CarCard({ filter }) {
           <img src={vehicleData.image_url} alt="" />
         </div>
         <div className="selected-vehicle-list">
-        <div className="selected-vehicle-price">
-          ${vehicleData.price_per_day} / Per day
-        </div>
-        <ul>
-          <li>
-            <span className="list-title">Model</span>
-            <span className="list-content">{vehicleData.model}</span>
-          </li>
-          <li>
-            <span className="list-title">Make</span>
-            <span className="list-content">{vehicleData.make}</span>
-          </li>
-          <li>
-            <span className="list-title">Year</span>
-            <span className="list-content">{vehicleData.year}</span>
-          </li>
-          <li>
-            <span className="list-title">Seats</span>
-            <span className="list-content">{vehicleData.seats}</span>
-          </li>
-          <li>
-            <span className="list-title">Transmission</span>
-            <span className="list-content">{vehicleData.transmission}</span>
-          </li>
-          <li>
-            <span className="list-title">Type</span>
-            <span className="list-content">{vehicleData.type}</span>
-          </li>
-        </ul>
-        <button className="selected-vehicle-button">RESERVE NOW</button>
+          <div className="selected-vehicle-price">
+            ${vehicleData.price_per_day} / Per day
+          </div>
+          <ul>
+            <li>
+              <span className="list-title">Model</span>
+              <span className="list-content">{vehicleData.model}</span>
+            </li>
+            <li>
+              <span className="list-title">Make</span>
+              <span className="list-content">{vehicleData.make}</span>
+            </li>
+            <li>
+              <span className="list-title">Year</span>
+              <span className="list-content">{vehicleData.year}</span>
+            </li>
+            <li>
+              <span className="list-title">Seats</span>
+              <span className="list-content">{vehicleData.seats}</span>
+            </li>
+            <li>
+              <span className="list-title">Transmission</span>
+              <span className="list-content">{vehicleData.transmission}</span>
+            </li>
+            <li>
+              <span className="list-title">Type</span>
+              <span className="list-content">{vehicleData.type}</span>
+            </li>
+          </ul>
+          <button className="selected-vehicle-button">RESERVE NOW</button>
         </div>
       </div>
     </>
