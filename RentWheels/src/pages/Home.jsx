@@ -13,7 +13,7 @@ function Home() {
     <>
       <section id="home" className="home-section">
         <div className="container">
-          <div className="home-text">
+          <div className="home-content">
             <h1>
               <span className="orange-text">EASY</span> AND
               <span className="orange-text"> FAST</span> WAY TO RENT YOUR CAR

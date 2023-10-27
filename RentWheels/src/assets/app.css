@@ -147,11 +147,16 @@ nav li {
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
-  padding: 5em 0;
+  padding: 10em 0;
   color: #fff;
 }
 
-.home-text h1 {
+.home-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.home-content h1 {
   font-size: 2rem;
 }
 
@@ -309,13 +314,12 @@ nav li {
 }
 
 .inventory-image-container {
-  margin-top: 2em;
+  margin: 2em 0;
 }
 
 .inventory-image-container img {
   object-fit: cover;
-  width: 340px;
-  height: 207px;
+  width: 100%;
 }
 
 .selected-vehicle-list {
@@ -370,6 +374,26 @@ nav li {
   font-weight: 700;
   font-size: 1.2rem;
   box-shadow: 6px 6px 0 #efe9e9;
+}
+
+@media(min-width: 768px) {
+  .selected-vehicle {
+    display: flex;
+    margin-top: 2em;
+  }
+
+  .inventory-image-container {
+    max-width: 100%;
+    margin-right: 1em;
+  }
+
+  .inventory-image-container img  {
+    height: 100%;
+  }
+
+  .selected-vehicle-list {
+    width: 400px;
+  }
 }
 
 /* ABOUT */
@@ -460,7 +484,4 @@ nav li {
   font-weight: 700;
 }
 
-@media(min-width: 768px) {
-
-}
 
