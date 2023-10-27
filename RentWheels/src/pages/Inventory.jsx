@@ -1,5 +1,5 @@
 import { Suspense, lazy, useState } from "react";
-const CarCard = lazy(() => import("../components/CarCard"));
+const CarCard = lazy(() => import("../components/CarInfo"));
 
 function Inventory() {
   const [filteredVehicle, setFilteredVehicle] = useState("all");
@@ -25,9 +25,7 @@ function Inventory() {
             </button>
           </div>
           <Suspense fallback={<h1>Loading...</h1>}>
-            <div className="cars-grid">
-              <CarCard filter={filteredVehicle} />
-            </div>
+            <CarCard filter={filteredVehicle} />
           </Suspense>
         </div>
       </section>

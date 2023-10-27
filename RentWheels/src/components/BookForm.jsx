@@ -53,7 +53,7 @@ function BookForm() {
             </div>
             <div className="book-car-input-container">
               <label htmlFor=""><IoLocationOutline />Pick-up Location</label>
-              <select name="" id="" className="book-car-input" value={'default'}>
+              <select name="" id="" className="book-car-input" value={''}>
                 <option value='' disabled >
                   Select pick up location
                 </option>

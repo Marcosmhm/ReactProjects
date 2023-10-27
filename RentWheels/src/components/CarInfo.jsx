@@ -87,8 +87,12 @@ function CarCard({ filter }) {
 
   return (
     <>
-      {renderVehicles}
-      {renderVehicleInfo}
+      <div className="pick-container">
+        <div className="car-picker-container">
+          {renderVehicles}  
+        </div>
+        {renderVehicleInfo}
+      </div>
     </>
   );
 }

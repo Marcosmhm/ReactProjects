@@ -319,7 +319,7 @@ nav li {
 
 .inventory-image-container img {
   object-fit: cover;
-  width: 100%;
+  max-width: 100%;
 }
 
 .selected-vehicle-list {
@@ -393,6 +393,23 @@ nav li {
 
   .selected-vehicle-list {
     width: 400px;
+  }
+}
+
+@media(min-width: 1024px) {
+  .car-div {
+    display: flex;
+    
+  }
+
+  .pick-container {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .selected-vehicle-list {
+    align-self: center;
   }
 }
 
