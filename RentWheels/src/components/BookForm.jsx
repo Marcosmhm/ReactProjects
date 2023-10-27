@@ -41,12 +41,11 @@ function BookForm() {
             <div className="book-car-input-container">
               <label htmlFor=""><AiOutlineCar /> Select Your Car Type</label>
               <select className="book-car-input"
-                placeholder="Select your car type"
                 onChange={handleChange}
                 name="carType"
                 value={formData.carType}
               >
-                <option value="" disabled selected>
+                <option value="" disabled >
                   Select your car type
                 </option>
                 {carTypeOptions}
@@ -54,16 +53,16 @@ function BookForm() {
             </div>
             <div className="book-car-input-container">
               <label htmlFor=""><IoLocationOutline />Pick-up Location</label>
-              <select name="" id="" className="book-car-input">
-                <option value="" disabled selected>
+              <select name="" id="" className="book-car-input" value={'default'}>
+                <option value='' disabled >
                   Select pick up location
                 </option>
               </select>
             </div>
             <div className="book-car-input-container">
               <label htmlFor=""><IoLocationOutline /> Drop-of location</label>
-              <select name="" id="" className="book-car-input">
-                <option value="" disabled selected>
+              <select name="" id="" className="book-car-input" value={''}>
+                <option value="" disabled>
                   Select drop off location
                 </option>
               </select>
