@@ -1,13 +1,9 @@
 import BookForm from "../components/BookForm";
 
+import { handleClickScroll } from "../utils";
+
 function Home() {
-  const handleBookClick = () => {
-    const id = 'book-car';
-    const yOffset = -70; 
-    const element = document.getElementById(id);
-    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({top: y, behavior: 'smooth'});
-  };
+
 
   return (
     <>
@@ -23,7 +19,7 @@ function Home() {
               flexible pick-up options and much more.
             </p>
             <div className="home-btn-container">
-              <button onClick={handleBookClick} className="home-btn">GET STARTED</button>
+              <button onClick={() => handleClickScroll('book-car')} className="home-btn book-car">GET STARTED</button>
             </div>
           </div>
         </div>

@@ -56,16 +56,16 @@ function Navbar() {
               </button>
             </div>
             <ul className={isMenuOpen ? "open growDown" : "closed"}>
-              <li className="home" onClick={(e) => handleNavClick(e)}>
+              <li onClick={(e) => handleNavClick('home')}>
                 Home
               </li>
-              <li className="why" onClick={(e) => handleNavClick(e)}>
+              <li onClick={(e) => handleNavClick('why')}>
                 Why Choose us
               </li>
-              <li className="fleet" onClick={(e) => handleNavClick(e)}>
+              <li onClick={(e) => handleNavClick('fleet')}>
                 Inventory
               </li>
-              <li className="about" onClick={(e) => handleNavClick(e)}>
+              <li onClick={(e) => handleNavClick('about')}>
                 About us
               </li>
               {authUser 
