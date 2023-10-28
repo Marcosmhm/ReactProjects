@@ -58,7 +58,7 @@ header {
   position: sticky;
   top: 0;
   min-height: 4rem;
-  background-color: #e9c46a;
+  background-color: #fff;
   z-index: 15;
 }
 
@@ -120,7 +120,7 @@ nav ul.growDown {
 }
 
 .menu-button {
-  background-color: #e9c46a;
+  background-color: #fff;
   border: none;
   font-size: 2rem;
 }
@@ -146,6 +146,7 @@ nav li {
   width: 90%;
   margin: 0 auto;
   padding: 1em;
+  max-width: 1280px;
 }
 
 #about,
@@ -153,11 +154,6 @@ nav li {
   text-align: center;
 }
 
-@media (min-width: 1200px ) {
-  .container {
-    max-width: 1200px;
-  }
-}
 /* HOME */
 .home-section {
   display: flex;
@@ -184,10 +180,15 @@ nav li {
 }
 
 .home-content {
-  max-width: 450px;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
   position: relative;
   z-index: 2;
+}
+
+.home-text {
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 .home-content h4 {
@@ -229,23 +230,28 @@ nav li {
     text-align: left;
   }
 
-  .home-content {
-    max-width: 450px;
-    margin: 0 0;
-  }
-
   .home-btn {
     width: 40%;
     padding: 1.1em 0;
+  }
+
+  .home-text {
+    margin: 0;
   }
 
   .home-img {
     display: unset;
     margin-top: 5rem;
     position: absolute;
-    right: 0;
+    right: -17%;
     width: 65%;
     z-index: 1;
+  }
+}
+
+@media (min-width: 1100px) {
+  .home-img {
+    right: 0;
   }
 }
 
