@@ -180,15 +180,14 @@ nav li {
 }
 
 .home-content {
-  display: flex;
-  align-items: center;
-  position: relative;
   z-index: 2;
+  position: relative;
 }
 
 .home-text {
   max-width: 450px;
   margin: 0 auto;
+  z-index: 2;
 }
 
 .home-content h4 {
@@ -234,6 +233,12 @@ nav li {
     width: 40%;
     padding: 1.1em 0;
   }
+  
+  .home-content {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+  }
 
   .home-text {
     margin: 0;
@@ -241,17 +246,8 @@ nav li {
 
   .home-img {
     display: unset;
-    margin-top: 5rem;
-    position: absolute;
-    right: -17%;
-    width: 65%;
+    width: 100%;
     z-index: 1;
-  }
-}
-
-@media (min-width: 1100px) {
-  .home-img {
-    right: 0;
   }
 }
 
