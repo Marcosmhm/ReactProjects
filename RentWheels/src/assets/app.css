@@ -157,6 +157,7 @@ nav li {
   }
 
   nav li {
+    justify-self: center;
     padding: 0.6rem 1.5rem;
   }
 
@@ -390,27 +391,6 @@ nav li {
   max-height: 180px;
 }
 
-.our-container .flex-card {
-  background-blend-mode: overlay;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-}
-
-.our-container .story {
-  background-image: url("./images/team.avif");
-  background-size: cover;
-}
-
-.our-container .approach {
-  background-image: url("./images/approach.avif");
-  background-size: cover;
-}
-
-.our-container .mission {
-  background-image: url("./images/mission.avif");
-  background-size: cover;
-}
-
 .flex-card h3 {
   margin-bottom: 1em;
 }
@@ -582,6 +562,53 @@ nav li {
   gap: 1em;
 }
 
+.our-container .flex-card {
+  background-blend-mode: overlay;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+.our-container .story {
+  background-image: url("./images/team.avif");
+  background-size: cover;
+}
+
+.our-container .approach {
+  background-image: url("./images/approach.avif");
+  background-size: cover;
+}
+
+.our-container .mission {
+  background-image: url("./images/mission.avif");
+  background-size: cover;
+}
+
+
+@media(min-width: 768px) {
+  .our-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .our-container .flex-card {
+    min-width: 300px;
+    color: #000!important;
+    flex: 1;
+  }
+
+  .our-container .approach {
+    background: 0;
+  }
+
+  .our-container .mission {
+    background: 0;
+  }
+
+  .our-container .story {
+    background: 0;
+  }
+}
+
 /* AUTH */
 .form-close-btn {
   background: none;
@@ -595,6 +622,8 @@ nav li {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  margin: 0 auto;
   width: 100vw;
   z-index: 50;
 }
@@ -603,8 +632,8 @@ nav li {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1em;
-  padding: 4em 0;
   height: 100vh;
   background-color: #fff;
   transform-origin: top center;

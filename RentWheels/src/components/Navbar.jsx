@@ -30,7 +30,7 @@ function Navbar() {
 
   function handleLoginClick() {
     document.body.style.overflow = "hidden";
-    handleMenuOpen()
+    handleMenuOpen();
     return setIsFormOpen(true);
   }
 
@@ -40,9 +40,9 @@ function Navbar() {
   }
 
   const handleNavClick = (e) => {
-    handleClickScroll(e)
-    handleMenuOpen()
-  }
+    handleClickScroll(e);
+    handleMenuOpen();
+  };
 
   return (
     <>
@@ -56,23 +56,19 @@ function Navbar() {
               </button>
             </div>
             <ul className={isMenuOpen ? "open growDown" : "closed"}>
-              <li onClick={(e) => handleNavClick('home')}>
-                Home
-              </li>
-              <li onClick={(e) => handleNavClick('why')}>
-                Why Choose us
-              </li>
-              <li onClick={(e) => handleNavClick('fleet')}>
-                Inventory
-              </li>
-              <li onClick={(e) => handleNavClick('about')}>
-                About us
-              </li>
-              {authUser 
-              ? (
-                <li onClick={handleLogOut} className="login-btn">Log Out</li>
+              <li onClick={(e) => handleNavClick("home")}>Home</li>
+              <li onClick={(e) => handleNavClick("why")}>Why Choose us</li>
+              <li onClick={(e) => handleNavClick("fleet")}>Inventory</li>
+              <li onClick={(e) => handleNavClick("about")}>About us</li>
+              {authUser ? (
+                <li onClick={handleLogOut} className="login-btn">
+                  Log Out
+                </li>
               ) : (
-                <li onClick={handleLoginClick} className="login-btn"> Login</li>
+                <li onClick={handleLoginClick} className="login-btn">
+                  {" "}
+                  Login
+                </li>
               )}
             </ul>
           </nav>
