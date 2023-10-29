@@ -1,13 +1,20 @@
-import { FcCustomerSupport, FcCurrencyExchange, FcApproval } from 'react-icons/fc'
-import { MdOutlineMoneyOffCsred } from 'react-icons/md'
+import {
+  FcCustomerSupport,
+  FcCurrencyExchange,
+  FcApproval,
+} from "react-icons/fc";
+import { MdOutlineMoneyOffCsred } from "react-icons/md";
 function WhyUs() {
   return (
     <>
       <section id="why">
+          <div className="why-banner">
+            <div className="why-title">
+              <h1>Save big with our cheap car rental</h1>
+              <h3>Local Suppliers. 24/7 Support</h3>
+            </div>
+          </div>
         <div className="container">
-          <h1 className="title">
-            WHY <span className="orange-text">CHOOSE US</span>
-          </h1>
           <div className="why-container">
             <img
               src="src/assets/images/pexels-mike-bird-1035108-removebg-preview.png"
@@ -44,7 +51,7 @@ function WhyUs() {
                 </p>
               </div>
               <div className="flex-card">
-                <MdOutlineMoneyOffCsred size={64} color='green'/>
+                <MdOutlineMoneyOffCsred size={64} color="green" />
                 <h3>Free Cancellation</h3>
                 <p>
                   We understand plans may change. Enjoy the freedom of canceling
