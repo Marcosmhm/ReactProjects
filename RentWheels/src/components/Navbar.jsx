@@ -70,9 +70,9 @@ function Navbar() {
               </li>
               {authUser 
               ? (
-                <li onClick={handleLogOut}>Log Out</li>
+                <li onClick={handleLogOut} className="login-btn">Log Out</li>
               ) : (
-                <li onClick={handleLoginClick}> Login</li>
+                <li onClick={handleLoginClick} className="login-btn"> Login</li>
               )}
             </ul>
           </nav>
