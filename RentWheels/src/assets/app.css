@@ -210,7 +210,6 @@ nav li {
 #about,
 #why {
   text-align: center;
-  padding: 5rem 0;
 }
 
 /* HOME */
@@ -261,7 +260,7 @@ nav li {
 }
 
 .home-subtitle {
-  margin: 0.75em 0;
+  margin: 1.5em 0;
 }
 
 .home-btn-container {
@@ -298,11 +297,11 @@ nav li {
     grid-template-columns: auto auto;
     align-items: center;
   }
-
+  
   .home-text {
     margin: 0;
   }
-
+  
   .home-img {
     display: unset;
     width: 100%;
@@ -323,8 +322,15 @@ nav li {
   padding: 2em 1.5em;
 }
 
+.book-car-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 1em;
+}
+
 .book-car-input-container {
   margin: 1.5em 0;
+  display: grid;
 }
 
 .book-car-input-container label {
@@ -339,6 +345,15 @@ nav li {
   width: 100%;
   opacity: 0.6;
   font-size: 0.9rem;
+}
+
+.form-button {
+    place-self: flex-end;
+    background-color: red;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.7em;
 }
 
 /* WHY US */
@@ -559,29 +574,25 @@ nav li {
   margin-top: 1em;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+}
+
+.about-text h3 {
+  margin-bottom: 0.5rem;
 }
 
 .our-container .flex-card {
-  background-blend-mode: overlay;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
+  text-align: left;
+  box-shadow: unset;
+  padding: 0;
 }
 
-.our-container .story {
-  background-image: url("./images/team.avif");
-  background-size: cover;
+.our-container img {
+  margin-top: 1em;
+  width: 100%;
+  border-radius: 10px;
+  min-height: 300px;
 }
 
-.our-container .approach {
-  background-image: url("./images/approach.avif");
-  background-size: cover;
-}
-
-.our-container .mission {
-  background-image: url("./images/mission.avif");
-  background-size: cover;
-}
 
 
 @media(min-width: 768px) {
@@ -590,22 +601,38 @@ nav li {
     flex-wrap: wrap;
   }
   
+  .our-container img {
+    min-height: 300px;
+    min-width: 400px;
+  }
+  
   .our-container .flex-card {
-    min-width: 300px;
-    color: #000!important;
-    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 2em;
   }
 
-  .our-container .approach {
-    background: 0;
+  .about-text {
+    font-size: 1.1rem;
   }
 
-  .our-container .mission {
-    background: 0;
+  .approach .about-text {
+    order: 1;
   }
 
-  .our-container .story {
-    background: 0;
+  .approach img{
+    order: 0;
+  }
+}
+
+@media (min-width:1200px) {
+  .our-container img {
+    min-height: 400px;
+    min-width: 500px;
+  }
+
+  .about-text {
+    font-size: 1.3rem;
   }
 }
 
