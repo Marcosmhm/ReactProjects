@@ -37,7 +37,7 @@ function BookForm() {
       <section id="book-car">
         <div className="container book-car-form-container">
           <h3>BOOK A CAR</h3>
-          <form action="">
+          <form className="book-car-form" action="">
             <div className="book-car-input-container">
               <label htmlFor=""><AiOutlineCar /> Select Your Car Type</label>
               <select className="book-car-input"
@@ -74,6 +74,9 @@ function BookForm() {
             <div className="book-car-input-container">
               <label htmlFor=""><MdOutlineEditCalendar />Drop-of Date</label>
               <input type="date" name="" id="" className="book-car-input" />
+            </div>
+            <div className="book-car-input-container">
+              <button className="form-button book-car-input">Search</button>
             </div>
           </form>
         </div>
