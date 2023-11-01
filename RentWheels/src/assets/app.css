@@ -429,6 +429,10 @@ nav li {
 }
 
 /* INVENTORY */
+#fleet {
+  background-color: #fff;
+}
+
 .inventory-btn-container {
   display: flex;
   gap: 1em;
@@ -574,6 +578,48 @@ nav li {
 /* TESTIMONIALS */
 .title p {
   max-width: 650px;
+}
+
+.testimonial-profile {
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+  gap: 1em;
+}
+
+.testimonial-flex-container .flex-card {
+  flex-basis: 50%;
+  text-align: justify;
+}
+
+.testimonial-profile img {
+  border-radius: 50%;
+  width: 70px;
+  aspect-ratio: 1;
+  margin: 0;
+}
+
+.testimonial-flex-container span,
+.testimonial-flex-container p {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.testimonial-profile span {
+  display: block;
+}
+
+.testimonial-profile span:last-child {
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .testimonial-flex-container {
+    display: flex;
+    gap: 1em;
+    font-size: 1.2rem;
+  }
+
 }
 
 /* ABOUT */
