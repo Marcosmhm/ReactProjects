@@ -378,7 +378,6 @@ nav li {
 }
 
 .why-container {
-  display: flex;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("./images/mark-bg.png");
@@ -421,6 +420,9 @@ nav li {
     gap: 1em;
   }
 
+}
+
+@media (min-width: 1378px) {
   .flex-card:last-child {
     grid-column-start: 2;
   }
@@ -569,6 +571,11 @@ nav li {
   }
 }
 
+/* TESTIMONIALS */
+.title p {
+  max-width: 650px;
+}
+
 /* ABOUT */
 .our-container {
   margin-top: 1em;
@@ -632,7 +639,7 @@ nav li {
   }
 
   .about-text {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
