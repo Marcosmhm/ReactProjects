@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { handleClickScroll } from '../utils.js'
 import vehicles from "../data/vehicles.js";
 import toyotaCamry from "../assets/images/toyota-camry-removebg-preview.png";
 
@@ -79,7 +80,7 @@ function CarCard({ filter }) {
               <span className="list-content">{vehicleData.type}</span>
             </li>
           </ul>
-          <button className="selected-vehicle-button">RESERVE NOW</button>
+          <button onClick={() => handleClickScroll('book-car')} className="selected-vehicle-button">RESERVE NOW</button>
         </div>
       </div>
     </>
