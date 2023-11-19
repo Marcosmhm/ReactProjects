@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import Inventory from "../pages/Inventory";
 import Testimonials from "../pages/Testimonials";
 import WhyUs from "../pages/WhyUs";
+import Faq from "./Faq";
 import Navbar from "./Navbar";
 
 function Layout() {
@@ -13,6 +14,7 @@ function Layout() {
       <WhyUs />
       <Inventory />
       <Testimonials />
+      <Faq />
       <About />
     </>
    );
