@@ -3,6 +3,7 @@
 .board-flex {
   margin: auto;
   display: flex;
+  min-width: 300px;
   max-width: 300px;
   flex-wrap: wrap;
   gap: 0.4em;
@@ -15,4 +16,10 @@
   flex-basis: 30%;
   height: 100px;
   background-color: white;
+  border-radius: 5px;
+  display: flex;
+}
+
+.board-square-content {
+  margin: auto;
 }
