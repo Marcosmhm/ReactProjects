@@ -129,6 +129,24 @@ nav li {
   padding: 0;
   text-align: center;
   list-style: none;
+  cursor: pointer;
+}
+
+nav li:hover:not(:last-child) {
+  color: var(--primary-color);
+}
+
+nav li:last-child {
+  color: #fff;
+}
+
+nav li:last-child:hover {
+  scale: 1.1;
+  transition: all 0.2s ease-in;
+}
+
+.nav-logo {
+  cursor: pointer;
 }
 
 @media (min-width: 1000px) {
