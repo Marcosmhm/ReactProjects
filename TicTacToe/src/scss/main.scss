@@ -1,0 +1,18 @@
+@use 'resets';
+
+.board-flex {
+  margin: auto;
+  display: flex;
+  max-width: 300px;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  padding: 0.5em;
+  background-color: #00dca4;
+  justify-content: space-evenly;
+}
+
+.board-square {
+  flex-basis: 30%;
+  height: 100px;
+  background-color: white;
+}
