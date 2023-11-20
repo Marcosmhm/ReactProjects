@@ -485,7 +485,12 @@ nav li:last-child:hover {
   cursor: pointer;
 }
 
-.car-div.active {
+.active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.faq-active {
   background-color: var(--primary-color);
   color: #fff;
 }
@@ -641,19 +646,46 @@ nav li:last-child:hover {
 }
 
 /* FAQ */
+#faq-section {
+  background-color: #fff;
+}
+
 .faq-wrapper {
-  max-width: 650px;
+  max-width: 800px;
   margin: 0  auto;
+}
+
+.faq-question-wrapper {
+  box-shadow: 0 10px 15px 0 rgba(0,0,0,.1);
 }
 
 .faq-question-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,.1);
+  cursor: pointer;
+  padding: 1.5rem 2rem;
 }
 
 .faq-question-box svg {
   font-size: 28px;
+}
+
+.faq-answer-box {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  font-size: 0.9rem;
+  transition: all 1s ease;
+}
+
+.faq-answer-box.open2 {
+  max-height: 300px;
+  overflow: unset;
+  opacity: unset;
+  padding: 1.5rem 2rem;
+  transition: all 1s ease;
 }
 
 /* ABOUT */
