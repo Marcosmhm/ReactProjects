@@ -1,7 +1,7 @@
 function Testimonials() {
   return (
     <>
-      <section>
+      <section id="testimonial-section">
         <div className="container">
           <div className="title">
             <h3>Review by People</h3>
