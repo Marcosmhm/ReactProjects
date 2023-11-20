@@ -190,7 +190,7 @@ nav li:last-child:hover {
   }
 }
 
-/* Main */
+/* MAIN */
 .orange-text {
   color: var(--primary-color);
 }
@@ -638,6 +638,22 @@ nav li:last-child:hover {
     font-size: 1.2rem;
   }
 
+}
+
+/* FAQ */
+.faq-wrapper {
+  max-width: 650px;
+  margin: 0  auto;
+}
+
+.faq-question-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq-question-box svg {
+  font-size: 28px;
 }
 
 /* ABOUT */
