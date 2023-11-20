@@ -3,14 +3,18 @@ import { useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 function Faq() {
-  const [activeQuestion, setActiveQuestion] = useState('q1')
+  const [activeQuestion, setActiveQuestion] = useState('')
 
-  const handleActiveClass = (id) => {
-    return activeQuestion === id ? "open2" : ""
+  const handleActiveAnswer = (id) => {
+    return activeQuestion === id ? "open-answer" : ""
   }
 
-  const handleAnswerClick = (e, id) => {
-    
+  const handleActiveQuestion = (id) => {
+    return activeQuestion === id ? "faq-active" : ""
+  }
+
+  const handleAnswerClick = (id) => {
+    activeQuestion === id ? setActiveQuestion('') : setActiveQuestion(id)
   };
 
   return (
@@ -27,14 +31,14 @@ function Faq() {
           </div>
           <div className="faq-wrapper">
             <div
-              className="faq-question-wrapper"
-              onClick={(e) => handleAnswerClick(e, "q1")}
+              className='faq-question-wrapper'
+              onClick={(e) => handleAnswerClick("q1")}
             >
-              <div className="faq-question-box">
+              <div className={`faq-question-box ${handleActiveQuestion('q1')}`}>
                 <h3>1. How old do I need to be to rent a car?</h3>
                 <MdKeyboardArrowDown />
               </div>
-              <div id="a1" className={`faq-answer-box ${handleActiveClass('q1')}`}>
+              <div id="a1" className={`faq-answer-box ${handleActiveAnswer('q1')}`}>
                 <p>
                   To rent a car with us, you must be at least 21 years old.
                   However, there are certain car categories that may require
@@ -44,14 +48,14 @@ function Faq() {
               </div>
             </div>
             <div
-              className="faq-question-wrapper"
-              onClick={(e) => handleAnswerClick(e, "q2")}
+              className='faq-question-wrapper'
+              onClick={(e) => handleAnswerClick("q2")}
             >
-              <div className="faq-question-box">
+              <div className={`faq-question-box ${handleActiveQuestion('q2')}`}>
                 <h3>2. Can I modify or cancel my reservation?</h3>
                 <MdKeyboardArrowDown />
               </div>
-              <div id="a2" className={`faq-answer-box ${handleActiveClass('q2')}`}>
+              <div id="a2" className={`faq-answer-box ${handleActiveAnswer('q2')}`}>
                 <p>
                   Yes, you can modify or cancel your reservation online through
                   our website or by contacting our customer service. Keep in
@@ -63,14 +67,14 @@ function Faq() {
               </div>
             </div>
             <div
-              className="faq-question-wrapper"
-              onClick={(e) => handleAnswerClick(e, "q3")}
+              className='faq-question-wrapper'
+              onClick={(e) => handleAnswerClick("q3")}
             >
-              <div className="faq-question-box">
+              <div className={`faq-question-box ${handleActiveQuestion('q3')}`}>
                 <h3>3. What documents do I need to rent a car?</h3>
                 <MdKeyboardArrowDown />
               </div>
-              <div id="a3" className={`faq-answer-box ${handleActiveClass('q3')}`}>
+              <div id="a3" className={`faq-answer-box ${handleActiveAnswer('q3')}`}>
                 <p>
                   To rent a car, you will need a valid driver's license, a major
                   credit card in your name, and a government-issued ID.

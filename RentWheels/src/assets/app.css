@@ -490,11 +490,6 @@ nav li:last-child:hover {
   color: #fff;
 }
 
-.faq-active {
-  background-color: var(--primary-color);
-  color: #fff;
-}
-
 .inventory-image-container {
   margin: 2em 0;
 }
@@ -677,15 +672,21 @@ nav li:last-child:hover {
   overflow: hidden;
   opacity: 0;
   font-size: 0.9rem;
-  transition: all 1s ease;
+  transition: .5s ease;
+  padding: 0 2rem;
 }
 
-.faq-answer-box.open2 {
+.faq-answer-box.open-answer {
   max-height: 300px;
   overflow: unset;
   opacity: unset;
-  padding: 1.5rem 2rem;
-  transition: all 1s ease;
+  padding: 1rem 2rem;
+  transition: .5s ease;
+}
+
+.faq-active {
+  background-color: var(--primary-color);
+  color: #fff;
 }
 
 /* ABOUT */
