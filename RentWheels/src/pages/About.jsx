@@ -3,7 +3,9 @@ function About() {
     <>
       <section id="about">
         <div className="container">
-          <h1 className="title">About us</h1>
+        <div className="title">
+          <h1>About us</h1>
+        </div>
           <div className="our-container">
             <div className="flex-card story">
               <div className="about-text">
