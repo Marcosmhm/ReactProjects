@@ -15,7 +15,7 @@ function Layout() {
       <Inventory />
       <Testimonials />
       <Faq />
-      <About />
+      {/* <About /> */}
     </>
    );
 }
