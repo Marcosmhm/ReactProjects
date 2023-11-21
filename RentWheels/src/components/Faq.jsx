@@ -3,7 +3,7 @@ import { useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 function Faq() {
-  const [activeQuestion, setActiveQuestion] = useState('')
+  const [activeQuestion, setActiveQuestion] = useState('q1')
 
   const handleActiveAnswer = (id) => {
     return activeQuestion === id ? "open-answer" : ""
