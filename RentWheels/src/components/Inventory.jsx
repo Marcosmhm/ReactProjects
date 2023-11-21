@@ -1,5 +1,5 @@
 import { Suspense, lazy, useState } from "react";
-const CarCard = lazy(() => import("../components/CarInfo"));
+const CarCard = lazy(() => import("./CarInfo"));
 
 function Inventory() {
   const [filteredVehicle, setFilteredVehicle] = useState("all");
