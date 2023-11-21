@@ -1,9 +1,10 @@
-import About from "../pages/About";
+import About from "./About";
 import Home from "../pages/Home";
-import Inventory from "../pages/Inventory";
-import Testimonials from "../pages/Testimonials";
-import WhyUs from "../pages/WhyUs";
+import Inventory from "./Inventory";
+import Testimonials from "./Testimonials";
+import WhyUs from "./WhyUs";
 import Faq from "./Faq";
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 function Layout() {
@@ -15,6 +16,7 @@ function Layout() {
       <Inventory />
       <Testimonials />
       <Faq />
+      <Footer />
       {/* <About /> */}
     </>
    );
