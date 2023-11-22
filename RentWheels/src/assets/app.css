@@ -227,7 +227,11 @@ nav li:last-child:hover {
 }
 
 section {
-  padding: 7rem 0;
+  padding: 5rem 0;
+}
+
+button {
+  cursor: pointer;
 }
 
 #about,
@@ -397,6 +401,7 @@ section {
   padding-top: 0;
   background-color: #fff;
 }
+
 .why-banner {
   background-color: #2d2d2d;
   color: #fff;
@@ -415,16 +420,6 @@ section {
 .why-title h3 {
   font-size: 1.5rem;
   margin-top: 1em;
-}
-
-.why-container {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("./images/mark-bg.png");
-}
-
-.why-container img {
-  display: none;
 }
 
 .flex-card {
@@ -450,10 +445,6 @@ section {
 }
 
 @media (min-width: 768px) {
-  .why-container {
-    background-position-x: center;
-  }
-
   .why-cards-cotainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -462,17 +453,7 @@ section {
 
 }
 
-@media (min-width: 1378px) {
-  .flex-card:last-child {
-    grid-column-start: 2;
-  }
-}
-
 /* INVENTORY */
-#fleet {
-  background-color: #f8f8f8;
-}
-
 .inventory-btn-container {
   display: flex;
   gap: 1em;
@@ -867,3 +848,52 @@ section {
 }
 
 /* FOOTER */
+.footer-flex-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 5rem;
+  justify-content: space-between;
+}
+
+.footer-flex-wrapper ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-flex-wrapper ul li {
+  padding-bottom: 1em;
+}
+
+.footer-flex-wrapper ul span {
+  color: #817F91;
+}
+
+.footer-list-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+}
+
+.footer-flex-wrapper input {
+  width: 100%;
+  background-color: #ECECEC;
+  border: none;
+  padding: 1em 2em;
+  color: #495057;
+}
+
+.footer-flex-wrapper button {
+  background-color: var(--primary-color);
+  border: none;
+  color: #fff;
+  padding: 0.8em 1.6em;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .footer-flex-wrapper ul:nth-child(1) li:nth-child(2),
+  .footer-flex-wrapper ul:nth-child(4) li:nth-child(2) {
+   max-width: 300px;
+  }
+}
