@@ -16,10 +16,6 @@ function WhyUs() {
           </div>
         <div className="container">
           <div className="why-container">
-            <img
-              src="src/assets/images/pexels-mike-bird-1035108-removebg-preview.png"
-              alt=""
-            />
             <div className="why-cards-cotainer">
               <div className="flex-card">
                 <FcCustomerSupport size={64} />
@@ -39,15 +35,6 @@ function WhyUs() {
                   transparent pricing and cost-effective options ensure that you
                   get the most value for your money without compromising on
                   quality.
-                </p>
-              </div>
-              <div className="flex-card">
-                <FcApproval size={64} />
-                <h3>Verified Car Brand</h3>
-                <p>
-                  Choose from a wide range of well-maintained and verified car
-                  brands. We offer vehicles from trusted manufacturers to ensure
-                  a safe and enjoyable driving experience for our customers.
                 </p>
               </div>
               <div className="flex-card">
