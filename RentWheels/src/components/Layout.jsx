@@ -6,6 +6,7 @@ import WhyUs from "./WhyUs";
 import Faq from "./Faq";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import Download from "./Download";
 
 function Layout() {
   return ( 
@@ -16,6 +17,7 @@ function Layout() {
       <Inventory />
       <Testimonials />
       <Faq />
+      <Download />
       <Footer />
       {/* <About /> */}
     </>
