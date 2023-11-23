@@ -4,6 +4,7 @@ import vehicles from "../data/vehicles.js";
 import { AiOutlineCar } from 'react-icons/ai'
 import { IoLocationOutline } from 'react-icons/io5'
 import { MdOutlineEditCalendar } from 'react-icons/md'
+import BookModal from "./BookModal.jsx";
 
 function BookForm() {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ function BookForm() {
     pickUpDate: "",
     dropOfDate: "",
   });
+  const [isBookModalOpen, setIsBookModalOpen] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,6 +33,11 @@ function BookForm() {
       </option>
     );
   });
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setIsBookModalOpen(prevState => !prevState)
+  }
 
   return (
     <>
@@ -76,10 +83,11 @@ function BookForm() {
               <input type="date" name="" id="" className="book-car-input" />
             </div>
             <div className="book-car-input-container">
-              <button className="form-button book-car-input">Search</button>
+              <button type="submit" className="form-button book-car-input" onClick={(e) => handleSubmit(e)}>Search</button>
             </div>
           </form>
         </div>
+      {isBookModalOpen && <BookModal />}
       </section>
     </>
   );
