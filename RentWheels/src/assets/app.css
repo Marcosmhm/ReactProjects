@@ -234,7 +234,6 @@ button {
   cursor: pointer;
 }
 
-#about,
 #why {
   text-align: center;
 }
@@ -475,11 +474,11 @@ button {
 
 .car-div {
   transition: all 0.3s ease-in-out;
-  background-color: #e5e5e5;
   margin-bottom: 0.3em;
   padding: 1em;
   font-weight: 700;
   font-size: 1.1rem;
+  box-shadow: 0 10px 15px rgba(158,158,158,.13);
 }
 
 .car-div:hover {
@@ -593,6 +592,99 @@ button {
 
   .selected-vehicle-list {
     align-self: center;
+  }
+}
+
+/* ABOUT */
+.about-section .title {
+  margin-top: 2em;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.about-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-section .title h1 {
+  line-height: 1.2;
+}
+
+.about-section .title p {
+  text-align: left;
+
+}
+
+.about-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-flex-item {
+  flex-basis: 50%;
+}
+
+.about-item-info {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.about-item-info h1 {
+  font-size: 3rem;
+}
+
+.about-item-info h3{
+  font-size: 1rem;
+  color: #817F91;
+}
+
+.about-img-container {
+  display: block;
+}
+
+.about-flex-item img {
+  max-width: 60px;
+}
+
+.about-flex-item:last-child img {
+  max-width: 45px;
+}
+
+@media (min-width: 768px) {
+  .about-section .title {
+    margin: 0;
+    padding-bottom: 2em;
+    max-width: 450px;
+  }
+
+  .about-section .title h1 {
+    font-size: 2.4rem;
+  }
+
+  .about-section .title p {
+    margin: 0;
+  }
+
+  .about-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 6vw;
+  }
+
+  .about-section-img {
+    width: 40%;
+    height: fit-content;
+    max-width: 450px;
+  }
+
+  
+  @media (min-width: 1000px) {
+    .about-flex-item {
+      flex-basis: 33.33%;
+    }
   }
 }
 
