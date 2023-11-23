@@ -15,11 +15,11 @@ function Layout() {
       <Home />
       <WhyUs />
       <Inventory />
+      <About />
       <Testimonials />
       <Faq />
       <Download />
       <Footer />
-      {/* <About /> */}
     </>
    );
 }
