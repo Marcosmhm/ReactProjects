@@ -15,6 +15,7 @@ function BookForm() {
     dropOfDate: "",
   });
   const [isBookModalOpen, setIsBookModalOpen] = useState(false);
+  const [isAnyFieldEmpty, setIsAnyFieldEmpty] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,15 +38,30 @@ function BookForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    document.body.style.overflow = "hidden";
-    setIsBookModalOpen((prevState) => !prevState);
+    const checkIfFieldsAreEmpty = Object.values(formData).some((value) => value === "");
+    if (checkIfFieldsAreEmpty) {
+      setIsAnyFieldEmpty(true) 
+      setTimeout(() => {
+        setIsAnyFieldEmpty(false) 
+      }, 4000);
+    } else {
+      setIsBookModalOpen((prevState) => !prevState);
+      document.body.style.overflow = "hidden";
+    }
   };
+
+  const errorElement = <>
+    <div className="error-div">
+      <span>All fields are Required</span>
+    </div>
+  </>
 
   return (
     <>
       <section id="book-car">
         <div className="container book-car-form-container">
           <h3>BOOK A CAR</h3>
+          {isAnyFieldEmpty && errorElement}
           <form className="book-car-form" action="">
             <div className="book-car-input-container">
               <label htmlFor="">
