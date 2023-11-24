@@ -972,6 +972,7 @@ button {
   position: fixed;
   top: 0;
   z-index: 999;
+  overflow-y: auto;
 }
 
 .book-modal-wrapper {
@@ -990,15 +991,21 @@ button {
   font-weight: 900;
 }
 
+.book-modal-wrapper h3 {
+  color: var(--primary-color);
+}
+
 .book-info {
   background-color: rgba(255, 76, 48, 0.08);
   padding: 1.5rem;
 }
 
+.book-info svg {
+  font-size: 32px;
+}
+
 .book-info h3 {
-  color: var(--primary-color);
   display: flex;
-  align-items: center;
   gap: 0.4em;
   margin-bottom: 0.7em;
 }
@@ -1009,34 +1016,48 @@ button {
 }
 
 .booking-data {
-  display: flex;
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .booking-data h3 {
-  color: var(--primary-color);
   font-size: 1.1rem;
 }
 
-.booking-car-pickup-info {
+.booking-left {
+  width: 50%;
   display: flex;
-  gap: 0.2em;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.pickup-info {
+  display: flex;
+  gap: 0.4em;
 }
 
 .pickup-info-content {
   display: flex;
   flex-direction: column;
+  font-size: 0.95rem;
 }
 
-.booking-left {
-  width: 50%;
+.pickup-info-content span {
+  font-weight: bold;
 }
 
 .booking-personal-form {
   display: flex;
   flex-direction: column;
+  gap: 1em;
+  padding: 1.5rem;
 }
 
 .booking-personal-form input {
-  padding: 0.5em;
+  padding: 0.75em 1em;
+  border: none;
+  font-size: 0.85rem;
+  background-color: #DBDBDB;
 }
