@@ -56,26 +56,44 @@ function BookModal({ ...props }) {
                   <h3>Car: {props.carModel}</h3>
                 </div>
               </div>
-              <div className="booking-personal-form">
-                <h3>PERSONAL INFORMATION</h3>
-                <label htmlFor="first-name">First Name</label>
-                <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" />
-                <label htmlFor="last-name">Last Name</label>
-                <input type="text" name="last-name" id="last-name" placeholder="Enter your last name" />
-                <label htmlFor="">Phone Number</label>
-                <input type="text" placeholder="Enter your phone number" />
-                <label htmlFor="">Age</label>
-                <input type="text" placeholder="18" />
-                <label htmlFor="">Email</label>
-                <input type="text" placeholder="Enter your email address" />
-                <label htmlFor="">Address</label>
-                <input type="text" placeholder="Enter your street address" />
-                <label htmlFor="">City</label>
-                <input type="text" placeholder="Enter your city" />
-                <label htmlFor="">Zip code</label>
-                <input type="text" placeholder="Enter your zip code" />
+              <h3 className="personal-info">PERSONAL INFORMATION</h3>
+              <div className="book-personal-form">
+                <div className="book-personal-form-input">
+                  <label htmlFor="first-name">First Name</label>
+                  <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" />
+                </div>
+                <div className="book-personal-form-input">
+                  <label htmlFor="last-name">Last Name</label>
+                  <input type="text" name="last-name" id="last-name" placeholder="Enter your last name" />
+                </div>
+                <div className="book-personal-form-input">
+                  <label htmlFor="">Phone Number</label>
+                  <input type="text" placeholder="Enter your phone number" />
+                </div>
+                <div className="book-personal-form-input">
+                  <label htmlFor="">Age</label>
+                  <input type="text" placeholder="18" />
+                </div>
+                <div className="book-personal-form-input">
+                  <label htmlFor="">Email</label>
+                  <input type="text" placeholder="Enter your email address" />
+                </div>
+                <div className="book-personal-form-input">
+                  <label htmlFor="">Address</label>
+                  <input type="text" placeholder="Enter your street address" />
+                </div>
+                <div className="book-personal-form-input">
+                  <label htmlFor="">City</label>
+                  <input type="text" placeholder="Enter your city" />
+                </div>
+                <div className="book-personal-form-input">
+                  <label htmlFor="">Zip code</label>
+                  <input type="text" placeholder="Enter your zip code" />
+                </div>
+                <div className="book-personal-form-input">
+                </div>
               </div>
-            </div>
+                </div>
           </div>
         </div>
       </section>
