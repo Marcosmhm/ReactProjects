@@ -977,7 +977,7 @@ button {
 
 .book-modal-wrapper {
   background-color: #fff;
-  max-width: 800px;
+  max-width: 500px;
   padding: 0.1em;
   margin: 0 auto;
 }
@@ -1048,16 +1048,46 @@ button {
   font-weight: bold;
 }
 
-.booking-personal-form {
-  display: flex;
-  flex-direction: column;
+.personal-info {
+  padding: 0 1.5rem;
+}
+
+.book-personal-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
   gap: 1em;
   padding: 1.5rem;
 }
 
-.booking-personal-form input {
+.book-personal-form label {
+  font-size: 0.85rem;
+}
+
+.book-personal-form input {
   padding: 0.75em 1em;
   border: none;
   font-size: 0.85rem;
   background-color: #DBDBDB;
+}
+
+.book-personal-form-input {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 2;
+  gap: 0.2em;
+}
+
+@media (min-width: 768px) {
+  .book-modal-wrapper {
+    max-width: 700px;
+  }
+
+  .book-personal-form-input {
+    grid-column: span 1;
+  }
+
+  .book-personal-form-input:nth-child(5),
+  .book-personal-form-input:nth-child(6){
+    grid-column: span 2;
+  }
 }
