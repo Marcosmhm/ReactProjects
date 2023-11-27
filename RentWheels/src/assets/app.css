@@ -886,6 +886,32 @@ button {
   font-weight: bold;
 }
 
+.footer-copy-wrapper {
+  padding-bottom: 3.5rem;
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  font-size: .87rem;
+  color: #80868b;
+  gap: 0.4em;
+  align-items: center;
+}
+
+footer a {
+  color: #000;
+  margin-top: .4em;
+  text-decoration: underline;
+}
+
+.personal-links {
+  display: flex;
+  gap: .5em;
+}
+
+.personal-links a {
+  border-bottom: 1px solid gray;
+}
+
 @media (min-width: 768px) {
   .footer-flex-wrapper ul:nth-child(1) li:nth-child(2),
   .footer-flex-wrapper ul:nth-child(4) li:nth-child(2) {
