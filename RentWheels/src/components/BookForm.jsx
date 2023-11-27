@@ -43,7 +43,7 @@ function BookForm() {
       setIsAnyFieldEmpty(true) 
       setTimeout(() => {
         setIsAnyFieldEmpty(false) 
-      }, 4000);
+      }, 3000);
     } else {
       setIsBookModalOpen((prevState) => !prevState);
       document.body.style.overflow = "hidden";
