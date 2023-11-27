@@ -1,3 +1,5 @@
+import { BsLinkedin, BsGithub } from 'react-icons/bs'
+
 function Footer() {
   return (
     <>
@@ -38,14 +40,38 @@ function Footer() {
             </ul>
             <ul>
               <li className="footer-list-title">Subscription</li>
-              <li><span>Subscribe your Email address for latest news & updates</span></li>
               <li>
-                <input type="email" name="email" id="" placeholder="Enter Email Address"/>
+                <span>
+                  Subscribe your Email address for latest news & updates
+                </span>
+              </li>
+              <li>
+                <input
+                  type="email"
+                  name="email"
+                  id=""
+                  placeholder="Enter Email Address"
+                />
               </li>
               <li>
                 <button type="submit">Submit</button>
               </li>
             </ul>
+          </div>
+          <div className="footer-copy-wrapper">
+            <span>© 2023 Marcos Henrique de Moraes</span>
+            <span>Design by <a href="https://xpeedstudio.com/">XpeedStudio</a> and built by me</span>
+            <span className="personal-links">
+              <a
+                href="https://www.linkedin.com/in/marcoshenriquem/"
+                target="_blank"
+              >
+                <BsLinkedin />
+              </a>
+              <a href="https://github.com/Marcosmhm" target="_blank">
+                <BsGithub />
+              </a>
+            </span>
           </div>
         </div>
       </footer>
