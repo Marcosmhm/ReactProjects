@@ -36,6 +36,7 @@ function BookForm() {
     );
   });
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const checkIfFieldsAreEmpty = Object.values(formData).some((value) => value === "");
@@ -84,9 +85,12 @@ function BookForm() {
                 <IoLocationOutline />
                 Pick-up Location
               </label>
-              <select name="pickUpLocation" id="" className="book-car-input" value={""} onChange={handleChange}>
+              <select name="pickUpLocation" id="" className="book-car-input" value={formData.pickUpLocation} onChange={handleChange}>
                 <option value="" disabled>
                   Select pick up location
+                </option>
+                <option value="Santa Monica - 2102 Lincol Blvd">
+                  Santa Monica - 2102 Lincol Blvd
                 </option>
               </select>
             </div>
@@ -94,9 +98,12 @@ function BookForm() {
               <label htmlFor="">
                 <IoLocationOutline /> Drop-of location
               </label>
-              <select name="" id="" className="book-car-input" value={""} onChange={handleChange}>
+              <select name="dropOf" id="" className="book-car-input" value={formData.dropOf} onChange={handleChange}>
                 <option value="" disabled>
                   Select drop off location
+                </option>
+                <option value="3669 Oliver Street Wedgwood Texas">
+                  3669 Oliver Street Wedgwood Texas
                 </option>
               </select>
             </div>
@@ -127,6 +134,7 @@ function BookForm() {
         </div>
         {isBookModalOpen && (
           <BookModal
+            handleClose = {() => setIsBookModalOpen((prevState) => !prevState)}
             carModel={formData.carType}
             pickUpLocation={formData.pickUpLocation}
             dropOf={formData.dropOf}
