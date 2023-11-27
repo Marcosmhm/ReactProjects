@@ -230,7 +230,7 @@ nav li:last-child:hover {
   color: #721c24;
   background-color: #f8d7da;
   padding: 1em;
-  animation: fade 4s linear;
+  animation: fade 3s linear;
 }
 
 @keyframes fade {
