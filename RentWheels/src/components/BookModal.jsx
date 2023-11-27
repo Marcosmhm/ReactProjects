@@ -1,12 +1,36 @@
+import { useRef, useEffect } from "react";
+
 import { FaCircleInfo } from "react-icons/fa6";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineEditCalendar } from "react-icons/md";
 
+const useOnClickOutside = (ref, handler) => {
+  useEffect(() => {
+    const listener = (event) => {
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+      handler(event);
+    };
+    document.addEventListener("mousedown", listener);
+    document.addEventListener("touchstart", listener);
+    return () => {
+      document.removeEventListener("mousedown", listener);
+      document.removeEventListener("touchstart", listener);
+      history.goBack;
+    };
+  }, [ref, handler]);
+};
+
 function BookModal({ ...props }) {
+  const ref = useRef();
+
+  useOnClickOutside(ref, () => props.handleClose());
+
   return (
     <>
       <section className="book-modal">
-        <div className="book-modal-wrapper">
+        <div className="book-modal-wrapper" ref={ref}>
           <div className="book-modal-container">
             <h1>COMPLETE RESERVATION</h1>
             <div className="book-modal-content">
@@ -60,11 +84,21 @@ function BookModal({ ...props }) {
               <div className="book-personal-form">
                 <div className="book-personal-form-input">
                   <label htmlFor="first-name">First Name</label>
-                  <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" />
+                  <input
+                    type="text"
+                    id="first-name"
+                    name="first-name"
+                    placeholder="Enter your first name"
+                  />
                 </div>
                 <div className="book-personal-form-input">
                   <label htmlFor="last-name">Last Name</label>
-                  <input type="text" name="last-name" id="last-name" placeholder="Enter your last name" />
+                  <input
+                    type="text"
+                    name="last-name"
+                    id="last-name"
+                    placeholder="Enter your last name"
+                  />
                 </div>
                 <div className="book-personal-form-input">
                   <label htmlFor="">Phone Number</label>
@@ -90,10 +124,9 @@ function BookModal({ ...props }) {
                   <label htmlFor="">Zip code</label>
                   <input type="text" placeholder="Enter your zip code" />
                 </div>
-                <div className="book-personal-form-input">
-                </div>
+                <div className="book-personal-form-input"></div>
               </div>
-                </div>
+            </div>
           </div>
         </div>
       </section>
