@@ -57,6 +57,11 @@ function BookForm() {
     </div>
   </>
 
+  const handleClose = () => {
+    document.body.style.overflow = "unset";
+    setIsBookModalOpen((prevState) => !prevState)
+  }
+
   return (
     <>
       <section id="book-car">
@@ -134,7 +139,7 @@ function BookForm() {
         </div>
         {isBookModalOpen && (
           <BookModal
-            handleClose = {() => setIsBookModalOpen((prevState) => !prevState)}
+            handleClose = {() => handleClose()}
             carModel={formData.carType}
             pickUpLocation={formData.pickUpLocation}
             dropOf={formData.dropOf}
