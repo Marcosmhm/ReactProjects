@@ -4,6 +4,7 @@ import vehicles from "../data/vehicles.js";
 import { AiOutlineCar } from "react-icons/ai";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineEditCalendar } from "react-icons/md";
+import { motion } from "framer-motion";
 import BookModal from "./BookModal.jsx";
 
 function BookForm() {
@@ -64,7 +65,11 @@ function BookForm() {
 
   return (
     <>
-      <section id="book-car">
+      <motion.section id="book-car"
+        initial={{ y: 200 }}  
+        animate={{ y: 0 }}
+        transition={{ delay: 0.2, duration: 1 }}
+      >
         <div className="container book-car-form-container">
           <h3>BOOK A CAR</h3>
           {isAnyFieldEmpty && errorElement}
@@ -147,7 +152,7 @@ function BookForm() {
             dropOfDate={formData.dropOfDate}
           />
         )}
-      </section>
+      </motion.section>
     </>
   );
 }

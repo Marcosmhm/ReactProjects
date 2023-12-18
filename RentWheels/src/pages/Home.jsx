@@ -17,7 +17,7 @@ function Home() {
             <motion.div className="home-text"
               initial={{ x: -600, opacity: 0 }}
               animate={{ x: 0, opacity: 1}}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
             >
               <h4>Plan your trip now</h4>
               <h1>
@@ -43,7 +43,7 @@ function Home() {
               className="home-img"
               initial={{ x: 600, opacity: 0 }}
               animate={{ x: 0, opacity: 1}}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
             />
           </div>
         </div>
