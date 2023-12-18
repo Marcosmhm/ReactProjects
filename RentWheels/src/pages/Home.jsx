@@ -1,6 +1,7 @@
 import BookForm from "../components/BookForm";
-
 import { handleClickScroll } from "../utils";
+import { motion } from "framer-motion";
+
 
 function Home() {
   return (
@@ -13,7 +14,11 @@ function Home() {
             className="bg-shape"
           />
           <div className="home-content">
-            <div className="home-text">
+            <motion.div className="home-text"
+              initial={{ x: -600, opacity: 0 }}
+              animate={{ x: 0, opacity: 1}}
+              transition={{ duration: 1 }}
+            >
               <h4>Plan your trip now</h4>
               <h1>
                 <span className="orange-text">EASY</span> AND
@@ -31,11 +36,14 @@ function Home() {
                   Get Started
                 </button>
               </div>
-            </div>
-            <img
+            </motion.div>
+            <motion.img
               src="/src/assets/images/red-car.png"
               alt=""
               className="home-img"
+              initial={{ x: 600, opacity: 0 }}
+              animate={{ x: 0, opacity: 1}}
+              transition={{ duration: 1 }}
             />
           </div>
         </div>
