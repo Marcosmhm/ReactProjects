@@ -136,7 +136,7 @@ nav li {
   cursor: pointer;
 }
 
-nav li:hover:not(:last-child) {
+nav li:hover:not(.register-btn){
   color: var(--primary-color);
 }
 
