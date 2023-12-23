@@ -1,43 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { handleLogOut, handleClickScroll } from "../utils";
-import { auth } from "../firebase.js";
-import { onAuthStateChanged } from "firebase/auth";
-import LoginSingup from "./LoginSingup";
+import { handleClickScroll } from "../utils";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isFormOpen, setIsFormOpen] = useState(false);
-  const [authUser, setAuthUser] = useState(null);
-
-  useEffect(() => {
-    const listen = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setAuthUser(user);
-      } else {
-        setAuthUser(null);
-      }
-    });
-
-    return () => {
-      listen();
-    };
-  }, []);
 
   const handleMenuOpen = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
-
-  function handleLoginClick() {
-    document.body.style.overflow = "hidden";
-    handleMenuOpen();
-    return setIsFormOpen(true);
-  }
-
-  function handleCloseForm() {
-    document.body.style.overflow = "unset";
-    setIsFormOpen(false);
-  }
 
   const handleNavClick = (e) => {
     handleClickScroll(e);
@@ -60,21 +30,15 @@ function Navbar() {
               <li onClick={(e) => handleNavClick("why")}>Why Choose us</li>
               <li onClick={(e) => handleNavClick("fleet")}>Inventory</li>
               <li onClick={(e) => handleNavClick("about")}>About us</li>
-              {authUser ? (
-                <li onClick={handleLogOut} className="login-btn">
-                  Log Out
-                </li>
-              ) : (
-                <li onClick={handleLoginClick} className="login-btn">
-                  {" "}
-                  Login
-                </li>
-              )}
+              <li onClick={(e) => handleNavClick("testimonial-section")}>Testimonials</li>
+            </ul>
+            <ul className={isMenuOpen ? "open growDown" : "closed"} >
+              <li className="login-btn">Sign In</li>
+              <li className="register-btn">Register</li>
             </ul>
           </nav>
         </div>
       </header>
-      {isFormOpen && <LoginSingup onClose={handleCloseForm} />}
     </>
   );
 }
