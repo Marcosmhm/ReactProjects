@@ -54,6 +54,7 @@ nav ul.closed {
   max-height: 0;
 }
 
+
 header {
   position: sticky;
   top: 0;
@@ -69,7 +70,6 @@ nav ul {
   transition: all 0.5s ease-in-out;
   background-color: #fff;
   border: 1px solid black;
-  border-radius: 5px;
   padding: 0;
   width: 100%;
   position: absolute;
@@ -78,8 +78,11 @@ nav ul {
 }
 
 nav ul.open {
-  max-height: 200px;
+  max-height: 300px;
   visibility: visible;
+}
+nav ul:last-child { 
+  display: none;
 }
 
 /* MOBILE MENU ANIMATION */
@@ -137,7 +140,7 @@ nav li:hover:not(:last-child) {
   color: var(--primary-color);
 }
 
-nav li:last-child:hover {
+.register-btn:hover {
   scale: 1.1;
 }
 
@@ -145,7 +148,7 @@ nav li:last-child:hover {
   cursor: pointer;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1150px) {
   nav {
     display: flex;
     align-items: center;
@@ -170,20 +173,23 @@ nav li:last-child:hover {
     animation: unset;
   }
 
+  nav ul:last-child {
+    display: flex;
+  }
+
   nav li {
     justify-self: center;
     padding: 0.6rem 1.5rem;
-  }
-
-  nav li:last-child {
-    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
   }
 
   .menu-button {
     display: none;
   }
 
-  .login-btn {
+  .register-btn {
+    color: #fff;
     background-color: #fa4226;
     box-shadow: 0 10px 15px 0 rgba(255,83,48,.5);
     border-radius: 5px;
