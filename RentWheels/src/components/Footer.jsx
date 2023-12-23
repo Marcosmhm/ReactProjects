@@ -1,9 +1,25 @@
-import { BsLinkedin, BsGithub } from 'react-icons/bs'
+import { BsLinkedin, BsGithub } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 function Footer() {
   return (
     <>
-      <footer>
+      <motion.footer
+        initial={{
+          y: 300,
+          opacity: 0,
+        }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 1,
+        }}
+        viewport={{
+          once: true,
+        }}
+      >
         <div className="container">
           <div className="footer-flex-wrapper">
             <ul>
@@ -60,7 +76,10 @@ function Footer() {
           </div>
           <div className="footer-copy-wrapper">
             <span>© 2023 Marcos Henrique de Moraes</span>
-            <span>Design by <a href="https://xpeedstudio.com/">XpeedStudio</a> and built by me</span>
+            <span>
+              Design by <a href="https://xpeedstudio.com/">XpeedStudio</a> and
+              built by me
+            </span>
             <span className="personal-links">
               <a
                 href="https://www.linkedin.com/in/marcoshenriquem/"
@@ -74,7 +93,7 @@ function Footer() {
             </span>
           </div>
         </div>
-      </footer>
+      </motion.footer>
     </>
   );
 }
