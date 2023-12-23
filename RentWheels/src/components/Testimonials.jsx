@@ -1,7 +1,25 @@
+import { motion } from "framer-motion";
+
 function Testimonials() {
   return (
     <>
-      <section id="testimonial-section">
+      <motion.section
+        id="testimonial-section"
+        initial={{
+          y: 300,
+          opacity: 0,
+        }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 1,
+        }}
+        viewport={{
+          once: true,
+        }}
+      >
         <div className="container">
           <div className="title">
             <h3>Review by People</h3>
@@ -43,7 +61,7 @@ function Testimonials() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }
