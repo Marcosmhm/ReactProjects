@@ -4,16 +4,34 @@ import {
   FcApproval,
 } from "react-icons/fc";
 import { MdOutlineMoneyOffCsred } from "react-icons/md";
+import { motion } from "framer-motion";
+
 function WhyUs() {
   return (
     <>
-      <section id="why">
-          <div className="why-banner">
-            <div className="why-title">
-              <h1>Save big with our cheap car rental</h1>
-              <h3>Local Suppliers. 24/7 Support</h3>
-            </div>
+      <motion.section
+        id="why"
+        initial={{
+          y: 300,
+          opacity: 0,
+        }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 1,
+        }}
+        viewport={{
+          once: true,
+        }}
+      >
+        <div className="why-banner">
+          <div className="why-title">
+            <h1>Save big with our cheap car rental</h1>
+            <h3>Local Suppliers. 24/7 Support</h3>
           </div>
+        </div>
         <div className="container">
           <div className="why-container">
             <div className="why-cards-cotainer">
@@ -50,7 +68,7 @@ function WhyUs() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }
