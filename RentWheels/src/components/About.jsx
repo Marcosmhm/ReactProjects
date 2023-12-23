@@ -1,7 +1,26 @@
+import { motion } from "framer-motion";
+
 function About() {
   return (
     <>
-      <section id="about" className="about-section">
+      <motion.section
+        id="about"
+        className="about-section"
+        initial={{
+          y: 300,
+          opacity: 0,
+        }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 1,
+        }}
+        viewport={{
+          once: true,
+        }}
+      >
         <div className="container">
           <div className="about-content-wrapper">
             <img
@@ -53,7 +72,7 @@ function About() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }
